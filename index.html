@@ -4,74 +4,185 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ROTVODOM is a dog shelter dedicated to finding loving homes for abandoned and stray dogs.">
+  <meta name="keywords" content="dog shelter, adopt a dog, stray dogs, animal rescue">
+  <meta name="author" content="x.bavayra">
+
   <title>ROTVODOM - dog shelter</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="style.css">
+
+  <link rel="icon" type="png" sizes="192x192" href="images-base/android-chrome-192x192.png">
+  <link rel="icon" type="png" sizes="512x512" href="images-base/android-chrome-512x512.png">
+  <link rel="icon" type="png" sizes="16x16" href="images-base/favicon-16x16.png">
+  <link rel="icon" type="png" sizes="32x32" href="images-base/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images-base/apple-touch-icon.png">
 </head>
+
 <body>
 
   <header>
+    <div class="header-container" id="home">
 
+        <div class="logo-container">
+            <div id="logo-bg">
+              <img id="logo" src="images-base/logo.png" alt="ROTVODOM LOGO">
+            </div>
+        </div>
+
+        <h1 class="h1-container">
+            ROTVODOM
+        </h1>
+    </div>
+
+    <div class="contact-CTA">
+        <button class="contact-btn">
+            CONTACT US!
+        </button>
+    </div>
   </header>
 
   <section class="hero">
-    <nav>
-
+    <nav aria-label="main-nav">
+        <ul class="nav-list">
+            <li><a href="">HOME</a></li>
+            <li><a href="">OUR DOGS</a></li>
+            <li><a href="">ABOUT US</a></li>
+            <li><a href="">CONTACTS</a></li>
+        </ul>
     </nav>
-    <div class="heroInfo">
 
+    <div class="hero-info">
+        <h2 class="visually-hidden">WHO ARE WE?</h2>
+        <p class="hero-content">We are a shelter that was created in Russia, Jekaterinburg 15 years ago...</p>
     </div>
-    <div class="heroCTA">
-
+    <div class="hero-CTA">
+        <button class="hero-meet-CTA">MEET YOUR BEST FRIEND</button>
     </div>
   </section>
 
   <main class="main">
-    <section class="petsCards">
-      <div class="filterBar">
+    <section class="filter-container">
+       <h2 class="visually-hidden">DOGS FOR ADOPTION</h2> 
+      <div class="filter-bar">
+        <div class="filter-group">
+            <label for="filter-age">AGE:</label>
+            <select id="filter-age" name="age">
+                <option value="">ALL</option>
+                <option value="puppy">PUPPY</option>
+                <option value="adult">ADULT</option>
+                <option value="senior">SENIOR</option>
+            </select>
+        </div>
 
+        <div class="filter-group">
+            <label for="filter-gender">GENDER:</label>
+            <select id="filter-gender" name="gender">
+                <option value="">ALL</option>
+                <option value="male">MALE</option>
+                <option value="female">FEMALE</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="filter-health">STATE OF HEALTH:</label>
+            <select id="filter-health" name="health">
+                <option value="none">DOESN'T MATTER</option>
+                <option value="healthy">HEALTHY</option>
+                <option value="minor">MINOR HEALTH ISSUES</option>
+                <option value="serious">CAN DEAL WITH SERIOUS HEALTH ISSUES</option>
+            </select>
+        </div>
+        
+          <button class="apply-filter">APPLY ALL FILTERS</button>
+          <button class="clear-filter">CLEAR ALL FILTERS</button>
       </div>
-      <div class="dogsFound">
 
+      <div class="dogs-found">
+        <p class="dog-filtered-found">DOGS FOUND:</p>
+      </div>
+    </section>
+
+    <section class="pet-cards-section">
+      <div class="cards-container">
+        <article class="pet-card">
+          <img>
+          <h3 class="pet-name-age">Bella, 3yo</h3>
+          <p class="about-pet">Here's Bella...</p>
+          <button class="adopt-btn">ADOPT ME!</button>
+        </article>
+
+        <article class="pet-card">
+          <img>
+          <h3 class="pet-name-age">Bella, 3yo</h3>
+          <p class="about-pet">Here's Bella...</p>
+          <button class="adopt-btn">ADOPT ME!</button>
+        </article>
+
+        <article class="pet-card">
+          <img>
+          <h3 class="pet-name-age">Bella, 3yo</h3>
+          <p class="about-pet">Here's Bella...</p>
+          <button class="adopt-btn">ADOPT ME!</button>
+        </article>
+
+        <article class="pet-card">
+          <img>
+          <h3 class="pet-name-age">Bella, 3yo</h3>
+          <p class="about-pet">Here's Bella...</p>
+          <button class="adopt-btn">ADOPT ME!</button>
+        </article>
+
+        <article class="pet-card">
+          <img>
+          <h3 class="pet-name-age">Bella, 3yo</h3>
+          <p class="about-pet">Here's Bella...</p>
+          <button class="adopt-btn">ADOPT ME!</button>
+        </article>
+
+        <article class="pet-card">
+          <img>
+          <h3 class="pet-name-age">Bella, 3yo</h3>
+          <p class="about-pet">Here's Bella...</p>
+          <button class="adopt-btn">ADOPT ME!</button>
+        </article>
       </div>
 
-      <div class="cards">
-
-      </div>
-
-      <div class="viewAllCTA">
-
-      </div>
+      <button class="view-all-CTA">SHOW ALL PETS...</button>
     </section>
 
     <section class="about">
-      <div class="aboutContainer">
-        <h2 class="h2About"></h2>
-        <p class="aboutContent">
-
-        </p>
-      </div>
+        <h2 class="visually-hidden">ABOUT US</h2>
+        <div class="about-container">
+          <p class="about-content">
+            We are the team of enthusiasts who have a deep love for anything with four legs!
+          </p>
+        </div>
     </section>
 
     <section class="contact">
-      <div class="contactContainer">
-        <h2 class="h2Contact"></h2>
-        <a>
-
-        </a>
+      <div class="contact-container">
+        <h2 class="visually-hidden">CONTACT US</h2>
+        <a></a>
       </div>
     </section>
+
   </main>
 
-  <div class="modalContainer">
-    <div class="modalContent">
-      <button class="closeModal"></button>
-      <div class="modalBody">
-        
+  <div class="modal-container">
+    <div class="modal-content">
+      <button class="close-modal"></button>
+      <div class="modal-body">
       </div>
     </div>
   </div>
+
   <footer>
-    <p class="footerContent">(c)ROTVODOM 2025</p>
+    <p class="footer-content">(c)ROTVODOM 2025</p>
   </footer>
 
 <script src="index.js"></script>
