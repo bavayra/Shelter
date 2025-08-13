@@ -28,22 +28,20 @@
   <header>
     <div class="header-container" id="home">
 
-        <div class="logo-container">
+        <div class="logo">
             <div id="logo-bg">
-              <img id="logo" src="images-base/logo.png" alt="ROTVODOM LOGO">
+              <img id="logo-image" src="images-base/logo.png" alt="ROTVODOM LOGO">
             </div>
-        </div>
+             <h1>
+                DOG SHELTER
+             </h1>
+        </div>  
 
-        <h1 class="h1-container">
-            ROTVODOM
-        </h1>
     </div>
 
-    <div class="contact-CTA">
         <button class="contact-btn">
             CONTACT US!
         </button>
-    </div>
   </header>
 
   <section class="hero">
@@ -98,6 +96,16 @@
             </select>
         </div>
         
+          <div class="filter-group">
+            <label for="filter-breed">STATE OF HEALTH:</label>
+            <select id="filter-breed" name="breed">
+                <option value="none">DOESN'T MATTER</option>
+                <option value="rottweiler">ROTTWEILER</option>
+                <option value="cane-corso"> CANE CORSO</option>
+                <option value="mixed">MIXED BREED</option>
+            </select>
+        </div>
+        
           <button class="apply-filter">APPLY ALL FILTERS</button>
           <button class="clear-filter">CLEAR ALL FILTERS</button>
       </div>
@@ -108,49 +116,7 @@
     </section>
 
     <section class="pet-cards-section">
-      <div class="cards-container">
-        <article class="pet-card">
-          <img>
-          <h3 class="pet-name-age">Bella, 3yo</h3>
-          <p class="about-pet">Here's Bella...</p>
-          <button class="adopt-btn">ADOPT ME!</button>
-        </article>
-
-        <article class="pet-card">
-          <img>
-          <h3 class="pet-name-age">Bella, 3yo</h3>
-          <p class="about-pet">Here's Bella...</p>
-          <button class="adopt-btn">ADOPT ME!</button>
-        </article>
-
-        <article class="pet-card">
-          <img>
-          <h3 class="pet-name-age">Bella, 3yo</h3>
-          <p class="about-pet">Here's Bella...</p>
-          <button class="adopt-btn">ADOPT ME!</button>
-        </article>
-
-        <article class="pet-card">
-          <img>
-          <h3 class="pet-name-age">Bella, 3yo</h3>
-          <p class="about-pet">Here's Bella...</p>
-          <button class="adopt-btn">ADOPT ME!</button>
-        </article>
-
-        <article class="pet-card">
-          <img>
-          <h3 class="pet-name-age">Bella, 3yo</h3>
-          <p class="about-pet">Here's Bella...</p>
-          <button class="adopt-btn">ADOPT ME!</button>
-        </article>
-
-        <article class="pet-card">
-          <img>
-          <h3 class="pet-name-age">Bella, 3yo</h3>
-          <p class="about-pet">Here's Bella...</p>
-          <button class="adopt-btn">ADOPT ME!</button>
-        </article>
-      </div>
+      <div class="cards-container"></div>
 
       <button class="view-all-CTA">SHOW ALL PETS...</button>
     </section>
