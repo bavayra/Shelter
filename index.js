@@ -10,6 +10,24 @@ document.addEventListener("click", function(event){
     paw.addEventListener("animationend", () => paw.remove());
 });
 
+function countUp(id, target, duration) {
+  let start = 0;
+  const stepTime = Math.abs(Math.floor(duration / target));
+  const el = document.getElementById(id);
+  
+  const timer = setInterval(() => {
+    start++;
+    el.textContent = start;
+    if (start >= target) {
+      clearInterval(timer);
+    }
+  }, stepTime);
+}
+
+countUp("dogsNow", 23, 1000); 
+countUp("dogsTotal", 184, 1500);
+countUp("dogsYear", 47, 1200);
+
 /* DOGS OBJECT */
 const dogs = [
     {

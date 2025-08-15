@@ -189,6 +189,34 @@ nav label{
     margin-bottom: 5rem;
 }
 
+/*PETS STATS COUNTER*/
+
+.pets-stats{
+    background-color: blue;
+    position: absolute;
+    top: 24%;
+    left: 20%;
+    width: auto;
+    height: auto;
+    padding: 25px;
+    line-height: 1.8rem;
+    background-color: rgb(43, 23, 35, 0.5);
+    color: var(--accent-text-color);
+    font-weight: 600;
+    border-radius: 1.25rem;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+#dogsNow,
+#dogsYear,
+#dogsTotal{
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: rgb(97, 18, 53);
+    cursor: auto;
+}
+
 /*HERO TEXT CONTENT*/
 .hero-info{
     width: 25vw;
