@@ -1,3 +1,16 @@
+document.addEventListener("click", function(event){
+    const paw = document.createElement("img");
+    paw.src= "images-base/paws.png";
+    paw.className = "paw-click";
+    paw.style.top = event.clientY + "px";
+    paw.style.left = event.clientX + "px";
+
+    document.body.appendChild(paw);
+
+    paw.addEventListener("animationend", () => paw.remove());
+});
+
+/* DOGS OBJECT */
 const dogs = [
     {
         name: "Bianka",

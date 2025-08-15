@@ -12,45 +12,49 @@ body{
 }
 
 :root {
-    --primary-color:  rgb(168, 108, 108);
+    --primary-color:  rgb(168, 108, 108); /*ПРОВЕРЬ ТУТ ЦВЕТА, ПРАЙМЕРИ НИГДЕ НЕ ИСПОЛЬЗУЕТСЯ*/
     --secondary-color: rgb(43, 23, 35);
     --surface-color: rgb(94, 32, 60);
     --accent-text-color: rgb(217, 177, 141);
 
     --icon-size: clamp(18px, 2.2vw, 24px);
-    --nav-inline: clamp(56px, 6vw, 88px);
+    --nav-inline: clamp(56px, 6vw, 88px);    
+
+    --step-gap: 10s;         
+    --speed: 4s;
+    
 }
 
 .visually-hidden{
     display:none;
 }
 
+/*HEADER*/
 header{
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 100vw;
     height: 12vh;
+    min-width: 100vw;
+    max-height: 14vh;
 }
 
 .header-container{
-    width: 40%;
-    height: clamp(46px, 8vh, 64px);
+    width: 100%;
+    height: 10%;
     position: fixed;
     top: 0;
-    left: 25%;
-    right: 25%;
     display: flex;
-    background-color: rgba(94, 32, 60, 0.6);   /*I didn't use var() because I needed to add opacity, and I like it this way*/
+   /* background-color: rgba(94, 32, 60, 0.6);*/
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     grid-template-columns: repeat(3, auto);
     padding: 1.2% 3%;
     z-index: 10;
     border: none;
     border-bottom-left-radius: 40px ;
     border-bottom-right-radius: 40px ;
-     box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+  /*   box-shadow: 0 8px 24px rgba(0, 0, 0, .25);*/
 }
 
 .logo{
@@ -62,8 +66,9 @@ header{
 
 #logo-bg{
     background-color: var(--secondary-color);
-    height: clamp(36px, 10vw, 88px);
-    width: clamp(36px, 10vw, 88px);
+    height: clamp(24px, 12vh, 156px);
+    width: clamp(24px, 12vw, 156px);
+    aspect-ratio: 1/1;
     border: none;
     border-radius: 50%;
     display: flex;
@@ -89,7 +94,7 @@ h1{
     align-items: center;
     background-color: rgba(43, 23, 35, 0.6);
     color: var(--accent-text-color);
-    font-size: 0.9rem; /*ПОДКОРРЕКТИРУЙ */
+    font-size: 1rem; /*ПОДКОРРЕКТИРУЙ */
     border: none;
     border-radius: 20px;
     margin-left: -30px;
@@ -120,7 +125,7 @@ h1{
     justify-content: center;
     background-color: var(--secondary-color);
     color: var(--accent-text-color);
-    font-size: clamp(14px, 0.8vw, 24px); /*Don't forget to change the text in here to the icon for smaller sizes*/
+    font-size: clamp(14px, 0.8vw, 18px); /*Don't forget to change the text in here to the icon for smaller sizes*/
     border: none;
     border-radius: 1.25rem;
     width: clamp(36px, 10vw, 168px);
@@ -129,19 +134,23 @@ h1{
     font-family: "Raleway", sans-serif;
 }
 
+/*MAIN NAVIGATION*/
+
 nav{
     background-color: var(--secondary-color);
     top: 50%;
     transform: translateY(-50%); /*First I went with top: 25% and no transform, but I realized it can potentially cause issues with scaling*/
     left: clamp(12px, 8vw, 48px);
     border: none;
-    border-radius: 30px;
+    border-radius: 50px;
     position:fixed;
     z-index: 1000;
-    padding: .5rem;
+    padding: 16px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
     overflow: auto;
-    max-block-size: 90dvh;
+    height: clamp(360px, 60vh, 980px);
+    margin-left: 5rem;
+    overflow: hidden;
 }
 
 nav ul{
@@ -149,19 +158,18 @@ nav ul{
     width:100%;
     height: 100%;
     margin: 0;
-   padding: 20px 0;
+    padding: 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-       gap: 3rem;
+    justify-content: space-around;
+    gap: 0;
 }
 
 nav a{
     display: flex;
     flex-direction: column;
     align-items: center;
- 
     text-decoration: none;
 }
 
@@ -169,20 +177,150 @@ nav img{
     display: block;
     inline-size: var(--icon-size);
     block-size: var(--icon-size);
-    padding-bottom: 1rem;
+    padding-bottom: 0.75rem;
 }
 
 nav label{
     font-size: clamp(8px, 1vw, 13px);
     color: var(--accent-text-color);
     text-align: center;
-    padding: 0px 10px;
+    margin-bottom: 5rem;
+}
+
+/*PAWS ANIMATION
+.paw-tracks {
+  position: fixed; 
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.paw {
+  width: clamp(120px, 20vw, 500px);
+  opacity: 0;      
+  animation: paw-move var(--speed) ease-in-out infinite;
+  transform-origin: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 50% 50%;
+}
+
+.lf, .lh{
+    rotate: -10deg;
+}
+
+.rf, .rh{
+    rotate: 10deg;
+}
+
+.paw:nth-child(1), .paw:nth-child(2) {animation-delay: calc(-0 * var(--step-gap));} 
+.paw:nth-child(3), .paw:nth-child(4) {animation-delay: calc(-1 * var(--step-gap));} 
+.paw:nth-child(5), .paw:nth-child(6) {animation-delay: calc(-2 * var(--step-gap));} 
+.paw:nth-child(7), .paw:nth-child(8) {animation-delay: calc(-3 * var(--step-gap));} 
+
+
+.paw:nth-child(1), .paw:nth-child(2),
+.paw:nth-child(5), .paw:nth-child(6) {animation-name: paw-move-A;}
+
+.paw:nth-child(3), .paw:nth-child(4),
+.paw:nth-child(7), .paw:nth-child(8) {animation-name: paw-move-B;}
+
+@keyframes paw-move-A {
+  from {opacity: 0; transform: translate3d(-8vw, 108vh, 0) scale(0.9);}
+  10%  {opacity: .1;}
+  60%  {opacity: .2;} 
+  to   {opacity: 0;  transform: translate3d(104vw, -4vh, 0) scale(0.95);}
+}
+
+@keyframes paw-move-B {
+  from {opacity: 0; transform: translate3d(-6vw, 104vh, 0) scale(0.9);}
+  10%  {opacity: .1;}
+  60%  {opacity: .2;} 
+  to   {opacity: 0;  transform: translate3d(102vw, -8vh, 0) scale(0.95);}
+}
+
+@supports (offset-path: path("M0 0 L 10px 10px")){
+    .paw{
+        position: static; 
+        offset-rotate: auto;
+        offset-anchor: 50% 50%;
+        animation-name: paw-move-offset;
+    }
+}
+
+.lf, .rh {offset-path: path("M -8vw 108vh L 104vw -4vh");}
+.rf, .lh {offset-path: path("M -6vw 104vh L 102vw -8vh");}
+
+.lf, 
+.rh, 
+.rf, 
+.lh{
+    rotate: 0deg;
+}
+
+@keyframes paw-move-offset{
+    0% {opacity: 0; offset-distance: 0%; transform: scale(0.9);}
+    10% {opacity: .1;}
+    10% {opacity: .2;}
+    100% {opacity: 0; offset-distance: 100%; transform: scale(0.95);}  
+}
+
+.lf, .rh{
+    animation-delay: 0s;
+    animation-name: paw-move-A;
+}
+
+.rf, .lh{
+    animation-delay: var(--step-gap);
+    animation-name: paw-move-B;
+}
+
+@keyframes paw-move {
+  from {opacity: 0; transform: translate3d(-8vw, 106vh, 0) scale(0.9);}
+  10%  {opacity: .1;}
+  60%  {opacity: .2;} 
+  to   {opacity: 0;  transform: translate3d(104vw, -6vh, 0) scale(0.95);}
+}
+
+
+
+@keyframes paw-move{
+    0% {opacity: 0; offset-distance: 0%; transform: scale(0.9);}
+    10% {opacity: .1;}
+    10% {opacity: .2;}
+    100% {opacity: 0; offset-distance: 100%; transform: scale(0.95);}
+}
+
+
+@media (max-width: 768px) {
+  .paw-tracks {display: none;}
+}*/
+
+/*PAW CLICK ANIMATION */
+.paw-click {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+  animation: paw-pop 0.6s ease-out forwards;
+  z-index: 9999;
+}
+
+@keyframes paw-pop {
+  0%   {opacity: 0; transform: translate(-50%, -50%) scale(0.5);}
+  30%  {opacity: .6; transform: translate(-50%, -50%) scale(1.1);}
+  70%  {opacity: .4; transform: translate(-50%, -50%) scale(1);}
+  100% {opacity: 0; transform: translate(-50%, -50%) scale(0.8);}
 }
 
 .modal-container,
 .close-modal,
 .hero-content,
 .hero-meet-CTA,
+.paws-animation,
 footer,
 main {
     display: none;
