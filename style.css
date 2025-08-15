@@ -17,7 +17,7 @@ body{
     --surface-color: rgb(94, 32, 60);
     --accent-text-color: rgb(217, 177, 141);
 
-    --icon-size: clamp(18px, 2.2vw, 24px);
+    --icon-size: clamp(18px, 3vw, 48px);
     --nav-inline: clamp(56px, 6vw, 88px);    
 
     --step-gap: 10s;         
@@ -54,7 +54,6 @@ header{
     border: none;
     border-bottom-left-radius: 40px ;
     border-bottom-right-radius: 40px ;
-  /*   box-shadow: 0 8px 24px rgba(0, 0, 0, .25);*/
 }
 
 .logo{
@@ -76,6 +75,7 @@ header{
     align-items: center;
     flex-shrink: 0;
     flex: 0 0 auto;
+     box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
 }
 
 #logo-image{
@@ -100,12 +100,13 @@ h1{
     margin-left: -30px;
     z-index: -1;
     font-weight: 500;
+     box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
 }
 
 .home-btn{
     background:none;
     border: none;
-    width: clamp(48px, 15vw, 56px); /*Maybe I should reconsider going here with aspect-ratio, looks ugly*/
+    width: clamp(48px, 16vw, 96px); /*Maybe I should reconsider going here with aspect-ratio, looks ugly*/
     aspect-ratio: 1/0.8;
     cursor: pointer;
     display: flex;
@@ -132,6 +133,7 @@ h1{
     height: clamp(20px, 5vh, 48px);
     cursor: pointer;
     font-family: "Raleway", sans-serif;
+     box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
 }
 
 /*MAIN NAVIGATION*/
@@ -140,9 +142,9 @@ nav{
     background-color: var(--secondary-color);
     top: 50%;
     transform: translateY(-50%); /*First I went with top: 25% and no transform, but I realized it can potentially cause issues with scaling*/
-    left: clamp(12px, 8vw, 48px);
+    left: clamp(12px, 10vw, 60px);
     border: none;
-    border-radius: 50px;
+    border-radius: 2.5rem;
     position:fixed;
     z-index: 1000;
     padding: 16px;
@@ -185,6 +187,54 @@ nav label{
     color: var(--accent-text-color);
     text-align: center;
     margin-bottom: 5rem;
+}
+
+/*HERO TEXT CONTENT*/
+.hero-info{
+    width: 25vw;
+    height: 25vh;
+    background-color: rgb(43, 23, 35, 0.7);
+    border: 1px solid var(--secondary-color);
+    border-radius: 1.25rem;
+    position: absolute;
+    left:58%;
+    top: 47%;
+    color: var(--accent-text-color);
+    font-size: 1.25rem;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height:2rem;
+    font-weight: 500;
+}
+
+.hero-CTA{
+    position: absolute;
+    left:76%;
+    top: 70%;
+    width: 14vw;
+    height: 4vh;
+    /*border: 1px solid var(--secondary-color);*/
+    border-radius: 1.25rem;
+     background-color: var(--surface-color);
+}
+
+.hero-meet-CTA{
+    height: 100%;
+    width: 100%;
+    /*border: 1px solid var(--secondary-color);*/
+    border-radius: 1.25rem;
+    background-color: var(--surface-color);
+    color: var(--accent-text-color);
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
 }
 
 /*PAWS ANIMATION
@@ -318,8 +368,7 @@ nav label{
 
 .modal-container,
 .close-modal,
-.hero-content,
-.hero-meet-CTA,
+
 .paws-animation,
 footer,
 main {
