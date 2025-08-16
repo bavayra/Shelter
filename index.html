@@ -25,7 +25,7 @@
 
 <body>
 
-  <header>
+<!--  <header>
     <div class="header-container" id="home">
 
         <div class="logo">
@@ -36,7 +36,7 @@
                 DOG SHELTER
              </h1>
         </div>  
-             <button class="home-btn">
+             <button href="#hero" class="home-btn">
                 <img src="images-base/home-icon.png">
               </button> 
 
@@ -45,9 +45,9 @@
             </button>
     </div>
 
-   
   </header>
 
+  <aside class="sidebar">
   <nav aria-label="main-nav">
     <ul class="nav-list">
 
@@ -59,7 +59,7 @@
       </li>
 
       <li>
-        <a href="" id="our-pets-link">
+        <a href="#pets" id="our-pets-link">
           <img id="pets-icon" src="nav-icons/dogs-nav-icon.png" alt="Our pets">
           <label for="pets-icon">OUR PETS</label>
         </a>
@@ -75,12 +75,12 @@
       <li>
         <a href="https://vk.com/topic-215318612_49115975" id="adoption-rules">
           <img id="adoption-icon" src="nav-icons/rules-nav-icon.png" alt="Adoption rules">
-          <label for="adoption-icon">ADOPTION RULES</label> <!--ПРОВЕРЬ ЛЕЙБЛЫ И ФОР АТРИБЬЮТ -->
+          <label for="adoption-icon">ADOPTION RULES</label> ПРОВЕРЬ ЛЕЙБЛЫ И ФОР АТРИБЬЮТ 
         </a>
       </li>
 
       <li>
-        <a href="">
+        <a href="#contacts">
           <img id="contacts-icon" src="nav-icons/contact-nav-icon.png" alt="Contacts">
           <label for="contacts-icon">CONTACTS</label>
         </a>
@@ -88,8 +88,9 @@
 
     </ul>
   </nav>
+  </aside>
 
-  <section class="hero">
+  <section id="hero">
     <div class="hero-info">
         <h2 class="visually-hidden">WHO ARE WE?</h2>
         <p class="hero-content">We take care of dogs who were betrayed, abandoned and injuried. Our small team of volunteers fights for a happy life for every wagging tail, believing with all our hearts that each one of them deserves the best home.
@@ -97,12 +98,12 @@
         </p>
     </div>
     <div class="hero-CTA">
-        <button class="hero-meet-CTA">MEET YOUR BEST FRIEND</button>
+        <button class="hero-meet-CTA" data-target="#pets">MEET YOUR BEST FRIEND</button>
     </div>
   </section>
 
   <main class="main">
-    <section class="filter-container">
+    <section id="filters" class="filter-container">
        <h2 class="visually-hidden">DOGS FOR ADOPTION</h2> 
       <div class="filter-bar">
         <div class="filter-group">
@@ -153,13 +154,13 @@
       </div>
     </section>
 
-    <section class="pet-cards-section">
-      <div class="cards-container"></div>
+    <section id="pets" class="pet-cards-section">
+      <div id="pets-grid" class="cards-container"></div>
 
-      <button class="view-all-CTA">SHOW ALL PETS...</button>
+      <button class="view-all-CTA" data-target="#pets">SHOW ALL PETS...</button>
     </section>
 
-    <section class="about">
+    <section id="about" class="about">
         <h2 class="visually-hidden">ABOUT US</h2>
         <div class="about-container">
           <p class="about-content">
@@ -168,12 +169,22 @@
         </div>
     </section>
 
-    <section class="contact">
+    <section id="contact" class="contact">
       <div class="contact-container">
         <h2 class="visually-hidden">CONTACT US</h2>
-        <a></a>
+        <a>CONTACT US</a>
       </div>
-    </section>
+    </section> -->
+
+<aritcle class="pet">
+  <img class="pet_img" src="/image-dogs/dog-archie.jpg">
+  <h3 class="pet_name">BONNIE</h3>
+  <p class="pet_age_gender">FEMALE 2yo</p>
+  <p class="pet_desc">Sweet cute baby with a lot of energy grgegwe fwefwEF TFW3tfwE GVwgW GWeg wetgewg gwegewg etgwegW TFWEf gvwegw</p>
+  <button class="pet_btn">ADOPT ME</button>
+
+</aritcle>
+
 
   </main>
 
@@ -185,31 +196,17 @@
     </div>
   </div>
 
- <footer>
+<!-- <footer>
     <p class="footer-content">(c)ROTVODOM 2025</p>
-</footer>
+</footer> -->
 
-  <div class="pets-stats">
+<!--<div class="pets-stats">
         DOGS WAITING FOR ADOPTION: <br> <span id="dogsNow">0</span><br>
         ADOPTED DOGS THIS YEAR: <br><span id="dogsYear">0</span><br>
         ADOPTED DOGS SINCE 2010: <br><span id="dogsTotal">0</span>
-  </div>
+  </div>-->
 
-  <!--<section class="paws-animation">
-    <div class="paw-tracks">
-      <img src="/images-base/paws.png" alt="Paw" class="paw lf" aria-hidden="true">
-      <img src="/images-base/paws.png"alt="Paw" class="paw rh" aria-hidden="true">
-
-      <img src="/images-base/paws.png" alt="Paw" class="paw rf" aria-hidden="true">
-      <img src="/images-base/paws.png"alt="Paw" class="paw lh" aria-hidden="true">
-      
-      <img src="/images-base/paws.png" alt="Paw" class="paw lf" aria-hidden="true">
-      <img src="/images-base/paws.png"alt="Paw" class="paw rh" aria-hidden="true">
-      <img src="/images-base/paws.png" alt="Paw" class="paw rf" aria-hidden="true">
-      <img src="/images-base/paws.png"alt="Paw" class="paw lh" aria-hidden="true">
-    </div>
-  </section>  THIS PART I PLANNED TO BE A PAWS CROSSING THE PAGE ANIMATION, BUT IT LOOKS CRINGE, MAYBE WILL CONTINUE LATER-->
- 
    <script src="index.js"></script>
+
   </body>
 </html>

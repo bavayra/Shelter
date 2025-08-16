@@ -9,6 +9,7 @@ body{
     margin: 0;
     padding: 0;
     letter-spacing: 0.04rem;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -120,6 +121,10 @@ h1{
     opacity: 0.7;
 }
 
+.home-btn img:hover{
+    opacity: 1;
+}
+
 .contact-btn{
     display: flex;
     align-items: center;
@@ -133,7 +138,15 @@ h1{
     height: clamp(20px, 5vh, 48px);
     cursor: pointer;
     font-family: "Raleway", sans-serif;
-     box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+}
+
+.contact-btn:hover,
+ nav label:hover,
+.hero-CTA button:hover{
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
 }
 
 /*MAIN NAVIGATION*/
@@ -165,7 +178,7 @@ nav ul{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    gap: 0;
+
 }
 
 nav a{
@@ -186,7 +199,7 @@ nav label{
     font-size: clamp(8px, 1vw, 13px);
     color: var(--accent-text-color);
     text-align: center;
-    margin-bottom: 5rem;
+    
 }
 
 /*PETS STATS COUNTER*/
@@ -214,7 +227,6 @@ nav label{
     font-size: 1.75rem;
     font-weight: 700;
     color: rgb(97, 18, 53);
-    cursor: auto;
 }
 
 /*HERO TEXT CONTENT*/
@@ -244,7 +256,7 @@ nav label{
     top: 70%;
     width: 14vw;
     height: 4vh;
-    /*border: 1px solid var(--secondary-color);*/
+    border:none;
     border-radius: 1.25rem;
      background-color: var(--surface-color);
 }
@@ -265,116 +277,6 @@ nav label{
     padding: 15px;
 }
 
-/*PAWS ANIMATION
-.paw-tracks {
-  position: fixed; 
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-}
-
-.paw {
-  width: clamp(120px, 20vw, 500px);
-  opacity: 0;      
-  animation: paw-move var(--speed) ease-in-out infinite;
-  transform-origin: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform-origin: 50% 50%;
-}
-
-.lf, .lh{
-    rotate: -10deg;
-}
-
-.rf, .rh{
-    rotate: 10deg;
-}
-
-.paw:nth-child(1), .paw:nth-child(2) {animation-delay: calc(-0 * var(--step-gap));} 
-.paw:nth-child(3), .paw:nth-child(4) {animation-delay: calc(-1 * var(--step-gap));} 
-.paw:nth-child(5), .paw:nth-child(6) {animation-delay: calc(-2 * var(--step-gap));} 
-.paw:nth-child(7), .paw:nth-child(8) {animation-delay: calc(-3 * var(--step-gap));} 
-
-
-.paw:nth-child(1), .paw:nth-child(2),
-.paw:nth-child(5), .paw:nth-child(6) {animation-name: paw-move-A;}
-
-.paw:nth-child(3), .paw:nth-child(4),
-.paw:nth-child(7), .paw:nth-child(8) {animation-name: paw-move-B;}
-
-@keyframes paw-move-A {
-  from {opacity: 0; transform: translate3d(-8vw, 108vh, 0) scale(0.9);}
-  10%  {opacity: .1;}
-  60%  {opacity: .2;} 
-  to   {opacity: 0;  transform: translate3d(104vw, -4vh, 0) scale(0.95);}
-}
-
-@keyframes paw-move-B {
-  from {opacity: 0; transform: translate3d(-6vw, 104vh, 0) scale(0.9);}
-  10%  {opacity: .1;}
-  60%  {opacity: .2;} 
-  to   {opacity: 0;  transform: translate3d(102vw, -8vh, 0) scale(0.95);}
-}
-
-@supports (offset-path: path("M0 0 L 10px 10px")){
-    .paw{
-        position: static; 
-        offset-rotate: auto;
-        offset-anchor: 50% 50%;
-        animation-name: paw-move-offset;
-    }
-}
-
-.lf, .rh {offset-path: path("M -8vw 108vh L 104vw -4vh");}
-.rf, .lh {offset-path: path("M -6vw 104vh L 102vw -8vh");}
-
-.lf, 
-.rh, 
-.rf, 
-.lh{
-    rotate: 0deg;
-}
-
-@keyframes paw-move-offset{
-    0% {opacity: 0; offset-distance: 0%; transform: scale(0.9);}
-    10% {opacity: .1;}
-    10% {opacity: .2;}
-    100% {opacity: 0; offset-distance: 100%; transform: scale(0.95);}  
-}
-
-.lf, .rh{
-    animation-delay: 0s;
-    animation-name: paw-move-A;
-}
-
-.rf, .lh{
-    animation-delay: var(--step-gap);
-    animation-name: paw-move-B;
-}
-
-@keyframes paw-move {
-  from {opacity: 0; transform: translate3d(-8vw, 106vh, 0) scale(0.9);}
-  10%  {opacity: .1;}
-  60%  {opacity: .2;} 
-  to   {opacity: 0;  transform: translate3d(104vw, -6vh, 0) scale(0.95);}
-}
-
-
-
-@keyframes paw-move{
-    0% {opacity: 0; offset-distance: 0%; transform: scale(0.9);}
-    10% {opacity: .1;}
-    10% {opacity: .2;}
-    100% {opacity: 0; offset-distance: 100%; transform: scale(0.95);}
-}
-
-
-@media (max-width: 768px) {
-  .paw-tracks {display: none;}
-}*/
-
 /*PAW CLICK ANIMATION */
 .paw-click {
   position: fixed;
@@ -394,11 +296,82 @@ nav label{
   100% {opacity: 0; transform: translate(-50%, -50%) scale(0.8);}
 }
 
+/*CSS FOR PETS/CARDS PAGE*/
+
+#hero, 
+#filters, 
+#pets,
+#about, 
+#contact{
+    scroll-margin-top:clamp(12px, 8vh, 96px) ;
+} 
+
+.cards-container{
+    display: grid;
+    gap: clamp(12px, 2vw, 20px);
+    grid-template-columns: repeat(auto-fit, minmax(clamp(220px, 28vw, 320px), 1fr));
+}
+
+.pet{
+    display: flex;
+    flex-direction: column;
+    width: clamp(360px, 6vw, 480px);
+    height: clamp(560px, 12vh, 860px);
+    background-color: var(--surface-color);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+    position: relative;
+}
+
+.pet_img{
+    display: block;
+    width: 70%;
+    height: 55%;
+    padding-top: 3.5rem;
+    border: none;
+    border-radius: 30px;
+}
+
+.pet h3{
+    color: var(--accent-text-color);
+    text-decoration: underline;
+    font-size: 1.5rem;
+    padding: 20px 0 0 0;
+    margin: 0;
+}
+
+.pet_age_gender{
+    color: var(--accent-text-color);
+    font-weight: 600;
+}
+
+.pet_desc {
+    color: var(--accent-text-color);
+    padding: 0px 10px 40px 10px;
+    margin: 0;
+}
+
+.pet_btn{
+    position: absolute;
+    left: 66%;
+    top: 97%;
+    width: clamp(24px, 8vw, 206px);
+    height: clamp(16px, 3vh, 56px);
+    background-color: var(--accent-text-color);
+    color: var(--surface-color);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
 .modal-container,
 .close-modal,
-
 .paws-animation,
-footer,
-main {
+footer
+ {
     display: none;
 }
