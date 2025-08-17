@@ -24,11 +24,14 @@ body{
 
     --icon-size: clamp(18px, 3vw, 48px);
     --nav-inline: clamp(56px, 6vw, 88px);    
-
-    --step-gap: 10s;         
-    --speed: 4s;
     
     --divider-h: clamp(16px, 3.5vw, 52px);
+}
+
+button,
+option,
+select{
+    cursor: pointer;
 }
 
 #hero{
@@ -171,7 +174,10 @@ h1{
 
 .contact-btn:hover,
  nav label:hover,
-.hero-CTA button:hover{
+.hero-CTA button:hover,
+.filter-btns button:hover,
+.view-all-CTA:hover
+{
     font-weight: bold;
     text-decoration: underline;
     text-decoration-thickness: 2px;
@@ -334,10 +340,135 @@ nav label{
     height: var(--divider-h);
     background: url("/images-base/paws2.png") center repeat-x;
     background-size: 42px auto;
-    pointer-events: none;
+    pointer-events: none;  
+    backdrop-filter: blur(4px);
 }
 
-/*CSS FOR PETS/CARDS PAGE*/
+/*FILTERS*/
+
+.pet-cards-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+.filter-bar{
+    display: flex;
+    flex-direction: row;
+    margin-top: 12vh;
+    margin-bottom: 4vh;
+    align-items: center;
+    justify-content: space-between;
+    gap: 220px;
+    width: 75vw;
+    height: 10vh;
+    background-color:rgba(43, 23, 35, 0.568) ;
+    border: none;
+    border-radius: 30px;
+    padding-left: 40px;
+     padding-right: 40px;
+     box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+}
+
+.filter-bar > * {
+    flex: 1;
+}
+
+.filter-group{
+    background-color: var(--secondary-color);
+     border-radius: 15px;
+    
+}
+
+select{
+    width: 100%;
+    height: 3vh;
+    text-align: center;
+ padding: 3px 8px;
+ border: none;
+ background-color: var(--accent-text-color);
+   border-bottom-left-radius: 15px ;
+    border-bottom-right-radius: 15px ;
+    font-size: .9rem;
+    color: var(--secondary-color);
+    justify-content: center;
+    font-weight: 600;
+}
+
+select:focus{
+    background-color: var(--surface-color);
+    color: var(--accent-text-color);
+}
+
+.pet-cards-section label{
+  color: var(--accent-text-color);
+    font-size: 1rem;
+    display: block;
+    text-align: center;
+    justify-content: center;
+    padding: 5px 10px;
+    height: 3.5vh;
+    font-weight: 600;
+    border: none;
+    padding-top: 12px;
+   
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-btns{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 40vw;
+    height: 3vh;
+}
+
+.filter-btns button {
+    background-color: var(--secondary-color);
+    color: var(--accent-text-color);
+    font-weight: 500;
+    border: none;
+    border-radius: 20px;
+    width: 20%;
+    height: 100%;
+    font-size: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+}
+
+.filter-btns button:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    font-weight: 600;
+}
+
+.view-all-btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    height: auto;
+}
+
+.view-all-btn button{
+     background-color: var(--surface-color);
+     border: none;
+     border-radius: 20px;
+     color: var(--accent-text-color);
+
+    width: 12%;
+    height: 2.6vh;
+    font-size: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+}
+
+/* PETS/CARDS PAGE*/
 
 #dogsNow,
 #dogsYear,
@@ -427,4 +558,6 @@ footer
  {
     display: none;
 }
+
+
 

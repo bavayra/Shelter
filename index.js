@@ -29,7 +29,7 @@ countUp("dogsTotal", 184, 1500);
 countUp("dogsYear", 47, 1200);
 
 /* DOGS OBJECT */
-const dogs = [
+const pets = [
     {
         name: "Bianka",
         breed: "Rottweiler",
