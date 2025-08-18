@@ -26,6 +26,17 @@ body{
     --nav-inline: clamp(56px, 6vw, 88px);    
     
     --divider-h: clamp(16px, 3.5vw, 52px);
+
+      --paw-size: clamp(260px, 60vw, 560px);
+  --toe: clamp(58px, 10vw, 100px);
+  --toe-gap: clamp(10px, 1.8vw, 22px);
+  --pad-radius: clamp(28px, 4vw, 42px);
+  --pad-padding: clamp(8px, 1.5vw, 14px);
+  --shadow: 0 6px clamp(10px, 1vw, 24px) rgba(0,0,0,.10);
+  --bg: #fff;
+  --ink: #141417;
+  --line: #e7e7ea;
+  --brand: #eea935; /* мёд/золото — поменяй под свою схему */
 }
 
 button,
@@ -322,7 +333,7 @@ nav label{
 .filter-container,
 .pet-cards-section,
 .about,
-.contact{
+.contact-paw{
     margin: 0;
 }
 
@@ -553,11 +564,15 @@ select:focus{
 
 .modal-container,
 .close-modal,
-.paws-animation,
 footer
  {
     display: none;
 }
+
+
+
+
+
 
 
 
