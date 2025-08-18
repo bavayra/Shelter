@@ -152,7 +152,7 @@ h1{
     height: 100%;
     opacity: 0.7;
     display: block;
-}
+} /*ЭТА ХЕРНЯ НЕ ПО ЦЕНТРУ*/
 
 .home-btn img:hover{
     opacity: 1;
@@ -183,6 +183,16 @@ h1{
     font-weight: bold;
     text-decoration: underline;
     text-decoration-thickness: 2px;
+     transform: scale(1.1);
+
+}
+
+.contact-btn,
+ nav label,
+.hero-CTA button,
+.filter-btns button,
+.view-all-CTA{
+    transition: transfore 0.3s ease-in-out;
 }
 
 /*MAIN NAVIGATION*/
@@ -664,16 +674,23 @@ img {
     transform: scale(1.1);
 }
 
-
-
-
-
-
 .modal-container,
-.close-modal,
-footer
+.close-modal
  {
     display: none;
+}
+
+/*FOOTER*/
+
+footer{
+    background-color:  rgb(197, 139, 139);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--surface-color);
+    font-weight: 600;
+    height: 3vh;
 }
 
 
