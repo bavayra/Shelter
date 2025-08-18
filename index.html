@@ -208,12 +208,31 @@
       </div>
       <div class="contact-form">
         <form>
-          <input id="form-message">
-          <input id="form-full-name" type="text">
-          <input id="form-email" type="email">
-          <input id="form-number" typ="tel">
+          <div class="form-message-area">
+            <label for="form-message">TYPE YOUR MESSAGE HERE</label>
+            <textarea id="form-message" name="message" rows="4" cols="40" placeholder="START TYPING..."></textarea>
+          </div>
+          
+          
+          <div class="form-full-name-input">
+            <label for="form-full-name">YOUR FULL NAME</label>
+            <input id="form-full-name" type="text">
+          </div>  
+
+          <div class="form-email-input">
+            <label for="form-email">YOUR EMAIL</label>
+            <input id="form-email" type="email">
+          </div>
+
+          <div class="form-number-input">
+            <label for="form-number">YOUR PHONE NUMBER</label>
+            <input id="form-number" typ="tel">
+          </div>
+
+         <div class="form-btns"> 
           <button id="form-submit-btn" type="submit">SEND</button>
-          <button id="form-clear-btn" type="reset">RESET</button>
+          <button id="form-reset-btn" type="reset">RESET</button>
+         </div> 
         </form>
       </div>
     </section>

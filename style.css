@@ -573,6 +573,9 @@ img {
 
 .contact-paw {
     padding: 5rem 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 0;
 }
 
 .contact-paw h2{
@@ -673,6 +676,83 @@ img {
 .contact-address span:hover{
     transform: scale(1.1);
 }
+
+/*CONTACTS FORM*/
+
+.contact-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--surface-color);
+    height: 50vh;   
+    width: 18vw;
+    border: none;
+    border-radius: 10%;
+    overflow: hidden;
+}
+
+form label{
+    font-size: 1rem;
+    color: var(--accent-text-color);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0.5rem;
+   
+}
+
+.form-message-area{
+       height: clamp(250px, 5vh, 360px);
+    width: clamp(300px, 3vw, 40px);
+    border: none;
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+    overflow: hidden;
+}
+
+form input{
+    height: 70%;
+    width: 90%;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 10%;
+}
+
+#form-message{
+    height: clamp(250px, 5vh, 360px);
+    width: clamp(300px, 3vw, 40px);
+    border: none;
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+    overflow: hidden;
+}
+
+#form-reset-btn{
+    background-color: var(--secondary-color);
+    color: var(--accent-text-color);
+    border: none;
+    border-radius: 10%;
+    width: 100%;
+}
+
+#form-submit-btn{
+    background-color: var(--accent-text-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 10%;
+}
+
+
+
 
 .modal-container,
 .close-modal
