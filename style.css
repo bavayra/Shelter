@@ -27,16 +27,7 @@ body{
     
     --divider-h: clamp(16px, 3.5vw, 52px);
 
-      --paw-size: clamp(260px, 60vw, 560px);
-  --toe: clamp(58px, 10vw, 100px);
-  --toe-gap: clamp(10px, 1.8vw, 22px);
-  --pad-radius: clamp(28px, 4vw, 42px);
-  --pad-padding: clamp(8px, 1.5vw, 14px);
-  --shadow: 0 6px clamp(10px, 1vw, 24px) rgba(0,0,0,.10);
-  --bg: #fff;
-  --ink: #141417;
-  --line: #e7e7ea;
-  --brand: #eea935; /* мёд/золото — поменяй под свою схему */
+
 }
 
 button,
@@ -493,7 +484,7 @@ select:focus{
 #filters, 
 #pets,
 #about, 
-#contact{
+#contacts{
     scroll-margin-top:clamp(12px, 8vh, 96px) ;
     background-color: rgb(197, 139, 139);
     min-height: 100vh;
@@ -562,13 +553,128 @@ select:focus{
     font-weight: 600;
 } 
 
+/*CONTACTS - PAW */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.contact-paw {
+    padding: 5rem 3rem;
+}
+
+.contact-paw h2{
+    font-size: clamp(2rem, 2vw, 3rem);
+    text-align: center;
+    color: var(--secondary-color);
+    margin-top: 12vh;
+    margin-bottom: 12vh;
+    text-decoration: underline;
+}
+
+.paw{
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    max-width: clamp(260px, 60vw, 960px);
+    margin-left: 20rem;
+    margin-right: 0;
+    gap: clamp(6px, 1vw, 18px);
+    position: relative;
+}
+
+.toe{
+    width: clamp(60px, 10vw, 120px);
+    height: clamp(60px, 10vw, 120px);
+    border-radius: 50%;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    transition: transform 0.2s ease-in-out;
+}
+
+.toe:hover{
+    transform: scale(1.1);
+}
+
+.toe-1 {
+    grid-column: 1;
+    grid-row: 2;
+    margin-right: -15px;
+}
+
+.toe-2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.toe-3 {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.toe-4 {
+    grid-column: 4;
+    grid-row: 2;
+    margin-left: -15px;
+}
+
+.pad{
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 2;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border: 2px solid var(--secondary-color);
+    border-radius: 40%;
+    overflow: hidden;
+    margin-top: 32px;
+}
+
+.pad iframe{
+    position: absolute;
+  inset: 0;
+    text-align: center;
+    background: var(--primary-color);
+   
+    border: 0;
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+}
+
+.contact-address a,
+.contact-address span{
+    text-decoration: none;
+    font-size: 1.5rem;
+    line-height: 1rem;
+    color: var(--surface-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    transition: transform 0.2s ease-in-out;
+}
+
+.contact-address a:hover,
+.contact-address span:hover{
+    transform: scale(1.1);
+}
+
+
+
+
+
+
 .modal-container,
 .close-modal,
 footer
  {
     display: none;
 }
-
 
 
 
