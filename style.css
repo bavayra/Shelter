@@ -19,7 +19,7 @@ body{
 }
 
 :root {
-    --primary-color:  rgb(168, 108, 108); /*ПРОВЕРЬ ТУТ ЦВЕТА, ПРАЙМЕРИ НИГДЕ НЕ ИСПОЛЬЗУЕТСЯ*/
+    --primary-color:  rgb(168, 108, 108);
     --secondary-color: rgb(43, 23, 35);
     --surface-color: rgb(94, 32, 60);
     --accent-text-color: rgb(217, 177, 141);
@@ -169,7 +169,7 @@ h1{
     justify-content: center;
     background-color: var(--secondary-color);
     color: var(--accent-text-color);
-    font-size: clamp(14px, 0.8vw, 18px); /*Don't forget to change the text in here to the icon for smaller sizes*/
+    font-size: clamp(14px, 0.8vw, 18px); 
     border: none;
     border-radius: 1.25rem;
     width: clamp(36px, 10vw, 168px);
@@ -383,8 +383,7 @@ nav label{
     background-color:rgba(43, 23, 35, 0.568) ;
     border: none;
     border-radius: 30px;
-    padding-left: 40px;
-     padding-right: 40px;
+    padding-inline: 40px;
      box-shadow: var(--drop-shadow);
 }
 
@@ -428,7 +427,7 @@ select:focus{
     height: 3.5vh;
     font-weight: 600;
     border: none;
-    padding-top: 12px;
+    padding-top: 12px; /*ЭТО ЧЕ ЗА ДВА ПАДДИНГА ТУТ У НАС*/
    
 }
 
@@ -624,7 +623,76 @@ select:focus{
     position: relative;
     top: -15vh;
     left: -4vw;
-}/*
+}*/
+
+#about{
+    padding: 20%
+}
+
+.about-container{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-inline: clamp(12px, 3vw, 36px);
+}
+
+.about-images{
+    display: flex;
+    gap:clamp(8px, 2vw, 16px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px;
+}
+
+.about-images img{
+    flex: 0 0 min(80vw, 420px);
+    height: clamp(180px, 36vh, 450px);
+    object-fit: cover;
+    scroll-snap-align: center;
+    border-radius: 12px;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+    padding-left: 30px;
+}
+
+.about-images img:hover,
+.about-images img:focus-visible{
+    transform: scale(1.03);
+}
+
+.about-caption {
+    font-size: 0.95rem;
+    line-height: 1.3;
+    background-color: var(--surface-color);
+    color: var(--accent-text-color);
+    min-height: 1.8em;
+}
+
+#aboutZoom[hidden]{
+    display: none;
+} /*Just for safety*/
+
+#aboutZoom{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.6);
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    z-index: 9999;
+}
+
+.zoom-image{
+     max-width: min(92vw, 1000px);
+     max-height: 80vh;
+}
+
+.zoom-caption{
+    color: var(--accent-text-color);
+    background-color: var(--surface-color);
+    margin-top: 12px;
+    text-align: center;
+    max-width: 90ch;
+}
 
 /*CONTACTS - PAW */
 
@@ -758,6 +826,7 @@ form{
     border: none;
     border-radius: 10%;
     overflow: hidden;
+
 }
 
 form label{
@@ -784,6 +853,7 @@ textarea::placeholder{
     background-color: var(--primary-color);
     font-weight: 500;
     overflow: hidden;
+        outline: none;
 }
 
 form input{
@@ -792,6 +862,7 @@ form input{
     background-color: var(--primary-color);
     border: none;
     border-radius: 20%;
+        outline: none;
 }
 
 #form-message{

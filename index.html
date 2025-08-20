@@ -90,7 +90,7 @@
   </nav>
   </aside> 
 
-  <section class="panel"id="hero"> <!--I should do a smooth scroll with the panel clases-->
+  <section class="panel"id="hero">
     <div class="hero-info">
         <h2 class="visually-hidden">WHO ARE WE?</h2>
         <p class="hero-content">We take care of dogs who were betrayed, abandoned and injuried. Our small team of volunteers fights for a happy life for every wagging tail, believing with all our hearts that each one of them deserves the best home.
@@ -166,9 +166,6 @@
     <section id="about" class="panel about has-divider">
         <h2 class="visually-hidden">ABOUT US</h2>
         <div class="about-container">
-          <p class="about-content">
-            We are the team of enthusiasts who have a deep love for anything with four legs!
-          </p>
           <div class="about-images" id="aboutImages" aria-label="Our team and shelter photos">
             <img src="/images-about/team-1.jpg" alt="ROTVODOM team" 
                  data-caption="Hi, my name is Svetlana, but I used to be called Rotvomama. I started ROTVODOM in 2010 in Jekaterinburg, Russia. I have never worked with dogs before, but I decided to do something good for waggling tails... First, I was alone there"
@@ -201,8 +198,14 @@
                 data-caption="We just want them to be happy and safe. Do you need the best friend? We believe you can find one in ROTVODOM"
                 loading="lazy">
           </div>
+          <p class="about-caption" id="aboutCaption" aria-live="polite"></p>
         </div>
     </section>
+
+    <div class="zoom" id="aboutZoom" hidden aria-label="Zoomed photos">
+      <img id="zoomImg" class="zoom-image" alt="">
+      <p id="zoomCaption" class="zoom-caption"></p>
+    </div>
 
     <section id="contacts" class="panel contact-paw has-divider">
       <div class="contact-container">
@@ -300,3 +303,9 @@
 
   </body>
 </html>
+
+<!--TODO:
+    change ids to camel case
+    Don't forget to change the text in here to the icon for smaller sizes
+    add a link to the home button so it will actually work
+    -->
