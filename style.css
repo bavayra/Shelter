@@ -2,8 +2,7 @@ html,
 body{
     margin: 0;
     padding: 0;
-    height: 100%;
-    
+    height: 100%;   
 }
 
 * {
@@ -31,6 +30,8 @@ body{
     --header-h: clamp(56px, 6vw, 88px);
 
     --drop-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+    --slide-w: min(80vw, 420px);
+
 }
 
 button,
@@ -71,7 +72,6 @@ header{
     min-width: 100vw;
     max-height: 14vh;
     box-sizing: content-box;
- 
 }
 
 .header-container{
@@ -92,7 +92,6 @@ header{
     top: calc(0px + env(safe-area-inset-top));
     padding-top: 4%;
 }
-
 
 .logo{
     display: flex;
@@ -183,13 +182,11 @@ h1{
  nav label:hover,
 .hero-CTA button:hover,
 .filter-btns button:hover,
-.view-all-CTA:hover
-{
+.view-all-CTA:hover {
     font-weight: bold;
     text-decoration: underline;
     text-decoration-thickness: 2px;
-     transform: scale(1.1);
-
+    transform: scale(1.1);
 }
 
 .contact-btn,
@@ -299,7 +296,7 @@ nav label{
     height: 4vh;
     border:none;
     border-radius: 1.25rem;
-     background-color: var(--surface-color);
+    background-color: var(--surface-color);
 }
 
 .hero-meet-CTA{
@@ -367,7 +364,6 @@ nav label{
     display: flex;
     align-items: center;
     justify-content: center;
-  
 }
 
 .filter-bar{
@@ -384,7 +380,7 @@ nav label{
     border: none;
     border-radius: 30px;
     padding-inline: 40px;
-     box-shadow: var(--drop-shadow);
+    box-shadow: var(--drop-shadow);
 }
 
 .filter-bar > * {
@@ -393,18 +389,17 @@ nav label{
 
 .filter-group{
     background-color: var(--secondary-color);
-     border-radius: 15px;
-    
+    border-radius: 15px;  
 }
 
 select{
     width: 100%;
     height: 3vh;
     text-align: center;
- padding: 3px 8px;
- border: none;
- background-color: var(--accent-text-color);
-   border-bottom-left-radius: 15px ;
+    padding: 3px 8px;
+    border: none;
+    background-color: var(--accent-text-color);
+    border-bottom-left-radius: 15px ;
     border-bottom-right-radius: 15px ;
     font-size: .9rem;
     color: var(--secondary-color);
@@ -418,7 +413,7 @@ select:focus{
 }
 
 .pet-cards-section label{
-  color: var(--accent-text-color);
+    color: var(--accent-text-color);
     font-size: 1rem;
     display: block;
     text-align: center;
@@ -428,7 +423,6 @@ select:focus{
     font-weight: 600;
     border: none;
     padding-top: 12px; /*ЭТО ЧЕ ЗА ДВА ПАДДИНГА ТУТ У НАС*/
-   
 }
 
 .buttons{
@@ -473,11 +467,10 @@ select:focus{
 }
 
 .view-all-btn button{
-     background-color: var(--surface-color);
-     border: none;
-     border-radius: 20px;
-     color: var(--accent-text-color);
-
+    background-color: var(--surface-color);
+    border: none;
+    border-radius: 20px;
+    color: var(--accent-text-color);
     width: 12%;
     height: 2.6vh;
     font-size: 1rem;
@@ -486,9 +479,9 @@ select:focus{
 
 /* PETS/CARDS PAGE*/
 
-#dogsNow,
-#dogsYear,
-#dogsTotal{
+#dogs-now,
+#dogs-year,
+#dogs-total{
     font-size: 1.75rem;
     font-weight: 700;
     color: rgb(97, 18, 53);
@@ -639,8 +632,11 @@ select:focus{
     display: flex;
     gap:clamp(8px, 2vw, 16px);
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x proximity;
     padding-bottom: 8px;
+    overscroll-behavior-inline: contain;
+    scroll-padding-inline: calc((100% -var(--slide-w))/2);
+    scrollbar-gutter: stable both-edges;
 }
 
 .about-images img{
@@ -652,6 +648,7 @@ select:focus{
     transition: transform 0.2s ease-in-out;
     cursor: pointer;
     padding-left: 30px;
+    scroll-snap-stop: always;
 }
 
 .about-images img:hover,
@@ -667,11 +664,11 @@ select:focus{
     min-height: 1.8em;
 }
 
-#aboutZoom[hidden]{
+#about-zoom[hidden]{
     display: none;
 } /*Just for safety*/
 
-#aboutZoom{
+#about-zoom{
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,.6);
@@ -780,10 +777,9 @@ img {
 
 .pad iframe{
     position: absolute;
-  inset: 0;
+    inset: 0;
     text-align: center;
     background: var(--primary-color);
-   
     border: 0;
     border-radius: inherit;
     width: 100%;
@@ -826,7 +822,6 @@ form{
     border: none;
     border-radius: 10%;
     overflow: hidden;
-
 }
 
 form label{
@@ -853,7 +848,7 @@ textarea::placeholder{
     background-color: var(--primary-color);
     font-weight: 500;
     overflow: hidden;
-        outline: none;
+    outline: none;
 }
 
 form input{
@@ -862,7 +857,7 @@ form input{
     background-color: var(--primary-color);
     border: none;
     border-radius: 20%;
-        outline: none;
+    outline: none;
 }
 
 #form-message{
