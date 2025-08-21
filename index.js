@@ -24,9 +24,75 @@ function countUp(id, target, duration) {
   }, stepTime);
 }
 
-countUp("dogsNow", 23, 1000); 
-countUp("dogsTotal", 184, 1500);
-countUp("dogsYear", 47, 1200);
+countUp("dogs-now", 23, 1000); 
+countUp("dogs-total", 184, 1500);
+countUp("dogs-year", 47, 1200);
+
+/*CAROUSEL*/
+
+const carousel = document.querySelector("#about");
+const aboutImages = carousel.querySelectorAll("img");
+const captionElement = document.getElementById("about-caption-content");
+const zoomLayer = document.getElementById("about-zoom");
+const zoomImage = document.getElementById("zoomed-img");
+const zoomCaption = document.getElementById("zoom-caption-content");
+
+let currentIndex = 0;
+/*let ticking = false; --> I thought about throtting, but my carousel isn't that big*/
+
+function getCaption(img){
+  return img.dataset.caption || img.alt || "";
+}
+
+function updateCaption(index){
+  captionElement.textContent = getCaption(aboutImages[index]);
+}
+
+function scrollToImg(index){
+  const scrolledImg = aboutImages[index];
+  const imgCenter = img.offsetLeft + img.offsetWidth / 2;
+  const targetLeft = imgCenter - carousel.offsetWidth / 2;
+
+  carousel.scrollTo({ left: targetLeft, behavior: "smooth"});
+}
+
+aboutImages.forEach((img, i) => {
+  img.addEventListener("click", () => {
+    currentIndex = i;
+    updateCaption(i);
+    scrollToImg(i);
+
+    zoomImage.src = img.src;
+    zoomCaption.textContent = getCaption(img);
+    zoomLayer.hidden = false;
+  });
+});
+
+zoomLayer.addEventListener("click", () => {
+  zoomLayer.hidden = true;
+})
+
+carousel.addEventListener("scroll", () => {
+  let closest = 0;
+  let minDist = Infinity;
+  const center = carousel.scrollLeft + carousel.offsetWidth / 2;
+
+  aboutImages.forEach((img, i) => {
+    const imgCenter = img.offsetLeft + img.offsetWidth / 2;
+    const dist = Math.abs(center - imgCenter);
+    if(dist < minDist){
+      minDist = dist;
+      closest = i;
+    }
+  });
+  currentIndex = closest;
+  updateCaption(currentIndex);
+});
+
+updateCaption(currentIndex);
+scrollToImg(currentIndex);
+
+
 
 /* DOGS OBJECT */
 const pets = [

@@ -251,7 +251,6 @@ nav label{
 /*PETS STATS COUNTER*/
 
 .pets-stats{
-    background-color: blue;
     position: absolute;
     top: 24%;
     left: 20%;
@@ -302,6 +301,7 @@ nav label{
 .hero-meet-CTA{
     height: 100%;
     width: 100%;
+    border:none;
     border-radius: 1.25rem;
     background-color: var(--surface-color);
     color: var(--accent-text-color);
@@ -312,6 +312,7 @@ nav label{
     justify-content: center;
     text-align: center;
     padding: 15px;
+    box-shadow: var(--drop-shadow);
 }
 
 /*PAW CLICK ANIMATION */
