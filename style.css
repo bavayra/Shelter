@@ -42,7 +42,7 @@ select{
 
 #hero{
     min-height: 100vh;
-    background-image: url(/images-base/bg-main2.jpeg);     
+    background-image: url(/Shelter/images-base/bg-main2.jpeg);     
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat;    
@@ -353,7 +353,7 @@ nav label{
     right: 0;
     top: calc(-1 * var(--divider-h));
     height: var(--divider-h);
-    background: url("/images-base/paws2.png") center repeat-x;
+    background: url("/Shelter/images-base/paws2.png") center repeat-x;
     background-size: 42px auto;
     pointer-events: none;  
     backdrop-filter: blur(4px);
@@ -807,22 +807,29 @@ img {
 
 /*CONTACTS FORM*/
 
+form{
+    margin: 0;
+    padding: 0;
+}
+
 .contact-form{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-form{
+#form-container{
     display: grid;
     align-items: center;
     justify-content: center;
+    grid-template-rows: repeat(5, 1fr);
     background-color: var(--surface-color);
     height: 50vh;   
     width: 18vw;
     border: none;
-    border-radius: 10%;
+    border-radius: 25px;
     overflow: hidden;
+    justify-items: stretch;
 }
 
 form label{
@@ -832,13 +839,19 @@ form label{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 0.5rem;   
+    padding-bottom: 0.3rem;   
+  
 }
 
-textarea::placeholder{
+form textarea::placeholder{
     color: inherit;
     font-size: 1rem;
 }
+
+.form-message-area{
+    padding-top: 30px;
+}
+
 #form-message{
     height: clamp(250px, 5vh, 360px);
     width: clamp(300px, 3vw, 40px);
@@ -850,40 +863,43 @@ textarea::placeholder{
     font-weight: 500;
     overflow: hidden;
     outline: none;
+    padding-top: 20px;
+    padding-left: 15px;
+    resize: none;
 }
 
 form input{
     height: 70%;
-    width: 90%;
+    width: 100%;
     background-color: var(--primary-color);
     border: none;
-    border-radius: 20%;
+    border-radius: 10px;
     outline: none;
+    padding: 5px 10px 5px 10px;
 }
 
-#form-message{
-    height: clamp(250px, 5vh, 360px);
-    width: clamp(300px, 3vw, 40px);
-    border: none;
-    font-size: 1.25rem;
-    color: var(--secondary-color);
-    font-weight: 500;
-    overflow: hidden;
+.form-btns{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    height: 35%;
+    width: 100%;  
 }
 
 #form-reset-btn{
     background-color: var(--secondary-color);
     color: var(--accent-text-color);
     border: none;
-    border-radius: 10%;
-    width: 100%;
+    border-radius: 10px;
+    font-weight: 600;
 }
 
 #form-submit-btn{
     background-color: var(--accent-text-color);
     color: var(--secondary-color);
     border: none;
-    border-radius: 10%;
+    border-radius: 10px;
+    font-weight: 600;
 }
 
 
