@@ -30,25 +30,61 @@ countUp("dogs-year", 47, 1200);
 
 /*CAROUSEL*/
 
-const carousel = document.querySelector("#about");
-const aboutImages = carousel.querySelectorAll("img");
+document.addEventListener("DOMContentLoaded", () => {
+
+const scroller = document.getElementById("about-images-container");
+const aboutImages = Array.from(scroller?.querySelectorAll("img") ?? []);
 const captionElement = document.getElementById("about-caption-content");
 const zoomLayer = document.getElementById("about-zoom");
 const zoomImage = document.getElementById("zoomed-img");
 const zoomCaption = document.getElementById("zoom-caption-content");
 
-let currentIndex = 0;
-/*let ticking = false; --> I thought about throtting, but my carousel isn't that big*/
+if(!scroller || aboutImages.length === 0 || !captionElement){
+    return;
+}
+
+ if (!scroller.hasAttribute('tabindex')) {
+    scroller.setAttribute('tabindex', '0');
+  }
 
 function getCaption(img){
   return img.dataset.caption || img.alt || "";
 }
 
+function getCurrentIndex() {
+    const rect = scroller.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+
+    let bestIdx = 0;
+    let bestDist = Infinity;
+
+    for (let i = 0; i < aboutImages.length; i++) {
+      const r = aboutImages[i].getBoundingClientRect();
+      const imgCenter = r.left + r.width / 2;
+      const d = Math.abs(imgCenter - centerX);
+      if (d < bestDist) {
+        bestDist = d;
+        bestIdx = i;
+      }
+    }
+    return bestIdx;
+  }
+
 function updateCaption(index){
-  captionElement.textContent = getCaption(aboutImages[index]);
+  const i = getCurrentIndex();
+  const img = aboutImages[i];
+  const text = getCaption(img);
+
+  captionElement.textContent = text;
+
+  for (let j = 0; j < aboutImages.length; j++) {
+      aboutImages[j].removeAttribute('aria-current');
+  }
+    img.setAttribute('aria-current', 'true');
+  }
 }
 
-function scrollToImg(index){
+function scrollToImg(i){
   const scrolledImg = aboutImages[index];
   const imgCenter = img.offsetLeft + img.offsetWidth / 2;
   const targetLeft = imgCenter - carousel.offsetWidth / 2;
