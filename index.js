@@ -39,9 +39,8 @@ const zoomLayer = document.getElementById("about-zoom");
 const zoomImage = document.getElementById("zoomed-img");
 const zoomCaption = document.getElementById("zoom-caption-content");
 
-if(!scroller || aboutImages.length === 0 || !captionElement){
+if(!scroller || aboutImages.length === 0 || !captionElement)
     return;
-}
 
  if (!scroller.hasAttribute('tabindex')) {
     scroller.setAttribute('tabindex', '0');
@@ -61,18 +60,18 @@ function getCurrentIndex() {
     for (let i = 0; i < aboutImages.length; i++) {
       const r = aboutImages[i].getBoundingClientRect();
       const imgCenter = r.left + r.width / 2;
-      const d = Math.abs(imgCenter - centerX);
-      if (d < bestDist) {
-        bestDist = d;
+      const dist = Math.abs(imgCenter - centerX);
+      if (dist < bestDist) {
+        bestDist = dist;
         bestIdx = i;
       }
     }
     return bestIdx;
   }
 
-function updateCaption(index){
-  const i = getCurrentIndex();
-  const img = aboutImages[i];
+function updateCaption(i){
+  const idx = i ?? getCurrentIndex();
+  const img = aboutImages[idx];
   const text = getCaption(img);
 
   captionElement.textContent = text;
@@ -82,15 +81,16 @@ function updateCaption(index){
   }
     img.setAttribute('aria-current', 'true');
   }
-}
 
 function scrollToImg(i){
-  const scrolledImg = aboutImages[index];
+  const img = aboutImages[i];
   const imgCenter = img.offsetLeft + img.offsetWidth / 2;
-  const targetLeft = imgCenter - carousel.offsetWidth / 2;
-
-  carousel.scrollTo({ left: targetLeft, behavior: "smooth"});
+  const targetLeft = imgCenter - scroller.offsetWidth / 2;
+  scroller.scrollTo({ left: targetLeft, behavior: "smooth"});
 }
+
+let currentIndex = getCurrentIndex();
+updateCaption(currentIndex);
 
 aboutImages.forEach((img, i) => {
   img.addEventListener("click", () => {
@@ -100,18 +100,18 @@ aboutImages.forEach((img, i) => {
 
     zoomImage.src = img.src;
     zoomCaption.textContent = getCaption(img);
-    zoomLayer.hidden = false;
+    zoomLayer.hidden = false; 
   });
 });
 
 zoomLayer.addEventListener("click", () => {
   zoomLayer.hidden = true;
-})
+});
 
-carousel.addEventListener("scroll", () => {
+scroller.addEventListener("scroll", () => {
   let closest = 0;
   let minDist = Infinity;
-  const center = carousel.scrollLeft + carousel.offsetWidth / 2;
+  const center = scroller.scrollLeft + scroller.offsetWidth / 2;
 
   aboutImages.forEach((img, i) => {
     const imgCenter = img.offsetLeft + img.offsetWidth / 2;
@@ -128,10 +128,10 @@ carousel.addEventListener("scroll", () => {
 updateCaption(currentIndex);
 scrollToImg(currentIndex);
 
-
+});
 
 /* DOGS OBJECT */
-const pets = [
+/*const pets = [
     {
         name: "Bianka",
         breed: "Rottweiler",
@@ -191,4 +191,5 @@ const pets = [
         image: "image-dogs/dog-jessie.jpg",
         description: "I really am a good girl, I promise. I love people so much… but they’ve let me down. I adore other animals… but they’ve hurt me too. I have cancer, but I’m not giving up! I just want to find my person and spend the rest of my life with them, surrounded by love and care.",
     },
-]
+] */
+
