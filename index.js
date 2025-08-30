@@ -1,4 +1,4 @@
-document.addEventListener("click", function(event){
+/*document.addEventListener("click", function(event){
     const paw = document.createElement("img");
     paw.src= "images-base/paws.png";
     paw.className = "paw-click";
@@ -26,7 +26,7 @@ function countUp(id, target, duration) {
 
 countUp("dogs-now", 23, 1000); 
 countUp("dogs-total", 184, 1500);
-countUp("dogs-year", 47, 1200);
+countUp("dogs-year", 47, 1200); */
 
 /*CAROUSEL*/
 
@@ -42,8 +42,8 @@ const zoomCaption = document.getElementById("zoom-caption-content");
 if(!scroller || aboutImages.length === 0 || !captionElement)
     return;
 
- if (!scroller.hasAttribute('tabindex')) {
-    scroller.setAttribute('tabindex', '0');
+ if (!scroller.hasAttribute("tabindex")) {
+    scroller.setAttribute("tabindex", "0");
   }
 
 function getCaption(img){
@@ -77,9 +77,9 @@ function updateCaption(i){
   captionElement.textContent = text;
 
   for (let j = 0; j < aboutImages.length; j++) {
-      aboutImages[j].removeAttribute('aria-current');
+      aboutImages[j].removeAttribute("aria-current");
   }
-    img.setAttribute('aria-current', 'true');
+    img.setAttribute("aria-current", "true");
   }
 
 function scrollToImg(i){
@@ -89,26 +89,104 @@ function scrollToImg(i){
   scroller.scrollTo({ left: targetLeft, behavior: "smooth"});
 }
 
-let currentIndex = getCurrentIndex();
-updateCaption(currentIndex);
+let  currentIndex = getCurrentIndex();
+let isZoomOpen = false;
+const captionZoomClass = "caption-zoom";
+
+const captionOriginalParent = captionElement.parentElement;
+const captionOriginalNext = captionElement.nextElementSibling;
+
+const zoomCloseBtn = document.createElement("button");
+zoomCloseBtn.type = "button";
+zoomCloseBtn.id = "zoom-close";
+zoomCloseBtn.setAttribute("aria-label", "Close image");
+zoomCloseBtn.innerHTML = "&times;";
+zoomCloseBtn.className = "zoom-close-btn";
+zoomLayer.appendChild(zoomCloseBtn);
+
+function moveCaptionToZoom(){
+    if (zoomCaption) zoomCaption.hidden = true;
+    zoomImage.insertAdjacentElement("afterend", captionElement);
+    captionElement.classList.add(captionZoomClass);
+}
+
+function restoreCaptionFromZoom(){
+  captionElement.classList.remove(captionZoomClass);
+  if (captionOriginalNext && captionOriginalNext.parentElement === captionOriginalParent){
+    captionOriginalParent.insertBefore(captionElement, captionOriginalNext);
+  } else {
+    captionOriginalParent.appendChild(captionElement);
+  }
+  if (zoomCaption) zoomCaption.hidden = true;
+}
+
+function setIndex (newIndex, { center = true} = {}){
+  const len = aboutImages.length;
+  currentIndex = (newIndex + len) % len;
+
+  updateCaption(currentIndex);
+
+    if (isZoomOpen){
+      zoomImage.src = aboutImages[currentIndex].src;
+    } 
+    else if (center) {
+      scrollToImg(currentIndex);
+    }
+}
+
+function openZoom(i){
+  isZoomOpen = true;
+  setIndex(i, { center: false});
+  moveCaptionToZoom();
+  zoomLayer.hidden = false;
+  document.body.style.overflow = "hidden";
+}
+
+function closeZoom(){
+  isZoomOpen = false;
+  zoomLayer.hidden = true;
+  restoreCaptionFromZoom();
+  document.body.style.overflow = "";
+}
+
+setIndex(currentIndex, {center: false});
 
 aboutImages.forEach((img, i) => {
   img.addEventListener("click", () => {
-    currentIndex = i;
-    updateCaption(i);
-    scrollToImg(i);
-
-    zoomImage.src = img.src;
-    zoomCaption.textContent = getCaption(img);
-    zoomLayer.hidden = false; 
+    openZoom(i);
   });
 });
 
-zoomLayer.addEventListener("click", () => {
-  zoomLayer.hidden = true;
+zoomCloseBtn.addEventListener("click", (e) =>{
+  e.stopPropagation();
+  closeZoom();
+});
+
+zoomLayer.addEventListener("click", (e) => {
+  if (e.target === zoomLayer) closeZoom();
+});
+
+document.addEventListener("keydown", (e) => {
+  const tag = document.activeElement?.tagName;
+  if (tag === "INPUT" || tag === "TEXTAREA" || document.activeElement?.isContentEditable)
+    return;
+
+  if (e.key === "Escape" && isZoomOpen){
+    e.preventDefault();
+    closeZoom();
+  }
+  else if (e.key === "ArrowRight"){
+    e.preventDefault();
+    setIndex(currentIndex + 1);
+  }
+  else if(e.key === "ArrowLeft"){
+    e.preventDefault();
+    setIndex(currentIndex - 1);
+  }
 });
 
 scroller.addEventListener("scroll", () => {
+  if (isZoomOpen) return;
   let closest = 0;
   let minDist = Infinity;
   const center = scroller.scrollLeft + scroller.offsetWidth / 2;
@@ -120,14 +198,9 @@ scroller.addEventListener("scroll", () => {
       minDist = dist;
       closest = i;
     }
+    });
+  setIndex(closest, {center: false});
   });
-  currentIndex = closest;
-  updateCaption(currentIndex);
-});
-
-updateCaption(currentIndex);
-scrollToImg(currentIndex);
-
 });
 
 /* DOGS OBJECT */
