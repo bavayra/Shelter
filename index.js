@@ -203,6 +203,17 @@ scroller.addEventListener("scroll", () => {
   });
 });
 
+/*Symbols from form message counter*/
+
+const textarea = document.getElementById("message");
+const counter = document.getElementById("chars-counter");
+const maxLength = textarea.getAttribute("maxlength");
+
+textarea.addEventListener("input", () => {
+  const remaining = maxLength - textarea.value.length;
+  counter.textContent = `Symbols remaining: ${remaining}`;
+});
+
 /* DOGS OBJECT */
 /*const pets = [
     {

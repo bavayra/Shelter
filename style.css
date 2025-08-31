@@ -18,7 +18,7 @@ body{
 }
 
 :root {
-    --primary-color:  rgb(168, 108, 108);
+    --primary-color:  rgb(218, 156, 149);
     --secondary-color: rgb(43, 23, 35);
     --surface-color: rgb(94, 32, 60);
     --accent-text-color: rgb(217, 177, 141);
@@ -32,6 +32,15 @@ body{
     --drop-shadow: 0 8px 24px rgba(0, 0, 0, .25);
     --slide-w: min(80vw, 420px);
 
+    --paw-size: clamp(1120px, 55vw, 1360px);
+}
+
+html{
+    background-color: var(--primary-color);
+    /*background-image: url(/images-base/paws.png);
+    background-repeat: repeat;
+    background-size: var(--paw-size) var(--paw-size);*/
+   
 }
 
 button,
@@ -45,7 +54,8 @@ select{
     background-image: url(/images-base/bg-main2.jpeg);     
     background-size: cover;
     background-position: center; 
-    background-repeat: no-repeat;    
+    background-repeat: no-repeat;
+    z-index: 1;    
 }
 
 section{
@@ -341,23 +351,6 @@ nav label{
     margin: 0;
 }
 
-.has-divider{
-    position: relative;
-}
-
-.has-divider::before{
-    margin-top: 25px;
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: calc(-1 * var(--divider-h));
-    height: var(--divider-h);
-    background: url("/Shelter/images-base/paws2.png") center repeat-x;
-    background-size: 42px auto;
-    pointer-events: none;  
-    backdrop-filter: blur(4px);
-}
 
 /*FILTERS*/
 
@@ -494,7 +487,7 @@ select:focus{
 #about, 
 #contacts{
     scroll-margin-top:clamp(12px, 8vh, 96px) ;
-    background-color: rgb(197, 139, 139);
+
     min-height: 100vh;
 } 
 
@@ -600,12 +593,22 @@ select:focus{
 .about-images img:hover,
 .about-images img:focus-visible{
     transform: scale(1.03);
+    outline: none;
 }
 
 #about-images-container{
     scrollbar-width: thin;
     scrollbar-color: var(--secondary-color) var(--primary-color);
 }
+
+#about-images-container:focus{
+    outline: none;
+}
+
+#about-images-container:focus-visible{
+    outline: none;
+}
+
 .about-caption {
     margin-top: 12px;
     text-align: center;
@@ -817,7 +820,6 @@ form label{
     align-items: center;
     justify-content: center;
     padding-bottom: 0.3rem;   
-  
 }
 
 form textarea::placeholder{
@@ -829,7 +831,7 @@ form textarea::placeholder{
     padding-top: 30px;
 }
 
-#form-message{
+#message{
     height: clamp(250px, 5vh, 360px);
     width: clamp(300px, 3vw, 40px);
     border: none;
@@ -853,6 +855,13 @@ form input{
     border-radius: 10px;
     outline: none;
     padding: 5px 10px 5px 10px;
+}
+
+#chars-counter{
+    font-size: 1rem;
+    color: var(--accent-text-color);
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 .form-btns{
@@ -888,7 +897,7 @@ form input{
 /*FOOTER*/
 
 footer{
-    background-color:  rgb(197, 139, 139);
+    background-color:  var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
