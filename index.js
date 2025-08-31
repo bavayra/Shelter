@@ -1,4 +1,4 @@
-/*document.addEventListener("click", function(event){
+document.addEventListener("click", function(event){
     const paw = document.createElement("img");
     paw.src= "images-base/paws.png";
     paw.className = "paw-click";
@@ -26,7 +26,7 @@ function countUp(id, target, duration) {
 
 countUp("dogs-now", 23, 1000); 
 countUp("dogs-total", 184, 1500);
-countUp("dogs-year", 47, 1200); */
+countUp("dogs-year", 47, 1200); 
 
 /*CAROUSEL*/
 

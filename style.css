@@ -18,29 +18,29 @@ body{
 }
 
 :root {
-    --primary-color:  rgb(218, 156, 149);
+    --primary-color:  rgb(212, 159, 154);
     --secondary-color: rgb(43, 23, 35);
     --surface-color: rgb(94, 32, 60);
     --accent-text-color: rgb(217, 177, 141);
 
     --icon-size: clamp(18px, 3vw, 48px);
     --nav-inline: clamp(56px, 6vw, 88px);    
-    
-    --divider-h: clamp(16px, 3.5vw, 52px);
-    --header-h: clamp(56px, 6vw, 88px);
 
     --drop-shadow: 0 8px 24px rgba(0, 0, 0, .25);
     --slide-w: min(80vw, 420px);
 
-    --paw-size: clamp(1120px, 55vw, 1360px);
+    --font-size-txt: clamp(16px, 1.6vw, 24px);
+    --font-size-accents: clamp(14px, 1.4vw, 16px);
+    --font-size-h1: clamp(24px, 3.5vw, 28px);
+    --font-size-h2: clamp(20px, 2vw, 24px);
+
+    --space-sm: clamp(8px, 1vw, 16px);
+    --space-md: clamp(16px, 2vw, 32px);
+    --space-lg: clamp(32px, 4vw, 64px);
 }
 
 html{
     background-color: var(--primary-color);
-    /*background-image: url(/images-base/paws.png);
-    background-repeat: repeat;
-    background-size: var(--paw-size) var(--paw-size);*/
-   
 }
 
 button,
@@ -59,7 +59,7 @@ select{
 }
 
 section{
-    padding-block: clamp(16px, 2vw, 24px);
+    padding-block: var(--space-md);
 }
 
 section > :first-child {
@@ -137,11 +137,12 @@ header{
 h1{
     height: 30%;
     display: flex;
-    padding: 16px 40px;
+    padding-inline: var(--space-md);
+    padding-block: var(--space-sm);
     align-items: center;
     background-color: rgba(43, 23, 35, 0.6);
     color: var(--accent-text-color);
-    font-size: 1rem; /*ПОДКОРРЕКТИРУЙ */
+    font-size: var(--font-size-h1);
     border: none;
     border-radius: 20px;
     margin-left: -30px;
@@ -178,7 +179,7 @@ h1{
     justify-content: center;
     background-color: var(--secondary-color);
     color: var(--accent-text-color);
-    font-size: clamp(14px, 0.8vw, 18px); 
+    font-size: var(--font-size-accents);
     border: none;
     border-radius: 1.25rem;
     width: clamp(36px, 10vw, 168px);
@@ -218,7 +219,7 @@ nav{
     border-radius: 2.5rem;
     position:fixed;
     z-index: 1000;
-    padding: 16px;
+    padding: var(--space-sm);
     box-shadow: var(--drop-shadow);
     overflow: auto;
     height: clamp(360px, 60vh, 980px);
@@ -249,11 +250,11 @@ nav img{
     display: block;
     inline-size: var(--icon-size);
     block-size: var(--icon-size);
-    padding-bottom: 0.75rem;
+    padding-bottom: var(--space-sm);
 }
 
 nav label{
-    font-size: clamp(8px, 1vw, 13px);
+    font-size: var(--font-size-accents);
     color: var(--accent-text-color);
     text-align: center;  
 }
@@ -266,14 +267,14 @@ nav label{
     left: 20%;
     width: auto;
     height: auto;
-    padding: 25px;
+    padding: var(--space-md);
     line-height: 1.8rem;
     background-color: rgb(43, 23, 35, 0.5);
     color: var(--accent-text-color);
     font-weight: 600;
     border-radius: 1.25rem;
     text-align: center;
-    font-size: 1.1rem;
+    font-size: var(--font-size-accents);
 }
 
 /*HERO TEXT CONTENT*/
@@ -287,8 +288,8 @@ nav label{
     left:58%;
     top: 47%;
     color: var(--accent-text-color);
-    font-size: 1.25rem;
-    padding: 0 30px;
+    font-size: var(--font-size-txt);
+    padding: var(--space-lg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -316,12 +317,12 @@ nav label{
     background-color: var(--surface-color);
     color: var(--accent-text-color);
     font-weight: 700;
-    font-size: 1rem;
+    font-size: var(--font-size-accents);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 15px;
+    padding: var(--space-sm);
     box-shadow: var(--drop-shadow);
 }
 
@@ -373,7 +374,7 @@ nav label{
     background-color:rgba(43, 23, 35, 0.568) ;
     border: none;
     border-radius: 30px;
-    padding-inline: 40px;
+    padding-inline: var(--space-lg);
     box-shadow: var(--drop-shadow);
 }
 
@@ -395,7 +396,7 @@ select{
     background-color: var(--accent-text-color);
     border-bottom-left-radius: 15px ;
     border-bottom-right-radius: 15px ;
-    font-size: .9rem;
+    font-size: var(--font-size-accents);
     color: var(--secondary-color);
     justify-content: center;
     font-weight: 600;
@@ -408,15 +409,14 @@ select:focus{
 
 .pet-cards-section label{
     color: var(--accent-text-color);
-    font-size: 1rem;
+    font-size: var(--font-size-accents);
     display: block;
     text-align: center;
     justify-content: center;
-    padding: 5px 10px;
+    padding: var(--space-sm);
     height: 3.5vh;
     font-weight: 600;
     border: none;
-    padding-top: 12px; /*ЭТО ЧЕ ЗА ДВА ПАДДИНГА ТУТ У НАС*/
 }
 
 .buttons{
@@ -443,7 +443,7 @@ select:focus{
     border-radius: 20px;
     width: 20%;
     height: 100%;
-    font-size: 1rem;
+    font-size: var(--font-size-accents);
     box-shadow: var(--drop-shadow);
 }
 
@@ -467,7 +467,7 @@ select:focus{
     color: var(--accent-text-color);
     width: 12%;
     height: 2.6vh;
-    font-size: 1rem;
+    font-size: var(--font-size-accents);
     box-shadow: var(--drop-shadow);
 }
 
@@ -476,7 +476,7 @@ select:focus{
 #dogs-now,
 #dogs-year,
 #dogs-total{
-    font-size: 1.75rem;
+    font-size: var(--font-size-txt);
     font-weight: 700;
     color: rgb(97, 18, 53);
 }
@@ -516,7 +516,7 @@ select:focus{
     display: block;
     width: 70%;
     height: 55%;
-    padding-top: 3.5rem;
+    padding-top: var(--space-md);
     border: none;
     border-radius: 30px;
 }
@@ -550,7 +550,7 @@ select:focus{
     color: var(--surface-color);
     border: none;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: var(--font-size-accents);
     font-weight: 600;
 } 
 
@@ -613,7 +613,7 @@ select:focus{
 .about-caption {
     margin-top: 12px;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: var(--font-size-txt);
     line-height: 1.3;
     background-color: var(--surface-color);
     color: var(--accent-text-color);
@@ -646,7 +646,7 @@ select:focus{
 
 #about-zoom .caption-zoom{
     margin-top: 8px;
-    font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+    font-size: var(--font-size-txt);
     line-height: 1.35;
     text-align: center;
     max-width: 90ch;
@@ -662,7 +662,7 @@ select:focus{
     border: none;
     background-color: var(--surface-color);
     color: var(--accent-text-color);
-    font-size: 1.5rem;
+    font-size: var(--font-size-txt);
     text-align: center;
     border-radius: 50%;
     cursor: pointer;
@@ -673,7 +673,7 @@ select:focus{
 .owners-review{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    font-size: 1.25rem;
+    font-size: var(--font-size-accents);
     margin: 12rem auto 0 auto;
     gap: 50px;
     width: 70%;
@@ -724,7 +724,7 @@ select:focus{
 }
 
 .contact-paw h2{
-    font-size: clamp(2rem, 2vw, 3rem);
+    font-size: 3rem;
     text-align: center;
     color: var(--surface-color);
     margin-top: 12vh;
@@ -812,7 +812,7 @@ select:focus{
 .contact-address a,
 .contact-address span{
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: var(--font-size-txt);
     line-height: 1rem;
     color: var(--surface-color);
     display: flex;
@@ -855,7 +855,7 @@ form{
 }
 
 form label{
-    font-size: 1rem;
+    font-size: var(--font-size-accents);
     color: var(--accent-text-color);
     font-weight: 600;
     display: flex;
@@ -865,8 +865,8 @@ form label{
 }
 
 form textarea::placeholder{
-    color: inherit;
-    font-size: 1rem;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
 }
 
 .form-message-area{
@@ -878,7 +878,7 @@ form textarea::placeholder{
     width: clamp(300px, 3vw, 40px);
     border: none;
     border-radius: 10%;
-    font-size: 1.25rem;
+    font-size: var(--font-size-txt);
     color: var(--secondary-color);
     background-color: var(--primary-color);
     font-weight: 500;
@@ -943,7 +943,7 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: var(--font-size-accents);
     color: var(--surface-color);
     font-weight: 600;
     height: 3vh;
