@@ -554,10 +554,11 @@ select:focus{
     font-weight: 600;
 } 
 
-/*ABOUT US*/
+/*ABOUT US - CAROUSEL*/
 
 #about{
     padding-block: clamp(24px, 6vw, 72px);
+
 }
 
 .about-container{
@@ -621,6 +622,7 @@ select:focus{
     padding: 8px 10px;
     border-radius: 8px;
     margin-inline: auto;
+    box-shadow: var(--drop-shadow);
 }
 
 #about-zoom[hidden]{
@@ -666,6 +668,46 @@ select:focus{
     cursor: pointer;
 }
 
+/*ABOUT US- REVIEWS*/
+
+.owners-review{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 1.25rem;
+    margin: 12rem auto 0 auto;
+    gap: 50px;
+    width: 70%;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.review{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    background-color: rgb(185, 132, 126);
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: var(--drop-shadow);
+    cursor: pointer;
+}
+
+.review:hover{
+    transform: scale(1.05);
+}
+
+.owners-review img{
+    height: 135px;
+    width: 120px;
+    border: none;
+    border-radius: 50%;
+}
+
 /*CONTACTS - PAW */
 
 .contact-container img {
@@ -684,7 +726,7 @@ select:focus{
 .contact-paw h2{
     font-size: clamp(2rem, 2vw, 3rem);
     text-align: center;
-    color: var(--secondary-color);
+    color: var(--surface-color);
     margin-top: 12vh;
     margin-bottom: 12vh;
     text-decoration: underline;
