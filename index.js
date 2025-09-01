@@ -1,3 +1,5 @@
+/*PAW CLICK ANIMATION*/
+
 document.addEventListener("click", function(event){
     const paw = document.createElement("img");
     paw.src= "images-base/paws.png";
