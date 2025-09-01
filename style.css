@@ -120,9 +120,8 @@ main, .panel, section{
     display: grid;
     place-items: center;
     inline-size: min(
-        clamp(28px, 8vw, 96px),
-        calc(var(--header-h) - 2*var(--header-pad))
-    );
+        clamp(28px, 6.5vw, 72px),
+        calc(var(--header-h) - 2*var(--header-pad)));
     aspect-ratio: 1/1;
     border-radius: 50%;
     background-color: var(--secondary-color);
@@ -182,7 +181,7 @@ h1{
 }
 
 .contact-btn:hover,
- nav label:hover,
+ nav span:hover,
 .hero-CTA button:hover,
 .filter-btns button:hover,
 .view-all-CTA:hover {
@@ -193,7 +192,7 @@ h1{
 }
 
 .contact-btn,
- nav label,
+ nav span,
 .hero-CTA button,
 .filter-btns button,
 .view-all-CTA{
@@ -219,18 +218,19 @@ h1{
 /*MAIN NAVIGATION*/
 
 nav{
-    background-color: var(--secondary-color);
-    top: 50%;
-    transform: translateY(-50%); /*First I went with top: 25% and no transform, but I realized it can potentially cause issues with scaling*/
-    left: clamp(12px, 10vw, 60px);
-    border: none;
-    border-radius: var(--border-radius);
     position:fixed;
-    z-index: 1000;
+    inset-block-start: 50%;
+    transform: translateY(-50%); /*First I went with top: 25% and no transform, but I realized it can potentially cause issues with scaling*/
+    inset-inline-start: clamp(12px, 10vw, 60px);
+    z-index: var(--z-nav);
     padding: var(--space-sm);
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-color);
+    border: none;
     box-shadow: var(--drop-shadow);
     height: clamp(360px, 60vh, 980px);
     margin-left: var(--space-lg);
+    overflow: auto;
 }
 
 nav ul{
@@ -243,12 +243,15 @@ nav ul{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    gap: var(--space-sm);
 }
 
 nav a{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: var(--space-sm);
+    color: var(--accent-text-color);
     text-decoration: none;
 }
 
@@ -259,7 +262,7 @@ nav img{
     padding-bottom: var(--space-sm);
 }
 
-nav label{
+nav span{
     font-size: var(--font-size-accents);
     color: var(--accent-text-color);
     text-align: center;  
