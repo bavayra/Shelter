@@ -1,20 +1,19 @@
-html,
-body{
-    margin: 0;
-    padding: 0;
-    height: 100%;   
+html{
+    -webkit-text-size-adjust: 100%;
 }
 
-* {
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
 body{
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
-    height: 100vh;
     letter-spacing: 0.04rem;
     scroll-behavior: smooth;
+    margin: 0;
+    min-block-size: 100%;
+    background: var(--primary-color);
 }
 
 :root {
@@ -25,6 +24,10 @@ body{
 
     --drop-shadow: 0 8px 24px rgba(0, 0, 0, .25);
     --slide-w: min(80vw, 420px);
+    --header-h: clamp(56px, 10svh, 96px);
+    --header-pad: clamp(6px, 1.2svh, 12px);
+    --container-max: 1200px;
+    --btn-height: clamp(40px, 6vh, 48px);
 
     --font-size-txt: clamp(16px, 1.6vw, 24px);
     --font-size-accents: clamp(12px, 1.4vw, 16px);
@@ -33,22 +36,20 @@ body{
 
     --icon-size: clamp(18px, 3vw, 48px);
 
-    --btn-height: clamp(40px, 6vh, 48px);
-
     --space-sm: clamp(8px, 1vw, 16px);
     --space-md: clamp(16px, 2vw, 32px);
     --space-lg: clamp(32px, 4vw, 64px);
     --space-xl: clamp(64px, 6vw, 240px);
 
     --border-radius: clamp(8px, 20px, 36px);
-}
 
-html{
-    background-color: var(--primary-color);
+    --z-nav: 20;
+    --z-header: 30;
+    --z-overlay: 100;
 }
 
 button,
-option,
+a[role="button"],
 select{
     cursor: pointer;
 }
@@ -64,6 +65,7 @@ select{
 
 section{
     padding-block: var(--space-md);
+    scroll-margin-top: var(--header-h);
 
 }
 
@@ -79,118 +81,104 @@ section > :last-child{
     display:none;
 }
 
-/*HEADER*/
-header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 100vw;
-    max-height: 14vh;
-    box-sizing: content-box;
+main, .panel, section{
+    overflow: visible;
 }
 
+/*HEADER*/
+
 .header-container{
-    width: 100%;
-    height: 10%;
-    position: fixed;
-    display: flex;
+    position: sticky;
+    top: 0;
+    inset-block-start: 0;
+    z-index: var(--z-header);
+    display: grid;
+    grid-template-columns: 1fr auto auto;
     align-items: center;
-    justify-content: space-evenly;
-    grid-template-columns: repeat(3, auto);
-    z-index: 1000;
-    border: none;
-    left: 0;
-    right: 0;
-    margin: 0;
-    top: calc(0px + env(safe-area-inset-top));
-    padding-top: 4%;
+    gap: var(--space-lg);
+    inline-size: 100%;
+    block-size: var(--header-h);
+    padding-inline: var(--space-md);
+    padding-block: var(--header-pad);
+    background: color-mix(in srgb, var(--secondary-color) 85%, transparent);
+    border: none;  
+    overflow: clip;
+}
+
+.header-container > *{
+    max-block-size: calc(var(--header-h) - 2* var(--header-pad));
 }
 
 .logo{
-    display: flex;
+    display: inline-flex;
+    justify-self: start;
     align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    gap: var(--space-sm);
 }
 
 #logo-bg{
-    background-color: var(--secondary-color);
-    height: clamp(24px, 12vh, 156px);
-    width: clamp(24px, 12vw, 156px);
+    display: grid;
+    place-items: center;
+    inline-size: min(
+        clamp(28px, 8vw, 96px),
+        calc(var(--header-h) - 2*var(--header-pad))
+    );
     aspect-ratio: 1/1;
-    border: none;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    flex: 0 0 auto;
+    background-color: var(--secondary-color);
     box-shadow: var(--drop-shadow);
+    padding: var(--space-sm);
 }
 
 #logo-image{
-    max-width: 120%;
-    max-height: 120%;
-    width: auto;
-    height: auto;
+    max-inline-size: 100%;
+    max-block-size: 100%;
     object-fit: contain;
-    display: block;
 }
 
 h1{
-    height: 30%;
-    display: flex;
-    padding-inline: var(--space-md);
-    padding-block: var(--space-sm);
-    align-items: center;
-    background-color: rgba(43, 23, 35, 0.6);
-    color: var(--accent-text-color);
+    margin:0;
+    line-height: 1;
     font-size: var(--font-size-h1);
+    font-weight: 600;
+    color: var(--accent-text-color);
+}
+
+#home-btn-link{
+    display: inline-grid;
+    place-items: center;
+    inline-size: clamp(72px, 7vw, 96px);
+    block-size: clamp(72px, 7vw, 96px);
+    padding: 0;
     border: none;
     border-radius: var(--border-radius);
-    margin-left: -30px;
-    z-index: -1;
-    font-weight: 500;
-    box-shadow: var(--drop-shadow);
+    justify-self: center;
 }
 
-.home-btn{
-    background:none;
-    border: none;
-    padding: var(--space-xl);
-    aspect-ratio: 1/0.8;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: var(--btn-height);
-}
-
-.home-btn img{
-    width: 100%;
-    height: 100%;
-    opacity: 0.7;
+.home-icon{
+    inline-size: 60%;
+    block-size: auto;
+    aspect-ratio: 1/1;
+    object-fit: contain;
     display: block;
+    opacity: 0.7;
 }
 
-.home-btn img:hover{
+.home-icon:hover{
     opacity: 1;
 }
 
 .contact-btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-inline-size: clamp(110px, 14vw, 160px);
+    padding-inline: var(--space-md);
+    height: var(--btn-height);
     background-color: var(--secondary-color);
     color: var(--accent-text-color);
     font-size: var(--font-size-accents);
     border: none;
     border-radius: var(--border-radius);
-    padding-inline: var(--space-md);
-    height: var(--btn-height);
-    cursor: pointer;
-    font-family: "Raleway", sans-serif;
     box-shadow: var(--drop-shadow);
+    justify-self: end;
 }
 
 .contact-btn:hover,
@@ -212,6 +200,22 @@ h1{
     transition: transfore 0.3s ease-in-out;
 }
 
+@media (max-width: 560) {
+    .header-container{
+        grid-template-columns: 1fr auto;
+        grid-template-areas: "brand action";
+    }
+    #home-btn-link{
+        display: none;
+    }
+    .logo {
+        justify-self: start;
+    }
+    .contact-btn{
+        justify-self: end;
+    }
+}
+
 /*MAIN NAVIGATION*/
 
 nav{
@@ -225,10 +229,8 @@ nav{
     z-index: 1000;
     padding: var(--space-sm);
     box-shadow: var(--drop-shadow);
-    overflow: auto;
     height: clamp(360px, 60vh, 980px);
     margin-left: var(--space-lg);
-    overflow: hidden;
 }
 
 nav ul{
@@ -355,7 +357,6 @@ nav label{
 .contact-paw{
     margin: 0;
 }
-
 
 /*FILTERS*/
 
@@ -513,7 +514,6 @@ select:focus{
     border: none;
     border-radius: var(--border-radius);
     position: relative;
-    overflow: hidden;
 }
 
 .pet_img{
