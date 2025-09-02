@@ -379,6 +379,11 @@ nav span{
 
 /*FILTERS*/
 
+.filter-container{
+    min-inline-size: 70%;
+    margin-inline: auto;
+}
+
 .pet-cards-section{
     display: flex;
     align-items: center;
@@ -387,19 +392,15 @@ nav span{
 
 .filter-bar{
     display: flex;
-    flex-direction: row;    
-    margin-top: var(--space-lg);
-    margin-bottom: var(--space-md);
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-xl);
-    width: 75vw;
-    height: 10vh;
-    background-color:rgba(43, 23, 35, 0.568) ;
-    border: none;
-    border-radius: var(--border-radius);
     padding-inline: var(--space-lg);
+    padding-block: var(--space-md);
+    border-radius: var(--border-radius);
     box-shadow: var(--drop-shadow);
+    background-color:rgba(43, 23, 35, 0.568);
+    gap:  var(--space-lg);
 }
 
 .filter-bar > * {
@@ -412,23 +413,17 @@ nav span{
 }
 
 select{
-    width: 100%;
-    height: 3vh;
-    text-align: center;
-    padding: var(--space-sm);
+    inline-size: 100%;
+    min-block-size: var(--btn-height);
+    padding-inline: var(--space-sm);
     border: none;
-    background-color: var(--accent-text-color);
     border-bottom-left-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
-    font-size: var(--font-size-accents);
     color: var(--secondary-color);
-    justify-content: center;
+    background-color: var(--accent-text-color);
+    font-size: var(--font-size-accents);
     font-weight: 600;
-}
-
-select:focus{
-    background-color: var(--surface-color);
-    color: var(--accent-text-color);
+    text-align: center;
 }
 
 .pet-cards-section label{
@@ -451,12 +446,11 @@ select:focus{
 
 .filter-btns{
     display: flex;
-    flex-direction: row;
+    gap: var(--space-lg);
     align-items: center;
     justify-content: center;
-    gap: var(--space-lg);
-    width: 40vw;
-    height: 3vh;
+    inline-size: 100%;
+    margin-block: var(--space-md);
 }
 
 .filter-btns button {
@@ -480,8 +474,7 @@ select:focus{
 .view-all-btn{
     display: flex;
     justify-content: center;
-    margin-top: var(--space-lg);
-    height: auto;
+    height: var(--btn-height);
 }
 
 .view-all-btn button{
