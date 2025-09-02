@@ -225,69 +225,61 @@
     </section>
 
     <section id="contacts" class="panel contact-paw">
-    
-      <div class="contact-container">
-        <h2 id="contact-title">CONTACT US</h2>
-        <div class="paw" role="group" aria-label="Contacts in a paw layout">
+      <h2 id="contact-title">CONTACT US</h2>     
+
+      <div class="contacts-grid">
+        <div class="paw" role="group" aria-label="Social networks">
+           <div class="pad" role="region" aria-label="Map">
+              <iframe title="ROTVODOM shelter location" loading="lazy" referrerpolicy="origin" 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17525.833283836157!2d60.81718118132396!3d56.69608486472699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43c14176c16eb26b%3A0xb078d03d330dd93c!2z0JDRgNCw0LzQuNC70YwsINCh0LLQtdGA0LTQu9C-0LLRgdC60LDRjyDQvtCx0LsuLCDQoNC-0YHRgdC40Y8!5e0!3m2!1sru!2scz!4v1755518556300!5m2!1sru!2scz" 
+                      allowfullscreen> <!--The map might have problems with correct opening but it does work in the Incognito mode, so it's an issue with browsers/extentions-->
+              </iframe> <!--I could'have used a fallback for the map, though I decided it is not necessary here -->
+            </div>
+
             <a class=" toe toe-1" href="https://www.instagram.com/rotvodom/" 
-               target="_blank" rel="noopener" aria-label="Instagram">
+               target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <img src="images-socials/instagram.png" alt="Instagram" aria-hidden="true"> <!--ПОТОМ ПЕРЕКРАСЬ ИКОНКИ-->
             </a>
             <a class=" toe toe-2" href="https://www.facebook.com/rotvoDom/" 
-               target="_blank" rel="noopener" aria-label="Facebook">
+               target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <img src="images-socials/facebook.png" alt="Facebook" aria-hidden="true"> <!--ПОТОМ ПЕРЕКРАСЬ ИКОНКИ-->
             </a>
             <a class=" toe toe-3" href="https://web.telegram.org/k/#@huskyekb" 
-               target="_blank" rel="noopener" aria-label="Telegram">
+               target="_blank" rel="noopener noreferrer" aria-label="Telegram">
               <img src="images-socials/telegram.png" alt="Telegram" aria-hidden="true"> <!--ПОТОМ ПЕРЕКРАСЬ ИКОНКИ-->
             </a>
             <a class=" toe toe-4" href="https://vk.com/rotvodom66" 
-               target="_blank" rel="noopener" aria-label="VKontakte"> <!--I know about .sr-only but for the demo project I decided not to use it-->
+               target="_blank" rel="noopener noreferrer" aria-label="VKontakte"> <!--I know about .sr-only but for the demo project I decided not to use it-->
               <img src="images-socials/vk.png" alt="VKontakte" aria-hidden="true"> <!--ПОТОМ ПЕРЕКРАСЬ ИКОНКИ-->
             </a>
-
-            <div class="pad" role="region" aria-label="Map">
-              <iframe title="ROTVODOM shelter location" loading="lazy" referrerpolicy="origin" 
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17525.833283836157!2d60.81718118132396!3d56.69608486472699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43c14176c16eb26b%3A0xb078d03d330dd93c!2z0JDRgNCw0LzQuNC70YwsINCh0LLQtdGA0LTQu9C-0LLRgdC60LDRjyDQvtCx0LsuLCDQoNC-0YHRgdC40Y8!5e0!3m2!1sru!2scz!4v1755518556300!5m2!1sru!2scz" 
-                      allowfullscreen=""> <!--The map might have problems with correct opening but it does work in the Incognito mode, so it's an issue with browsers/extentions-->
-              </iframe> <!--I could'have used a fallback for the map, though I decided it is not necessary here -->
-            </div>
-        </div>
-      </div>
-
-      <div class="contact-form">
-        <form id="form-container">
-          <div class="form-message-area">
+          </div>             
+            
+        <form id="form-container" class="contact-form" novalidate>
             <label for="message">TYPE YOUR MESSAGE HERE</label>
-            <textarea id="message" name="message" rows="4" cols="40" placeholder="START TYPING..." maxlength="200"></textarea>
+            <textarea id="message" name="message" rows="4" maxlength="200" placeholder="START TYPING..."></textarea>
             <div id="chars-counter">Symbols remain: 200</div>
-          </div>
 
-          <div class="form-full-name-input">
             <label for="form-full-name">YOUR FULL NAME</label>
-            <input id="form-full-name" type="text">
-          </div>  
-          <div class="form-email-input">
+            <input id="form-full-name" type="text" name="fullName" required autocomplete="name">
+    
             <label for="form-email">YOUR EMAIL</label>
-            <input id="form-email" type="email">
-          </div>
-          <div class="form-number-input">
+            <input id="form-email" type="email" name="email" required autocomplete="email">
+     
             <label for="form-number">YOUR PHONE NUMBER</label>
-            <input id="form-number" typ="tel">
-          </div>
+            <input id="form-number" typ="tel" name="tel" autocomplete="tel">
 
          <div class="form-btns"> 
-          <button id="form-submit-btn" type="submit">SEND</button>
-          <button id="form-reset-btn" type="reset">RESET</button>
+            <button id="form-submit-btn" type="submit">SEND</button>
+            <button id="form-reset-btn" type="reset">RESET</button>
          </div> 
-        </form>
-      </div>
 
-         <address class="contact-address">
+           <address class="contact-address">
             <a href="mailto:shelter@hello.com">shelter@hello.com</a><br>
             <a href="tel: +77 777 7777">+77 777 7777</a><br>
             <span>Jekaterinburg, Russia</span>
           </address>
+        </form>
+      </div>  
     </section>
 
 <!--<aritcle class="pet">

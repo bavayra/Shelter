@@ -723,7 +723,106 @@ select{
     border-radius: 50%;
 }
 
-/*CONTACTS - PAW */
+/*CONTACTS*/ 
+.contact-paw {
+   padding: clamp(24px, 6vh, 72px) 0;
+}
+
+.contact-title {
+    margin: 0 0 var(--space-lg);
+    text-align: center;
+    font-size: var(--font-size-h2);
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.contacts-grid{
+    inline-size: min(92%, 1200px);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 1fr min(460px, 40vw);
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.paw{
+    position: relative;
+    inline-size: min(620px, 52vw);
+    aspect-ratio: 1.2/1;
+    margin-inline: auto;
+}
+
+.pad {
+    position: absolute;
+    inset: auto;
+    left: 50%;
+    top: 56%;
+    transform: translate(-50%, -50%);
+    inline-size: clamp(260px, 44%, 420px);
+    aspect-ratio: 1/1;
+    border: none;
+    border-radius: 40%;
+    overflow: hidden;
+    background: var(--primary-color);
+}
+
+.pad iframe{
+    inline-size: 100%;
+    block-size: 100%;
+    border: 0;
+}
+
+.toe{
+    position: absolute;
+    inline-size: clamp(96px, 10vw, 120px);
+    block-size: clamp(96px, 10vw, 120px);
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    transition: transform .2s ease-in-out;
+}
+
+.toe:hover{
+    transform: scale(1.1);
+}
+
+.toe img{
+    inline-size: 56%;
+    block-size: auto;
+    display: block;
+}
+
+
+
+.contact-container{
+    inline-size: min(90%, 1200px);
+    margin-inline: auto;
+    display: grid;
+    gap: var(--space-lg);
+    grid-template-columns: 1fr;
+}
+
+
+
+.contact-form{
+    display: grid;
+    gap: var(--space-sm);
+}
+
+form input,
+form textarea{
+    border: 1px solid transparent;
+    border-radius: var(--border-radius);
+    padding: var(--space-sm);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: var(--font-size-txt);
+}
+
+.form-btns{
+    display: flex;
+    gap: var(--space-lg);
+}
 
 .contact-container img {
     max-width: 100%;
@@ -731,92 +830,28 @@ select{
     display: block;
 }
 
-.contact-paw {
-    padding: 5rem 3rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 0;
-}
-
-.contact-paw h2{
-    font-size: 3rem;
-    text-align: center;
-    color: var(--surface-color);
-    margin-block: var(--space-lg);
-    text-decoration: underline;
-    margin-left: 20rem;
-}
-
-.paw{
-    display: grid;
-    grid-template-rows: repeat(4, 1fr);
-    max-width: clamp(260px, 60vw, 960px);
-    margin-left: 20rem;
-    margin-right: 0;
-    gap: var(--space-sm);
-    position: relative;
-}
-
-.toe{
-    width: clamp(60px, 10vw, 120px);
-    height: clamp(60px, 10vw, 120px);
-    border-radius: 50%;
-    background: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    transition: transform 0.2s ease-in-out;
-}
-
-.toe:hover{
-    transform: scale(1.1);
-}
-
 .toe-1 {
-    grid-column: 1;
-    grid-row: 2;
-    margin-right: -15px;
+   left: 28%;
+   top: 8%;
 }
 
 .toe-2 {
-    grid-column: 2;
-    grid-row: 1;
+   left: 50%;
+   top: 2%;
+   transform: translateX(-50%);
 }
 
 .toe-3 {
-    grid-column: 3;
-    grid-row: 1;
+   right: 28%;
+   top: 8%;
 }
 
 .toe-4 {
-    grid-column: 4;
-    grid-row: 2;
-    margin-left: -15px;
+   left: 50%;
+   top: 32%;
+   transform: translateX(-50%);
 }
 
-.pad{
-    grid-column: 2 / span 2;
-    grid-row: 2 / span 2;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    border: 2px solid var(--secondary-color);
-    border-radius: 40%;
-    overflow: hidden;
-    margin-top: var(--space-md);
-}
-
-.pad iframe{
-    position: absolute;
-    inset: 0;
-    text-align: center;
-    background: var(--primary-color);
-    border: 0;
-    border-radius: inherit;
-    width: 100%;
-    height: 100%;
-}
 
 .contact-address{
     grid-row: 2;
@@ -846,12 +881,6 @@ select{
 form{
     margin: 0;
     padding: 0;
-}
-
-.contact-form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 #form-container{
@@ -903,15 +932,7 @@ form textarea::placeholder{
     resize: none;
 }
 
-form input{
-    height: 70%;
-    width: 100%;
-    background-color: var(--primary-color);
-    border: none;
-    border-radius: var(--border-radius);
-    outline: none;
-    padding: var(--space-sm);
-}
+
 
 #chars-counter{
     font-size: 1rem;
@@ -920,12 +941,7 @@ form input{
     margin-bottom: var(--space-md);
 }
 
-.form-btns{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-lg);
-    height: var(--btn-height);
-}
+
 
 #form-reset-btn{
     background-color: var(--secondary-color);
