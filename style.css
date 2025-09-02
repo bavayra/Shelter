@@ -54,15 +54,6 @@ select{
     cursor: pointer;
 }
 
-#hero{
-    min-height: 100vh;
-    background-image: url(/images-base/bg-main2.jpeg);     
-    background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat;
-    z-index: 1;    
-}
-
 section{
     padding-block: var(--space-md);
     scroll-margin-top: var(--header-h);
@@ -287,40 +278,65 @@ nav span{
 }
 
 /*HERO TEXT CONTENT*/
+
+#hero{
+    min-block-size: 100dvh;
+    background-image: url(/images-base/bg-main2.jpeg);     
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.hero-container{
+    inline-size: min(92%, 1200px);
+    margin-inline: auto;
+    padding-block: clamp(24px, 8vh, 96px);
+    min-block-size: inherit;
+    display: grid;
+    grid-template-columns: minmax(0, 58%) min(36ch, 32vw);
+    align-items: end;
+    gap: var(--space-lg);
+
+}
+
 .hero-info{
-    width: 25vw;
-    height: 25vh;
-    background-color: rgb(43, 23, 35, 0.7);
+    grid-column: 2;
+    justify-self: end;
+    align-self: center;
+    margin-inline-end: -10vw;
+    margin-block-start: clamp(32px, 24vh, 220px);
+    padding: var(--space-md);
+    padding-inline-start: calc(var(--space-md) + 1.5vw);
+    margin-inline-start: -6vw;
+    z-index: 2;
+    max-inline-size: clamp(28ch, 30vw, 36ch);
     border: 1px solid var(--secondary-color);
     border-radius: var(--border-radius);
-    position: absolute;
-    left:58%;
-    top: 47%;
+    background-color: rgb(43, 23, 35, 0.7);
     color: var(--accent-text-color);
-    font-size: var(--font-size-txt);
-    padding: var(--space-lg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    box-shadow: var(--drop-shadow);
     text-align: center;
-    line-height:2rem;
+    font-size: var(--font-size-txt);
     font-weight: 500;
+    line-height: 1.5;
 }
 
 .hero-CTA{
     position: absolute;
-    left:76%;
-    top: 70%;
-    width: 14vw;
-    height: 4vh;
-    border:none;
-    border-radius: var(--border-radius);
-    background-color: var(--surface-color);
+    inset-block-start: 69%;
+    inset-inline-start: 72%;
+    inline-size: clamp(180px, 20vw, 300px);
+    block-size: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md);
+    border: none;
+    z-index: 3;
 }
 
 .hero-meet-CTA{
-    height: 100%;
-    width: 100%;
     border:none;
     border-radius: var(--border-radius);
     background-color: var(--surface-color);
@@ -495,7 +511,6 @@ select:focus{
 #about, 
 #contacts{
     scroll-margin-top:clamp(12px, 8vh, 96px) ;
-
     min-height: 100vh;
 } 
 
