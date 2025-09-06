@@ -1003,6 +1003,7 @@ footer{
         height: 105px;
         width: 90px;
     }
+
  /*CONTACTS SECTION/PAW*/
     #contact-title {
         font-size: var(--font-size-h1);
@@ -1018,8 +1019,6 @@ footer{
     .orbit{
         --r: 150%;
     }
-
-/*CONTACT SECTION FORM*/
     .contact-form{
         inline-size: 80%;
         max-inline-size: 600px;
@@ -1035,6 +1034,7 @@ footer{
     .contact-address{
         font-size: var(--font-size-accents);
     }
+}
 
 @media (max-width: 768px){
     /*NAV SECTION*/
@@ -1079,6 +1079,27 @@ footer{
         height: 80px;
         width: 70px;
     }
+
+    /*CONTACTS SECTION*/
+    .contact-form{
+        gap: var(--space-sm); 
+    }
+    .contact-form :is(input, textarea){
+        padding: var(--space-sm);
+    }
+    #message{
+        min-block-size: clamp(160px, 22vh, 240px);
+    }
+    .form-btns{
+        gap: var(--space-md);
+    }
+
+    #form-reset-btn,
+    #form-submit-btn{
+        padding-inline: var(--space-md);
+        font-weight: 500;
+        font-size: var(--font-size-accents);
+    }
 }
 
 
@@ -1102,4 +1123,4 @@ footer{
 
 @media (max-width: 480px){
 }
-}
+
