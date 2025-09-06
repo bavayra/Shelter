@@ -1037,8 +1037,41 @@ footer{
     }
 
 @media (max-width: 768px){
+    /*NAV SECTION*/
+    nav{
+        height: clamp(360px, 40vh, 720px);
+    }
+    nav ul{
+        gap: var(--space-sm);
+        padding: 0;
+    }
 
-}
+    /*HERO STATS*/
+    .pets-stats {
+        display: none;
+    }   
+    .hero-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .hero-info{
+        inline-size: clamp(64ch, 30vw, 72ch);
+        margin-block-start: -5vh;
+    }
+    .hero-CTA{
+        inset-block-start: 15%;
+        inset-inline-start: 70%;
+        inline-size: clamp(240px, 22vw, 360px);
+    }
+    .hero-meet-CTA{
+        font-size: var(--font-size-accents);
+        font-weight: 500;
+        padding: var(--space-md);
+    }
+
+
+
 
 @media (max-width: 560) {
     .header-container{
@@ -1058,8 +1091,4 @@ footer{
 
 @media (max-width: 480px){
 }
-
-
-
-
 
