@@ -1046,7 +1046,7 @@ footer{
         padding: 0;
     }
 
-    /*HERO STATS*/
+    /*HERO SECTION*/
     .pets-stats {
         display: none;
     }   
@@ -1070,6 +1070,17 @@ footer{
         padding: var(--space-md);
     }
 
+    /*ABOUT US -REVIEWS*/
+    .owners-review{
+        inline-size: 90%;
+        max-inline-size: 760px;
+    }
+    .owners-review img{
+        height: 80px;
+        width: 70px;
+    }
+}
+
 
 
 
@@ -1091,4 +1102,4 @@ footer{
 
 @media (max-width: 480px){
 }
-
+}
