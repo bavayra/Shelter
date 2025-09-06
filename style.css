@@ -1102,10 +1102,7 @@ footer{
     }
 }
 
-
-
-
-@media (max-width: 560) {
+/*@media (max-width: 560px) {
     .header-container{
         grid-template-columns: 1fr auto;
         grid-template-areas: "brand action";
@@ -1119,8 +1116,100 @@ footer{
     .contact-btn{
         justify-self: end;
     }
-}
+}*/
 
 @media (max-width: 480px){
+
+    /*HERO SECTION*/
+
+
+    .pets-stats {
+        display: none;
+    }
+    .hero-info{
+        justify-self: center;
+        align-self: start;
+        padding: var(--space-sm);
+        font-size: var(--accent-text-color);
+    }
+    .hero-CTA{
+        inset-block-start: 53%;
+        inset-inline-start: 80%;
+        inline-size: clamp(180px, 20vw, 300px);
+        padding: var(--space-md);
+    }
+    .hero-meet-CTA{
+        font-size: var(--font-size-sm);
+    }
+
+  /*PETS SECTION*/
+    .pet-cards-section label{
+        height: 100%;
+        font-weight: 500;
+    }  
+
+    .filter-group select{  
+        font-weight: 500;
+    }
+    .filter-bar{
+        gap: var(--space-md);
+    }
+
+ /*ABOUT SECTION*/   
+    #about-zoom{
+        padding: var(--space-sm);
+    }
+    .zoom-image{
+        max-width: min(70vw, 840px);
+        max-height: 70vh;
+    }
+    #about-zoom .caption-zoom{
+        max-width: 80ch;
+        margin-top: 0;
+        font-size: var(--font-size-accents);
+        line-height: 1;
+    }
+
+ /*ABOUT-REVIEWS*/   
+    .owners-review{
+        gap: var(--space-md);
+        inline-size: 100%;
+        max-inline-size: 960px;
+    }
+    .owners-review img{
+        height: 105px;
+        width: 90px;
+    }
+
+ /*CONTACTS SECTION/PAW*/
+    #contact-title {
+        font-size: var(--font-size-h1);
+    }
+    .contacts-grid{
+        inline-size: min(92%, 960px);
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-sm);
+    }
+    .paw{
+        inline-size: min(480px, 50vw);
+    }
+    .orbit{
+        --r: 150%;
+    }
+    .contact-form{
+        inline-size: 80%;
+        max-inline-size: 600px;
+        margin-inline: auto;
+        padding: var(--space-lg);
+    }
+    .contact-form :is(input, textarea){
+        font-size: var(--font-size-accents);
+    }
+    #message{
+        min-block-size: clamp(160px, 20vh, 240px);
+    }
+    .contact-address{
+        font-size: var(--font-size-accents);
+    }
 }
 
