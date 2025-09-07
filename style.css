@@ -1171,29 +1171,50 @@ footer{
     }
 
  /*ABOUT SECTION*/   
-    #about-zoom{
-        padding: var(--space-sm);
+    .about-container{
+        inline-size: 90%;
+        max-inline-size: 480px;
+    }
+    .about-images img{
+        flex: 0 0 min(55vw, 320px);
+        height: clamp(120px, 25vh, 320px);
+    }
+    .about-caption {
+        margin-top: var(--space-md);
+        padding: var(--space-md);
+        font-size: var(--font-size-accents);
+    }   
+    .zoom {
+        inline-size: 95%;
+        max-inline-size: 480px; /*Так сработала центровка картинок */
     }
     .zoom-image{
-        max-width: min(70vw, 840px);
-        max-height: 70vh;
+         max-width: min(85vw, 460px);
+        max-height: 65vh;
     }
-    #about-zoom .caption-zoom{
-        max-width: 80ch;
-        margin-top: 0;
+    #about-zoom{
+        display: flex;
+        flex-direction: column;
+        justify-content:  center;
+        min-block-size: 90vh;
+    }
+    #about-zoom .caption-zoom{   
+        margin-top: var(--space-md);
         font-size: var(--font-size-accents);
-        line-height: 1;
     }
 
- /*ABOUT-REVIEWS*/   
+ /*ABOUT-REVIEWS*/
+    #third-review{
+        display: none;
+    }
     .owners-review{
-        gap: var(--space-md);
+        margin-inline: var(--space-md);
         inline-size: 100%;
-        max-inline-size: 960px;
+        max-inline-size: 480px;
     }
     .owners-review img{
-        height: 105px;
-        width: 90px;
+        height: 85px;
+        width: 80px;
     }
 
  /*CONTACTS SECTION/PAW*/
