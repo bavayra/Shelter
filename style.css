@@ -1218,34 +1218,53 @@ footer{
     }
 
  /*CONTACTS SECTION/PAW*/
+     .contact-paw {
+        padding: clamp(16px, 4vh, 32px) 0;
+    }
     #contact-title {
-        font-size: var(--font-size-h1);
+        margin-bottom: var(--space-lg);
     }
     .contacts-grid{
-        inline-size: min(92%, 960px);
-        grid-template-columns: 1fr 1fr;
-        gap: var(--space-sm);
+        inline-size: min(92%, 400px);
     }
     .paw{
-        inline-size: min(480px, 50vw);
+        inline-size: min(480px, 60vw);
     }
     .orbit{
-        --r: 150%;
+        --r: 120%;
+    }
+    .contacts-grid{
+        display: flex;
+        flex-direction: column;
+        inline-size: min(92%, 480px);
+        gap: var(--space-sm);
     }
     .contact-form{
-        inline-size: 80%;
-        max-inline-size: 600px;
-        margin-inline: auto;
-        padding: var(--space-lg);
+        block-size: 60vh;
+        min-block-size: 340px;
+        gap: var(--space-sm);
+        padding-inline: var(--space-lg);
     }
     .contact-form :is(input, textarea){
         font-size: var(--font-size-accents);
     }
+    .contact-form input{
+        block-size: var(--space-md);
+    }
     #message{
-        min-block-size: clamp(160px, 20vh, 240px);
+        min-block-size: clamp(40px, 10vh, 80px);
+    }
+    .form-btns{
+        gap: var(--space-md);
+        padding-block: var(--space-sm);
     }
     .contact-address{
-        font-size: var(--font-size-accents);
+        margin-block: 0;
+    }
+
+/*FOOTER*/
+    footer{
+        height: 1.5vh;
     }
 }
 
