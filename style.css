@@ -9,7 +9,7 @@ html{
 body{
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
-    letter-spacing: 0.04rem;
+    letter-spacing: 0.08rem;
     scroll-behavior: smooth;
     margin: 0;
     min-block-size: 100%;
@@ -1129,7 +1129,7 @@ footer{
        inline-size: clamp(50ch, 22vw, 70ch);    
     }
     .hero-CTA{
-        inset-block-start: 19%;
+        inset-block-start: 21%;
         inset-inline-start: 28%;
     }
     .hero-meet-CTA{
@@ -1149,66 +1149,26 @@ footer{
         min-block-size:  clamp(24px, 4vh, 36px);
         font-size:  var(--font-size-sm);
     }
-
-.pet-cards-section label{
-    min-block-size:  clamp(24px, 4vh, 36px);
-    padding-block: var(--space-md);
-    font-size: var(--font-size-sm);
-}
-
-.filter-health-label{
-     min-block-size:  clamp(20px, 2vh, 32px);
-}
-
-.buttons{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.filter-btns{
-    display: flex;
-    gap: var(--space-lg);
-    align-items: center;
-    justify-content: center;
-    inline-size: 100%;
-    margin-block: var(--space-md);
-}
-
-.filter-btns button {
-    height:  var(--btn-height);
-    padding-inline: var(--space-md);
-    background-color: var(--secondary-color);
-    color: var(--accent-text-color);
-    font-weight: 500;
-    border: none;
-    border-radius: var(--border-radius);
-    font-size: var(--font-size-accents);
-    box-shadow: var(--drop-shadow);
-}
-
-.filter-btns button:hover{
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    font-weight: 600;
-}
-
-.view-all-btn{
-    display: flex;
-    justify-content: center;
-    height: var(--btn-height);
-}
-
-.view-all-btn button{
-    height:  var(--btn-height);
-    padding-inline: var(--space-md);
-    background-color: var(--surface-color);
-    border: none;
-    border-radius: var(--border-radius);
-    color: var(--accent-text-color);
-    font-size: var(--font-size-accents);
-    box-shadow: var(--drop-shadow);
-}
+    .pet-cards-section label{
+        min-block-size:  clamp(24px, 4vh, 36px);
+        padding-block: var(--space-md);
+        font-size: var(--font-size-sm);
+    }
+    .filter-btns{
+        margin-block: var(--space-sm);
+    }
+    .filter-btns button {
+        padding-inline: var(--space-md);
+        font-weight: 600;
+        letter-spacing: 0.06rem;
+        font-size: var(--font-size-sm);
+    }
+    .view-all-btn button{
+            padding-inline: var(--space-md);
+            font-weight: 600;
+            letter-spacing: 0.06rem;
+            font-size: var(--font-size-sm);
+    }
 
  /*ABOUT SECTION*/   
     #about-zoom{
