@@ -31,7 +31,7 @@ margin: 0;
     --header-pad: clamp(6px, 1.2svh, 12px);
     --container-max: 72rem;
     --content-pad: clamp(1rem, 3vw, 2rem);
-    --btn-height: clamp(40px, 6vh, 48px);
+    --btn-height: clamp(40px, 6dvh, 48px);
 
     --font-size-sm: clamp(.875rem, .8rem + .3vw, 1rem);
     --font-size-accents: clamp(1rem, .95rem + .4vw, 1.125rem);
@@ -222,8 +222,7 @@ h1{
 nav{
   display: block;
   margin-block: 0;
-  padding-block: var(--space-md);
-  padding-inline: var(--space-md);
+  padding: var(--space-md);
   background-color: var(--secondary-color);
   border: none;
 }
@@ -263,52 +262,43 @@ nav img{
     display: none;
 }
 
-/* =========================
-   HERO
-   ========================= */
+/*HERO*/
 
 #hero{
-  /* фон растянут на всю ширину секции */
-  background: center / cover no-repeat url("images-base/bg-main2.jpeg");
+  block-size: 100dvh;
   padding-block: clamp(1.5rem, 4vw, 3.5rem);
+  background: center no-repeat url("images-base/bg-main2.jpeg");
 }
 
 .hero-container{
-  /* оборачиваешь в .container в HTML */
   display: grid;
   gap: var(--space-sm);
-  grid-template-columns: 1fr;         /* мобила: одна колонка */
-  grid-template-areas:
-    "info"
-    "cta";
+  grid-template-columns: 1fr;
 }
 
 .hero-info{
-  grid-area: info;
-max-inline-size: 36ch;              /* комфортная длина строки */
-  font-size: var(--step-1);
-  color: var(--accent-text-color);
+ display: none;
 }
 
-.hero-cta,
-.hero-CTA{                             /* оставляю оба названия на всякий случай */
-  grid-area: cta;
-  display: inline-flex;
-  gap: .75rem;
+.hero-CTA{                          
+  display: flex;
+  justify-content: center;
+  margin-block: var(--space-md);       
 }
 
-.hero-cta button,
+
 .hero-CTA button{
   height: var(--btn-height);
-  padding-inline: var(--space-md);
+  padding-inline: var(--space-lg);
   border: none;
   border-radius: var(--border-radius);
   background: var(--surface-color);
   color: var(--accent-text-color);
+  font-size: var(--font-size-txt);
   font-weight: 700;
   transition: transform .3s ease-in-out;  /* исправлено с transfore */
 }
-.hero-cta button:hover,
+
 .hero-CTA button:hover{ transform: scale(1.05); }
 
 /* =========================
