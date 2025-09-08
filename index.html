@@ -26,7 +26,7 @@
 <body>
 
 <header>
-    <div class="header-container" id="home">
+    <div class="container header-container" id="home">
       <div class="logo">
         <div id="logo-bg">
           <img id="logo-image" src="images-base/logo.png" alt="ROTVODOM LOGO">
@@ -42,7 +42,8 @@
         </a>
 
       <button class="contact-btn" type="button" data-target="#contacts">
-        CONTACT US!
+        <img src="/images-base/phone-call.png" alt="Phone" class="contact-icon">
+        <span class="contact-text">CONTACT US!</span>
       </button>
     </div>
   </header>
@@ -89,7 +90,7 @@
   </aside> 
 
   <section class="panel" id="hero">
-    <div class="hero-container">
+    <div class="container hero-container">
       <div class="hero-info">
         <h2 class="visually-hidden">WHO ARE WE?</h2>
         <p class="hero-content">We take care of dogs who were betrayed, abandoned and injuried. Our small team of volunteers fights for a happy life for every wagging tail, believing with all our hearts that each one of them deserves the best home.
@@ -160,12 +161,12 @@
         </div>
       </div>
     
-      <div id="pets-grid" class="cards-container"></div>
+      <div id="pets-grid" class="container cards-container"></div>
     </section>
 
     <section id="about" class="panel about">
         <h2 class="visually-hidden">ABOUT US</h2>
-        <div class="about-container">
+        <div class="container about-container">
           <div class="about-images" id="about-images-container" aria-label="Our team and shelter photos" tabindex="0" >
             <img src="images-about/team-1.jpg" alt="ROTVODOM team" 
                  data-caption="Hi, my name is Svetlana, but I used to be called Rotvomama. I started ROTVODOM in 2010 in Jekaterinburg, Russia. I have never worked with dogs before, but I decided to do something good for waggling tails... First, I was alone there"
@@ -206,7 +207,7 @@
           <p id="zoom-caption-content" class="zoom-caption"></p>
         </div>
 
-        <div class="owners-review">
+        <div class="container owners-review">
           <div class="review" id="first-review">
             <p class="review-text">We found this angel at the shelter and fell in love immidiatley. The Rotvodom's team was super supprtive, helpfull and heartwarming.</p>
             <img class="review-img" id="first-img" src="image-review/review1.jpg">
@@ -225,6 +226,7 @@
     </section>
 
     <section id="contacts" class="panel contact-paw">
+      <div class="container">
       <h2 id="contact-title">CONTACT US</h2>     
 
       <div class="contacts-grid">
@@ -282,6 +284,7 @@
           </address>
         </form>
       </div>  
+      </div>
     </section>
 
 <!--<aritcle class="pet">
@@ -306,11 +309,13 @@
     <p class="footer-content">(c)ROTVODOM 2025</p>
 </footer>
 
+<div class="pet-stats-container">
   <div class="pets-stats">
     DOGS WAITING FOR ADOPTION: <br> <span id="dogs-now">0</span><br>
     ADOPTED DOGS THIS YEAR: <br><span id="dogs-year">0</span><br>
     ADOPTED DOGS SINCE 2010: <br><span id="dogs-total">0</span>
   </div>
+</div>  
 
    <script src="index.js"></script>
 
