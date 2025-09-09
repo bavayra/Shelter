@@ -539,19 +539,27 @@ select{
     box-shadow: var(--drop-shadow);
 }
 
-
-
-
-
-
-/* =========================
-   REVIEWS
-   ========================= */
+/* REVIEWS*/
 
 .owners-review{
   display: grid;
   gap: var(--space-md);
   grid-template-columns: 1fr;
+  margin-inline: var(--space-lg);
+  
+}
+
+.review{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    justify-items: center;
+    align-items: center;
+    padding: var(--space-sm);
+    border: 2px solid var(--surface-color);
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-size: var(--font-size-sm);
+    box-shadow: var(--drop-shadow);
 }
 
 .owners-review img{
