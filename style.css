@@ -517,8 +517,7 @@ select{
 }
 
 #about-images-container{
-    scrollbar-width: thin;
-    scrollbar-color: var(--secondary-color) var(--primary-color);
+    scrollbar-width: none;
 }
 
 #about-images-container:focus{
@@ -611,12 +610,35 @@ select{
    padding: clamp(24px, 6vh, 72px) 0;
 }
 
-#contact-title {
-    margin: 0 0 var(--space-lg);
+.h2-container{
+    display: flex;
+    flex-direction:column;
+    inline-size: 100%;
+    max-inline-size: 480px;
+    block-size: clamp(128px, 25dvh, 480px);
+    margin-bottom: var(--space-lg);
+    padding: 0;
+    background-color: var(--surface-color);
     text-align: center;
-    font-size: clamp(26px, 4vw, 48px);
-    color: var(--surface-color);
+    font-weight: 400;
+}
+
+#contact-desc{
+    margin-block: var(--space-md);
+    font-size: var(--font-size-accents);
+    color: var(--accent-text-color);
+}
+
+#contact-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: var(--space-md);
+    margin: 0;
+    font-size: clamp(48px, 8vw, 64px);
+    color: var(--accent-text-color);
     text-decoration: underline;
+    text-decoration-style: dotted;
 }
 
 .contacts-grid{
@@ -645,8 +667,9 @@ select{
 }
 
 .orbit{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: var(--space-lg);
 }
