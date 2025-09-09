@@ -9,7 +9,7 @@ html{
 }
 
 body{
-margin: 0;
+    margin: 0;
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
     letter-spacing: 0.08rem;
@@ -31,7 +31,7 @@ margin: 0;
     --header-pad: clamp(6px, 1.2svh, 12px);
     --container-max: 72rem;
     --content-pad: clamp(1rem, 3vw, 2rem);
-    --btn-height: clamp(40px, 6dvh, 48px);
+    --btn-height: clamp(36px, 6dvh, 48px);
 
     --font-size-xs: clamp(.75rem, .7rem + .25vw, .875rem);
     --font-size-sm: clamp(.875rem, .8rem + .3vw, 1rem);
@@ -54,7 +54,7 @@ margin: 0;
     --space-sm: clamp(8px, 1vw, 16px);
     --space-md: clamp(16px, 2vw, 32px);
     --space-lg: clamp(32px, 4vw, 64px);
-    --space-xl: clamp(240px, 12vw, 480px);
+    --space-xl: clamp(64px, 8vw, 128px);
 
     --border-radius: clamp(8px, 20px, 36px);
 
@@ -109,8 +109,8 @@ main, .panel, section{
 .paw-click {
     position: fixed;
     z-index: 9999;
-    width: 50px;
-    height: 50px;
+    inline-size: 2rem;
+    block-size: 2rem;
     transform: translate(-50%, -50%) scale(0.5);
     opacity: 0;
     animation: paw-pop 0.6s ease-out forwards;
@@ -235,7 +235,8 @@ h1{
 nav{
   display: block;
   margin-block: 0;
-  padding: var(--space-md);
+  padding-inline:  var(--space-lg);
+  padding-block: var(--space-md);
   background-color: var(--secondary-color);
   border: none;
 }
@@ -244,7 +245,7 @@ nav ul{
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: var(--space-sm);
+  gap: var(--space-xs);
   justify-self: center;
   list-style: none;
   margin: 0;
@@ -500,7 +501,9 @@ select{
 .about-images{
   display: flex;
   gap: var(--space-sm);
+  inline-size: 90%;
   padding-inline: var(--space-sm);
+  margin-inline: var(--space-md);
   background-color: var(--primary-color);
   overflow-x: auto;                        
   overscroll-behavior-x: contain;
@@ -509,7 +512,7 @@ select{
 
 .about-images img{
   flex: 0 0 min(60vw, 420px);              
-  block-size: clamp(88px, 23svh, 280px);  
+  block-size: clamp(88px, 20svh, 280px);  
   object-fit: cover;
   border-radius: var(--border-radius);
   scroll-snap-align: center;
@@ -529,7 +532,7 @@ select{
 }
 
 .about-caption { 
-    inline-size: 50dvh;
+    inline-size: 90%;
     max-inline-size: 80ch;
     margin-top: var(--space-sm);
     margin-inline: auto;
@@ -581,7 +584,6 @@ select{
   gap: var(--space-md);
   grid-template-columns: 1fr;
   margin-inline: var(--space-lg);
-  
 }
 
 .review{
@@ -593,7 +595,7 @@ select{
     border: 2px solid var(--surface-color);
     border-radius: var(--border-radius);
     text-align: center;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
     box-shadow: var(--drop-shadow);
 }
 
@@ -614,8 +616,7 @@ select{
     display: flex;
     flex-direction:column;
     inline-size: 100%;
-    max-inline-size: 480px;
-    block-size: clamp(128px, 25dvh, 480px);
+    block-size: clamp(128px, 20dvh, 480px);
     margin-bottom: var(--space-lg);
     padding: 0;
     background-color: var(--surface-color);
@@ -625,7 +626,8 @@ select{
 
 #contact-desc{
     margin-block: var(--space-md);
-    font-size: var(--font-size-accents);
+    padding-inline: var(--space-sm);
+    font-size: var(--font-size-sm);
     color: var(--accent-text-color);
 }
 
@@ -634,8 +636,9 @@ select{
     align-items: center;
     justify-content: center;
     padding-top: var(--space-md);
+    padding-inline: var(--space-sm);
     margin: 0;
-    font-size: clamp(48px, 8vw, 64px);
+    font-size: var(--font-size-h1);
     color: var(--accent-text-color);
     text-decoration: underline;
     text-decoration-style: dotted;
@@ -647,7 +650,7 @@ select{
     margin-inline: auto;
     grid-template-columns: 1fr;
     align-items: center;
-    
+    justify-content: center;
     gap: var(--space-lg);
 }
 
@@ -671,6 +674,7 @@ select{
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    justify-content: center;
     gap: var(--space-lg);
 }
 
@@ -682,7 +686,7 @@ select{
 .contact-form{
   display: grid;
   gap: var(--space-md);
-  padding: var(--space-lg);
+  padding: var(--space-md);
   background: var(--surface-color);
   border-radius: var(--border-radius);
   box-shadow: var(--drop-shadow);
@@ -696,8 +700,9 @@ select{
 }
 
 .contact-form :is(input, textarea){
-  inline-size: 35dvh;
+  inline-size: 30dvh;
   padding: var(--space-sm);
+   margin-inline: var(--space-md);
   border: 1px solid transparent;
   border-radius: var(--border-radius);
   background: var(--primary-color);
@@ -708,7 +713,7 @@ select{
 }
 
 .contact-form :is(input){
-    block-size: clamp(8px, 4.5vh, 24px);
+    block-size: clamp(8px, 4vh, 24px);
 }
 
 #message{
