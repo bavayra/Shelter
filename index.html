@@ -110,9 +110,9 @@
         <h2 class="visually-hidden">DOGS FOR ADOPTION</h2> 
         <div class="filter-bar">
           <div class="filter-group">
-            <label for="filter-age">AGE:</label>
+            <label for="filter-age">AGE</label>
             <select id="filter-age" name="age">
-                <option value="">ALL</option>
+                <option value="">ANY</option>
                 <option value="puppy">PUPPY</option>
                 <option value="adult">ADULT</option>
                 <option value="senior">SENIOR</option>
@@ -120,28 +120,28 @@
          </div>
 
          <div class="filter-group">
-            <label for="filter-gender">GENDER:</label>
+            <label for="filter-gender">GENDER</label>
             <select id="filter-gender" name="gender">
-                <option value="">ALL</option>
+                <option value="">ANY</option>
                 <option value="male">MALE</option>
                 <option value="female">FEMALE</option>
             </select>
          </div>
 
          <div class="filter-group">
-            <label for="filter-health" class="filter-health-label">STATE OF HEALTH:</label>
+            <label for="filter-health" class="filter-health-label">HEALTH</label>
             <select id="filter-health" name="health">
-                <option value="none">DOESN'T MATTER</option>
+                <option value="none">ANY</option>
                 <option value="healthy">HEALTHY</option>
                 <option value="minor">MINOR HEALTH ISSUES</option>
-                <option value="serious">CAN DEAL WITH SERIOUS HEALTH ISSUES</option>
+                <option value="serious">SERIOUS HEALTH ISSUES</option>
             </select>
          </div>
         
           <div class="filter-group">
-            <label for="filter-breed">BREED:</label>
+            <label for="filter-breed">BREED</label>
             <select id="filter-breed" name="breed">
-                <option value="none">DOESN'T MATTER</option>
+                <option value="none">ANY</option>
                 <option value="rottweiler">ROTTWEILER</option>
                 <option value="cane-corso"> CANE CORSO</option>
                 <option value="mixed">MIXED BREED</option>
@@ -169,10 +169,10 @@
         <div class="container about-container">
           <div class="about-images" id="about-images-container" aria-label="Our team and shelter photos" tabindex="0" >
             <img src="images-about/team-1.jpg" alt="ROTVODOM team" 
-                 data-caption="Hi, my name is Svetlana, but I used to be called Rotvomama. I started ROTVODOM in 2010 in Jekaterinburg, Russia. I have never worked with dogs before, but I decided to do something good for waggling tails... First, I was alone there"
+                 data-caption="Hi, my name is Svetlana, but I used to be called Rotvomama. I started ROTVODOM in 2010 in Jekaterinburg, Russia."
                  loading="lazy">
             <img src="images-about/team-2.jpg" alt="ROTVODOM team"
-                 data-caption="I've faced many problems and challenges but soon I wasn't alone to fight the battles"
+                 data-caption="I've faced many problems and challenges because I was working alone but soon I started meeting people with the same desire to help."
                  loading="lazy">
             <img src="images-about/team-3.jpg" alt="ROTVODOM team"
                  data-caption="The shelter started to grow as well as the number of dogs we've helped... "
@@ -181,22 +181,22 @@
                 data-caption="We've met a lot of friends: both with two and four legs. We started a community!"
                 loading="lazy">
             <img src="images-about/team-5.jpg" alt="ROTVODOM team"
-                data-caption="Many people felt the same as we did and decided to help in any way they could: we got help with food, medcine, infrastructure, and - sadly we needed that - with money"
+                data-caption="Many people felt the same as we did and decided to join us in any way they could: food, medcine, infrastructure, and money."
                 loading="lazy">          
             <img src="images-about/team-6.jpg" alt="ROTVODOM team"
-                data-caption="But we also encountered situations, when dogs needed more than care and food...We've found dogs we severe health issues, injuries and deep psychological issues..."
+                data-caption="But we also encountered situations, when dogs needed more than that...We've found dogs with severe health issues, injuries and deep psychological traumas."
                 loading="lazy">
             <img src="images-about/team-7.jpg" alt="ROTVODOM team"
-                data-caption="We tried to cure evryone we could, but of course - we are not Gods. Many of our pets went on the rainbow to early, we couldn't do anything."
+                data-caption="We tried to cure evryone we could, but of course - we are not Gods. Many of our pets went on the rainbow too early."
                 loading="lazy">
             <img src="images-about/team-8.jpg" alt="ROTVODOM team"
-                data-caption="But the ones we could help, they found loving homes. They are being taken care of, loved, well fed. That's all we ever wanted - to see them happy with their new best friends, big ones and..."
+                data-caption="But the ones we managed help, they found loving homes. They are being taken care of, loved, well fed. That's all we ever wanted - to see them happy with their new best friends, big ones and..."
                 loading="lazy">
             <img src="images-about/team-9.jpg" alt="ROTVODOM team"
-                data-caption="...and small ones! Our dogs are not a dangerous breed. They are still big not-so-fluffy babies"
+                data-caption="...and small ones! Our dogs are not dangerous breeds. They are still big, loving and amazing creatures."
                 loading="lazy">
             <img src="images-about/team-10.jpg" alt="ROTVODOM team"
-                data-caption="We just want them to be happy and safe. Do you need the best friend? We believe you can find one in ROTVODOM"
+                data-caption="We just want them to be happy and safe. Do you need the best friend? We believe you can find one in ROTVODOM."
                 loading="lazy">
           </div>
           <p class="about-caption" id="about-caption-content" aria-live="polite"></p>
@@ -330,8 +330,9 @@
     fix the close btn for zoomed about
     fix the caption margin while zoomed
     check the pictures sizes for reviews
-   fix state of health filter label, its ugly
- check the letter spacing
+    add arrows for the carousel
+    get rid of the outline on images for about
+    rewrite js for the carousel, its broken now
     -->
 
     
