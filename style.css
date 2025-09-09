@@ -892,6 +892,13 @@ footer{
         font-weight: 500;
     }
 
+ /*ABOUT*/
+    .about-images{
+        inline-size: 95%;
+    }
+    .about-images img{       
+        block-size: clamp(88px, 35svh, 320px);  
+    }
 }
 
 /*
