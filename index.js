@@ -205,7 +205,23 @@ scroller.addEventListener("scroll", () => {
   });
 });
 
-/*Symbols from form message counter*/
+/*Arrows for carousel*/
+
+const carousel = document.getElementById("about-images-container");
+const arrowLeft = document.querySelector(".about-arrow.left");
+const arrowRight = document.querySelector(".about-arrow.right");
+
+const scrollAmount = 300;
+
+arrowLeft.addEventListener("click", () => {
+  carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+});
+
+arrowRight.addEventListener("click", () => {
+  carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
+});
+
+/*Symbols message form counter*/
 
 const textarea = document.getElementById("message");
 const counter = document.getElementById("chars-counter");

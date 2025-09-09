@@ -491,6 +491,7 @@ select{
 }
 
 .about-container{
+  position: relative;
   display: grid;
   gap: var(--space-md);
   text-align: center;
@@ -542,6 +543,37 @@ select{
     line-height: 1.3;
     box-shadow: var(--drop-shadow);
 }
+
+.about-arrow {
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+    background: var(--accent-text-color);
+    border: none;
+    border-radius: 50%;
+    inline-size: var(--icon-size-lg); 
+    block-size: var(--icon-size-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--drop-shadow);
+    z-index: var(--z-overlay);
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+.about-arrow:hover {
+    opacity: 1;
+}
+
+.about-arrow.left {
+    left: var(--space-md);
+}
+
+.about-arrow.right {
+    right: var(--space-md);
+}
+
 
 /* REVIEWS*/
 
