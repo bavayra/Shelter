@@ -216,6 +216,22 @@ textarea.addEventListener("input", () => {
   counter.textContent = `Symbols remaining: ${remaining}`;
 });
 
+/*Scroll to top btn*/
+const scrollTopBtn = document.getElementById("scroll-top-btn");
+const secondSection = document.querySelectorAll("section")[1];
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= secondSection.offsetTop) {
+    scrollTopBtn.classList.add("show");
+  } else {
+    scrollTopBtn.classList.remove("show");
+  }
+});
+
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
 /* DOGS OBJECT */
 /*const pets = [
     {
