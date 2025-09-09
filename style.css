@@ -275,6 +275,9 @@ nav img{
 }
 
 /*HERO*/
+.pets-stats{
+    display: none;
+}
 
 #hero{
   block-size: 100dvh;
@@ -398,7 +401,7 @@ select{
 
 .filter-btns button {
     height:  var(--btn-height);
-    padding-inline: var(--space-md);
+    padding-inline: var(--space-sm);
     background-color: var(--secondary-color);
     color: var(--accent-text-color);
     font-weight: 500;
@@ -422,7 +425,7 @@ select{
 
 .view-all-btn button{
     height:  var(--btn-height);
-    padding-inline: var(--space-md);
+    padding-inline: var(--space-sm);
     background-color: var(--surface-color);
     border: none;
     border-radius: var(--border-radius);
@@ -569,64 +572,163 @@ select{
   border-radius: 50%;
 }
 
-/* =========================
-   CONTACTS / FORM
-   ========================= */
+/* CONTACTS / FORM */
 
-.contacts-container{
-  display: grid;
-  gap: var(--space-lg);
+.contact-paw {
+   padding: clamp(24px, 6vh, 72px) 0;
 }
 
-.paw{ position: relative; }               /* для твоей «орбиты» локальный контекст */
+#contact-title {
+    margin: 0 0 var(--space-lg);
+    text-align: center;
+    font-size: clamp(26px, 4vw, 48px);
+    color: var(--surface-color);
+    text-decoration: underline;
+}
+
+.contacts-grid{
+    display: grid;
+    inline-size: min(85%, 360px);
+    margin-inline: auto;
+    grid-template-columns: 1fr;
+    align-items: center;
+    
+    gap: var(--space-lg);
+}
+
+.paw{
+    position: relative;
+    inline-size: min(620px, 52vw);
+    aspect-ratio: 1.2/1;
+    margin-inline: auto;
+}
+
+.pad {
+    display: none;
+}
+
+.pad iframe{
+    display: none;
+}
+
+.orbit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+.toe{
+    inline-size: var(--toe-size);
+    aspect-ratio: 1/1;
+}
 
 .contact-form{
   display: grid;
-  gap: var(--space-sm);
-  padding: var(--space-md);
+  gap: var(--space-md);
+  padding: var(--space-lg);
   background: var(--surface-color);
   border-radius: var(--border-radius);
   box-shadow: var(--drop-shadow);
 }
 
 .contact-form label{
-  font-size: var(--step-0);
+  font-size: var(--font-size-sm);
   color: var(--accent-text-color);
-  font-weight: 600;
-  text-align: start;
+  font-weight: 500;
+  text-align: center;
 }
 
 .contact-form :is(input, textarea){
+  inline-size: 35dvh;
   padding: var(--space-sm);
   border: 1px solid transparent;
   border-radius: var(--border-radius);
   background: var(--primary-color);
   color: var(--secondary-color);
   font-size: var(--step-0);
-  outline: 2px solid var(--accent-text-color);  /* было soid — исправлено */
+  outline: 2px solid var(--accent-text-color); 
   outline-offset: 2px;
 }
 
+.contact-form :is(input){
+    block-size: clamp(8px, 4.5vh, 24px);
+}
+
 #message{
-  min-block-size: clamp(8rem, 20svh, 15rem);
+
+  min-block-size: clamp(3rem, 12svh, 10rem);
   resize: vertical;
 }
 
+#chars-counter{
+    margin-bottom: var(--space-sm);
+    font-size: var(--font-size-sm);
+    color: var(--accent-text-color);
+    text-align: center;
+}
+
 .form-btns{
-  display: flex;
-  gap: var(--space-md);
-  justify-content: center;
+    display: flex;
+    gap: var(--space-lg);
+    justify-content: center;
+    margin-block: var(--space-md);   
 }
 
 #form-reset-btn,
 #form-submit-btn{
-  padding-inline: var(--space-md);
-  padding-block: var(--space-sm);
-  border: none;
-  border-radius: var(--border-radius);
-  font-weight: 600;
-  font-size: var(--step-0);
+    padding-inline: var(--space-lg);
+    padding-block: var(--space-sm);
+    border: none;   
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    box-shadow: var(--drop-shadow);
+    transition: transform .2s ease-in-out;
+}
 
+#form-reset-btn{
+    background-color: var(--secondary-color);
+    color: var(--accent-text-color);
+}
+
+#form-reset-btn:hover{
+    transform: scale(1.1);
+}
+
+#form-submit-btn{
+    background-color: var(--accent-text-color);
+    color: var(--secondary-color);    
+}
+
+#form-submit-btn:hover{
+    transform: scale(1.1);
+}
+
+.contact-address{
+    margin-top: 0;
+    color: var(--secondary-color);
+    text-align: center;
+    font-size: var(--font-size-xs);
+}
+
+.contact-address a,
+.contact-address span{
+    color: var(--accent-text-color);
+    text-decoration: none;
+}
+
+/*FOOTER*/
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.5dvh;
+    background-color: var(--primary-color);
+    font-size: var(--font-size-xs);
+    color: var(--surface-color);
+    font-weight: 500;
+}
 
 
 
