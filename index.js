@@ -1,22 +1,22 @@
 /*PAW CLICK ANIMATION*/
 
-document.addEventListener("click", function(event){
-    const paw = document.createElement("img");
-    paw.src= "images-base/paws.png";
-    paw.className = "paw-click";
-    paw.style.top = event.clientY + "px";
-    paw.style.left = event.clientX + "px";
+document.addEventListener("click", function (event) {
+  const paw = document.createElement("img");
+  paw.src = "images-base/paws.png";
+  paw.className = "paw-click";
+  paw.style.top = event.clientY + "px";
+  paw.style.left = event.clientX + "px";
 
-    document.body.appendChild(paw);
+  document.body.appendChild(paw);
 
-    paw.addEventListener("animationend", () => paw.remove());
+  paw.addEventListener("animationend", () => paw.remove());
 });
 
 function countUp(id, target, duration) {
   let start = 0;
   const stepTime = Math.abs(Math.floor(duration / target));
   const el = document.getElementById(id);
-  
+
   const timer = setInterval(() => {
     start++;
     el.textContent = start;
@@ -26,33 +26,33 @@ function countUp(id, target, duration) {
   }, stepTime);
 }
 
-countUp("dogs-now", 23, 1000); 
+countUp("dogs-now", 23, 1000);
 countUp("dogs-total", 184, 1500);
-countUp("dogs-year", 47, 1200); 
+countUp("dogs-year", 47, 1200);
 
 /*CAROUSEL*/
 
 document.addEventListener("DOMContentLoaded", () => {
 
-const scroller = document.getElementById("about-images-container");
-const aboutImages = Array.from(scroller?.querySelectorAll("img") ?? []);
-const captionElement = document.getElementById("about-caption-content");
-const zoomLayer = document.getElementById("about-zoom");
-const zoomImage = document.getElementById("zoomed-img");
-const zoomCaption = document.getElementById("zoom-caption-content");
+  const scroller = document.getElementById("about-images-container");
+  const aboutImages = Array.from(scroller?.querySelectorAll("img") ?? []);
+  const captionElement = document.getElementById("about-caption-content");
+  const zoomLayer = document.getElementById("about-zoom");
+  const zoomImage = document.getElementById("zoomed-img");
+  const zoomCaption = document.getElementById("zoom-caption-content");
 
-if(!scroller || aboutImages.length === 0 || !captionElement)
+  if (!scroller || aboutImages.length === 0 || !captionElement)
     return;
 
- if (!scroller.hasAttribute("tabindex")) {
+  if (!scroller.hasAttribute("tabindex")) {
     scroller.setAttribute("tabindex", "0");
   }
 
-function getCaption(img){
-  return img.dataset.caption || img.alt || "";
-}
+  function getCaption(img) {
+    return img.dataset.caption || img.alt || "";
+  }
 
-function getCurrentIndex() {
+  function getCurrentIndex() {
     const rect = scroller.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
 
@@ -71,137 +71,137 @@ function getCurrentIndex() {
     return bestIdx;
   }
 
-function updateCaption(i){
-  const idx = i ?? getCurrentIndex();
-  const img = aboutImages[idx];
-  const text = getCaption(img);
+  function updateCaption(i) {
+    const idx = i ?? getCurrentIndex();
+    const img = aboutImages[idx];
+    const text = getCaption(img);
 
-  captionElement.textContent = text;
+    captionElement.textContent = text;
 
-  for (let j = 0; j < aboutImages.length; j++) {
+    for (let j = 0; j < aboutImages.length; j++) {
       aboutImages[j].removeAttribute("aria-current");
-  }
+    }
     img.setAttribute("aria-current", "true");
   }
 
-function scrollToImg(i){
-  const img = aboutImages[i];
-  const imgCenter = img.offsetLeft + img.offsetWidth / 2;
-  const targetLeft = imgCenter - scroller.offsetWidth / 2;
-  scroller.scrollTo({ left: targetLeft, behavior: "smooth"});
-}
+  function scrollToImg(i) {
+    const img = aboutImages[i];
+    const imgCenter = img.offsetLeft + img.offsetWidth / 2;
+    const targetLeft = imgCenter - scroller.offsetWidth / 2;
+    scroller.scrollTo({ left: targetLeft, behavior: "smooth" });
+  }
 
-let  currentIndex = getCurrentIndex();
-let isZoomOpen = false;
-const captionZoomClass = "caption-zoom";
+  let currentIndex = getCurrentIndex();
+  let isZoomOpen = false;
+  const captionZoomClass = "caption-zoom";
 
-const captionOriginalParent = captionElement.parentElement;
-const captionOriginalNext = captionElement.nextElementSibling;
+  const captionOriginalParent = captionElement.parentElement;
+  const captionOriginalNext = captionElement.nextElementSibling;
 
-const zoomCloseBtn = document.createElement("button");
-zoomCloseBtn.type = "button";
-zoomCloseBtn.id = "zoom-close";
-zoomCloseBtn.setAttribute("aria-label", "Close image");
-zoomCloseBtn.innerHTML = "&times;";
-zoomCloseBtn.className = "zoom-close-btn";
-zoomLayer.appendChild(zoomCloseBtn);
+  const zoomCloseBtn = document.createElement("button");
+  zoomCloseBtn.type = "button";
+  zoomCloseBtn.id = "zoom-close";
+  zoomCloseBtn.setAttribute("aria-label", "Close image");
+  zoomCloseBtn.innerHTML = "&times;";
+  zoomCloseBtn.className = "zoom-close-btn";
+  zoomLayer.appendChild(zoomCloseBtn);
 
-function moveCaptionToZoom(){
+  function moveCaptionToZoom() {
     if (zoomCaption) zoomCaption.hidden = true;
     zoomImage.insertAdjacentElement("afterend", captionElement);
     captionElement.classList.add(captionZoomClass);
-}
-
-function restoreCaptionFromZoom(){
-  captionElement.classList.remove(captionZoomClass);
-  if (captionOriginalNext && captionOriginalNext.parentElement === captionOriginalParent){
-    captionOriginalParent.insertBefore(captionElement, captionOriginalNext);
-  } else {
-    captionOriginalParent.appendChild(captionElement);
   }
-  if (zoomCaption) zoomCaption.hidden = true;
-}
 
-function setIndex (newIndex, { center = true} = {}){
-  const len = aboutImages.length;
-  currentIndex = (newIndex + len) % len;
+  function restoreCaptionFromZoom() {
+    captionElement.classList.remove(captionZoomClass);
+    if (captionOriginalNext && captionOriginalNext.parentElement === captionOriginalParent) {
+      captionOriginalParent.insertBefore(captionElement, captionOriginalNext);
+    } else {
+      captionOriginalParent.appendChild(captionElement);
+    }
+    if (zoomCaption) zoomCaption.hidden = true;
+  }
 
-  updateCaption(currentIndex);
+  function setIndex(newIndex, { center = true } = {}) {
+    const len = aboutImages.length;
+    currentIndex = (newIndex + len) % len;
 
-    if (isZoomOpen){
+    updateCaption(currentIndex);
+
+    if (isZoomOpen) {
       zoomImage.src = aboutImages[currentIndex].src;
-    } 
+    }
     else if (center) {
       scrollToImg(currentIndex);
     }
-}
-
-function openZoom(i){
-  isZoomOpen = true;
-  setIndex(i, { center: false});
-  moveCaptionToZoom();
-  zoomLayer.hidden = false;
-  document.body.style.overflow = "hidden";
-}
-
-function closeZoom(){
-  isZoomOpen = false;
-  zoomLayer.hidden = true;
-  restoreCaptionFromZoom();
-  document.body.style.overflow = "";
-}
-
-setIndex(currentIndex, {center: false});
-
-aboutImages.forEach((img, i) => {
-  img.addEventListener("click", () => {
-    openZoom(i);
-  });
-});
-
-zoomCloseBtn.addEventListener("click", (e) =>{
-  e.stopPropagation();
-  closeZoom();
-});
-
-zoomLayer.addEventListener("click", (e) => {
-  if (e.target === zoomLayer) closeZoom();
-});
-
-document.addEventListener("keydown", (e) => {
-  const tag = document.activeElement?.tagName;
-  if (tag === "INPUT" || tag === "TEXTAREA" || document.activeElement?.isContentEditable)
-    return;
-
-  if (e.key === "Escape" && isZoomOpen){
-    e.preventDefault();
-    closeZoom();
   }
-  else if (e.key === "ArrowRight"){
-    e.preventDefault();
-    setIndex(currentIndex + 1);
-  }
-  else if(e.key === "ArrowLeft"){
-    e.preventDefault();
-    setIndex(currentIndex - 1);
-  }
-});
 
-scroller.addEventListener("scroll", () => {
-  if (isZoomOpen) return;
-  let closest = 0;
-  let minDist = Infinity;
-  const center = scroller.scrollLeft + scroller.offsetWidth / 2;
+  function openZoom(i) {
+    isZoomOpen = true;
+    setIndex(i, { center: false });
+    moveCaptionToZoom();
+    zoomLayer.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeZoom() {
+    isZoomOpen = false;
+    zoomLayer.hidden = true;
+    restoreCaptionFromZoom();
+    document.body.style.overflow = "";
+  }
+
+  setIndex(currentIndex, { center: false });
 
   aboutImages.forEach((img, i) => {
-    const imgCenter = img.offsetLeft + img.offsetWidth / 2;
-    const dist = Math.abs(center - imgCenter);
-    if(dist < minDist){
-      minDist = dist;
-      closest = i;
-    }
+    img.addEventListener("click", () => {
+      openZoom(i);
     });
-  setIndex(closest, {center: false});
+  });
+
+  zoomCloseBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    closeZoom();
+  });
+
+  zoomLayer.addEventListener("click", (e) => {
+    if (e.target === zoomLayer) closeZoom();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    const tag = document.activeElement?.tagName;
+    if (tag === "INPUT" || tag === "TEXTAREA" || document.activeElement?.isContentEditable)
+      return;
+
+    if (e.key === "Escape" && isZoomOpen) {
+      e.preventDefault();
+      closeZoom();
+    }
+    else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      setIndex(currentIndex + 1);
+    }
+    else if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      setIndex(currentIndex - 1);
+    }
+  });
+
+  scroller.addEventListener("scroll", () => {
+    if (isZoomOpen) return;
+    let closest = 0;
+    let minDist = Infinity;
+    const center = scroller.scrollLeft + scroller.offsetWidth / 2;
+
+    aboutImages.forEach((img, i) => {
+      const imgCenter = img.offsetLeft + img.offsetWidth / 2;
+      const dist = Math.abs(center - imgCenter);
+      if (dist < minDist) {
+        minDist = dist;
+        closest = i;
+      }
+    });
+    setIndex(closest, { center: false });
   });
 });
 
@@ -248,8 +248,7 @@ scrollTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-/* DOGS OBJECT */
-/*const pets = [
+const pets = [
     {
         name: "Bianka",
         breed: "Rottweiler",
@@ -309,5 +308,5 @@ scrollTopBtn.addEventListener("click", () => {
         image: "image-dogs/dog-jessie.jpg",
         description: "I really am a good girl, I promise. I love people so much… but they’ve let me down. I adore other animals… but they’ve hurt me too. I have cancer, but I’m not giving up! I just want to find my person and spend the rest of my life with them, surrounded by love and care.",
     },
-] */
+] 
 
