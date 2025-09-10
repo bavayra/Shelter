@@ -1198,14 +1198,12 @@ nav span{
     text-align: center;  
 }*/
 
-
-
+/*HERO*/
     .pets-stats {
         top: 20%;
         left: 10%;
         font-size: var(--font-size-xs);
     }
-
 
     .hero-info {
         inline-size: clamp(16ch, 40vw, 36ch);
@@ -1222,125 +1220,37 @@ nav span{
         inline-size: clamp(180px, 30vw, 360px);
     }
 
-    .hero-meet-CTA {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: var(--space-sm);
-        border: none;
-        border-radius: var(--border-radius);
-        background-color: var(--surface-color);
-        color: var(--accent-text-color);
-        font-weight: 500;
-        font-size: var(--font-size-xs);
-        text-align: center;
-        box-shadow: var(--drop-shadow);
-    }
-
-
-    .filter-container {
-        inline-size: 100%;
-        max-inline-size: var(--container-max);
-        margin-inline: auto;
-    }
-
-    .pet-cards-section {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
+        /*FILTER*/
     .filter-bar {
-        display: flex;
-        flex-wrap: wrap;
         gap: var(--space-lg);
-        align-items: center;
-        justify-content: space-between;
         padding-inline: var(--space-lg);
         padding-block: var(--space-md);
-        border-radius: var(--border-radius);
-        box-shadow: var(--drop-shadow);
-        background-color: rgba(43, 23, 35, 0.568);
+        border-radius: 0;
     }
 
-
     select {
-        inline-size: 100%;
-        min-block-size: var(--btn-height);
-        padding-inline: var(--space-sm);
-        border: none;
-        border-bottom-left-radius: var(--border-radius);
-        border-bottom-right-radius: var(--border-radius);
-        color: var(--secondary-color);
-        background-color: var(--accent-text-color);
-        font-size: var(--font-size-accents);
-        font-weight: 600;
-        text-align: center;
+       block-size: auto;
+         padding: var(--space-sm);
+        font-size: var(--font-size-sm);
+        font-weight: 500;
     }
 
     .pet-cards-section label {
-        display: block;
-        text-align: center;
-        justify-content: center;
-        height: 3.5vh;
-        padding: var(--space-sm);
-        color: var(--accent-text-color);
-        font-size: var(--font-size-accents);
-        font-weight: 600;
-        border: none;
-    }
-
-    .buttons {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .filter-btns {
-        display: flex;
-        gap: var(--space-lg);
-        align-items: center;
-        justify-content: center;
-        inline-size: 100%;
-        margin-block: var(--space-md);
+        block-size: auto;
+        font-size: var(--font-size-sm);
+        font-weight: 500;
     }
 
     .filter-btns button {
-        height: var(--btn-height);
-        padding-inline: var(--space-md);
-        background-color: var(--secondary-color);
-        color: var(--accent-text-color);
-        font-weight: 500;
-        border: none;
-        border-radius: var(--border-radius);
-        font-size: var(--font-size-accents);
-        box-shadow: var(--drop-shadow);
-    }
-
-    .filter-btns button:hover {
-        text-decoration: underline;
-        text-decoration-thickness: 2px;
-        font-weight: 600;
-    }
-
-    .view-all-btn {
-        display: flex;
-        justify-content: center;
-        height: var(--btn-height);
+        block-size: auto;
+        padding-block: var(--space-sm);
+        font-size: var(--font-size-sm);
     }
 
     .view-all-btn button {
-        height: var(--btn-height);
-        padding-inline: var(--space-md);
-        background-color: var(--surface-color);
-        border: none;
-        border-radius: var(--border-radius);
-        color: var(--accent-text-color);
-        font-size: var(--font-size-accents);
-        box-shadow: var(--drop-shadow);
+        block-size: auto;
+        font-size: var(--font-size-sm);
     }
-
-
 
     #dogs-now,
     #dogs-year,
@@ -1358,6 +1268,8 @@ nav span{
         scroll-margin-top: clamp(12px, 8vh, 96px);
         min-height: 100vh;
     }
+
+    /*PET CARDS*/
 
     .cards-container {
         display: grid;
