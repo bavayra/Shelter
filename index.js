@@ -30,6 +30,34 @@ countUp("dogs-now", 23, 1000);
 countUp("dogs-total", 184, 1500);
 countUp("dogs-year", 47, 1200);
 
+// sidebar toggle for touch/keyboard
+const sidebar = document.querySelector('.sidebar');
+const toggle  = document.querySelector('.sidebar-toggle');
+
+if (sidebar && toggle) {
+  toggle.addEventListener('click', () => {
+    const open = sidebar.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+
+  // закрыть по клику вне сайдбара
+  document.addEventListener('click', (e) => {
+    if (!sidebar.contains(e.target)) {
+      sidebar.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // закрыть по Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      sidebar.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.focus();
+    }
+  });
+}
+
 /*CAROUSEL*/
 
 document.addEventListener("DOMContentLoaded", () => {
