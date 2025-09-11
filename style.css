@@ -1425,13 +1425,13 @@ nav span{
         --r: 150%;
     }
 
-.contact-form{
+    .contact-form {
         gap: var(--space-sm);
         inline-size: 80%;
         margin-inline: var(--space-sm);
         padding: var(--space-lg);
     }
- 
+
     .contact-form label {
         font-size: var(--font-size-xs);
         font-weight: 500;
@@ -1464,22 +1464,52 @@ nav span{
     footer {
         font-size: var(--font-size-sm);
     }
-#scroll-top-btn {
- 
-    inline-size: var(--icon-size);    
-    block-size: var(--icon-size);
 
-}
+    #scroll-top-btn {
+        inline-size: var(--icon-size);
+        block-size: var(--icon-size);
+    }
 
     .scroll-icon {
-    width: 70%;
-    height: 55%;
+        width: 70%;
+        height: 55%;
+    }
 }
+
+@media (min-width: 1440px) {
+
+    /*HERO*/
+    .hero-info {
+        inline-size: clamp(16ch, 40vw, 48ch);
+        margin-inline-end: 6vw;
+        margin-block-start: clamp(96px, 45vh, 480px);
+        font-size: var(--font-size-accents);
+    }
+
+    .hero-CTA {
+        inline-size: clamp(180px, 34vw, 400px);
+    }
+
+    /*FILTERS*/
+    .filter-container {
+        max-inline-size: 100dvw;
+    }
+
+    .filter-bar {
+        padding-inline: var(--space-xl);
+    }
+
+    select {
+        font-weight: 600;
+    }
+
+    .pet-cards-section label {
+        font-size: var(--font-size-accents);
+    }
 }
 
 
-
-/*
+    /*
 .header-container{
     position: sticky;
     top: 0;
