@@ -32,8 +32,8 @@ body {
     --content-pad: clamp(1rem, 3vw, 2rem);
     --btn-height: clamp(36px, 6dvh, 48px);
 
-    --sidebar-w: clamp(96px, 15vw, 180px);
-    --sidebar-w-sm: 82px;
+    --sidebar-w: clamp(72px, 15vw, 156px);
+    --sidebar-w-sm: clamp(64px, 8vw, 96px);
     --sidebar-transition: 200ms;
 
     --font-size-xs: clamp(.75rem, .7rem + .25vw, .875rem);
@@ -1171,7 +1171,6 @@ footer {
         border-bottom-right-radius: var(--border-radius);
         transition: width var(--sidebar-transition) ease;
         overflow: hidden;
-
     }
 
     .sidebar-toggle {
@@ -1187,14 +1186,11 @@ footer {
         inline-size: 100%;
     }
 
-
-
     .nav-list a {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: var(--space-sm);
-
         text-decoration: none;
         white-space: nowrap;
         text-align: center;
@@ -1213,7 +1209,6 @@ footer {
         pointer-events: none;
         inline-size: none;
         overflow: hidden;
-
         transition:
             opacity var(--sidebar-transition) ease,
             transform var(--sidebar-transition) ease-in-out,
@@ -1223,7 +1218,6 @@ footer {
     .sidebar:hover,
     .sidebar:focus-visible {
         inline-size: var(--sidebar-w);
-           
     }
 
     .sidebar:hover .nav-list span,
@@ -1233,59 +1227,6 @@ footer {
         pointer-events: auto;
         inline-size: auto;
     }
-
-
-
-    /*nav{
-    position:fixed;
-    inset-block-start: 50%;
-    transform: translateY(-50%); 
-    inset-inline-start: clamp(12px, 10vw, 60px);
-    z-index: var(--z-nav);
-    height: clamp(360px, 60vh, 980px);
-    padding: var(--space-sm);
-    margin-left: var(--space-lg);
-    border-radius: var(--border-radius);
-    background-color: var(--secondary-color);
-    border: none;
-    box-shadow: var(--drop-shadow);
-    overflow: auto;
-}
-
-nav ul{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    gap: var(--space-sm);
-    list-style: none;
-    width:100%;
-    height: 100%;
-    margin: 0;
-    padding: 20px 0;
-}
-
-nav a{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-sm);
-    color: var(--accent-text-color);
-    text-decoration: none;
-}
-
-nav img{
-    display: block;
-    inline-size: var(--icon-size);
-    block-size: var(--icon-size);
-    padding-bottom: var(--space-sm);
-}
-
-nav span{
-    font-size: var(--font-size-accents);
-    color: var(--accent-text-color);
-    text-align: center;  
-}*/
 
     /*HERO*/
     .pets-stats {
@@ -1583,6 +1524,27 @@ nav span{
     .hero-CTA {
         inline-size: clamp(180px, 34vw, 400px);
     }
+
+    /*NAV*/
+     .sidebar {
+        inline-size: var(--sidebar-w-sm);
+        block-size: clamp(240px, 75vh, 640px);
+    }
+
+    .sidebar:hover,
+    .sidebar:focus-visible {
+        inline-size: var(--sidebar-w);
+    }
+
+    .sidebar:hover .nav-list span,
+    .sidebar:focus-visible .nav-list span {
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+        inline-size: auto;
+    }
+
+
 
     /*FILTERS*/
     .filter-container {
