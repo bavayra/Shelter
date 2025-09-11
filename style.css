@@ -1506,10 +1506,23 @@ nav span{
     .pet-cards-section label {
         font-size: var(--font-size-accents);
     }
+
+    /*CAROUSEL*/
+    .about-arrow {
+        inline-size: clamp(18px, 4vw, 36px);
+        block-size: clamp(18px, 4vh, 36px);
+    }
+
+    /*REVIEWS*/
+    .review {
+        float: right;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
 }
 
 
-    /*
+/*
 .header-container{
     position: sticky;
     top: 0;
