@@ -43,7 +43,7 @@ body {
     --pad-top: 56%;
     --pad-left: 50%;
     --pad-size: 44%;
-    --toe-size: clamp(96px, 12vw, 360px);
+    --toe-size: clamp(96px, 10vw, 360px);
     --toe-gap: 6%;
 
     --icon-size-sm: clamp(12px, 2vw, 36px);
@@ -1519,6 +1519,24 @@ nav span{
     font-size: var(--font-size-sm);
     font-weight: 500;
 }
+
+    /*CONTACTS*/
+
+
+    .form-btns {
+        gap: var(--space-sm);
+    }
+
+    #form-reset-btn,
+    #form-submit-btn {
+        inline-size: 40%;
+        padding-inline: var(--space-sm);
+        font-weight: 600;
+    }
+
+    .contact-address {
+        margin-top: 0;
+    }
 }
 
 
