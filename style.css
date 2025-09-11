@@ -1227,8 +1227,8 @@ nav span{
     .hero-CTA {
         position: absolute;
         inset-block-start: 92%;
-        inset-inline-start: 70%;
-        inline-size: clamp(180px, 30vw, 360px);
+        inset-inline-start: 58%;
+        inline-size: clamp(180px, 40vw, 420px);
     }
 
     /*FILTER*/
@@ -1433,7 +1433,7 @@ nav span{
     }
 
     .orbit {
-        --r: 150%;
+        --r: 120%;
     }
 
     .contact-form {
@@ -1474,6 +1474,11 @@ nav span{
 
     footer {
         font-size: var(--font-size-sm);
+    }
+
+     .about-arrow {
+        inline-size: clamp(18px, 4vw, 36px);
+        block-size: clamp(18px, 4vh, 36px);
     }
 
     #scroll-top-btn {
@@ -1532,6 +1537,14 @@ nav span{
     }
 
     /*CONTACTS*/
+    .toe{
+        inline-size: clamp(96px, 12vw, 420px);
+    }
+
+    .orbit{
+        --r: 120%;
+    }
+
     .form-btns {
         gap: var(--space-sm);
     }
