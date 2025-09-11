@@ -43,7 +43,7 @@ body {
     --pad-top: 56%;
     --pad-left: 50%;
     --pad-size: 44%;
-    --toe-size: clamp(96px, 10vw, 360px);
+    --toe-size: clamp(72px, 10vw, 360px);
     --toe-gap: 6%;
 
     --icon-size-sm: clamp(12px, 2vw, 36px);
@@ -270,7 +270,7 @@ nav {
 nav ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-xs);
+    gap: var(--space-sm);
     justify-self: center;
     align-items: center;
     list-style: none;
@@ -281,11 +281,11 @@ nav ul {
 nav a {
     display: inline-flex;
     align-items: center;
-    gap: .4rem;
+    gap: .9rem;
     color: var(--accent-text-color);
     text-decoration: none;
-    font-size: var(--font-size-sm);
-    font-weight: 600;
+    font-size: var(--font-size-xs);
+    font-weight: 500;
 }
 
 nav a:hover {
@@ -667,7 +667,7 @@ select {
 
 #contact-desc {
     margin-block: var(--space-md);
-    padding-inline: var(--space-sm);
+    padding-inline: var(--space-md);
     font-size: var(--font-size-sm);
     color: var(--accent-text-color);
 }
@@ -710,7 +710,7 @@ select {
     display: none;
 }
 
-.orbit {
+/*.orbit {
     position: absolute;
     left: var(--pad-left);
     top: var(--pad-top);
@@ -718,6 +718,13 @@ select {
     inline-size: var(--pad-size);
     aspect-ratio: 1/1;
     --r: 120%;
+}*/
+
+.orbit{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    justify-content: center;
 }
 
 .toe {
@@ -1516,13 +1523,11 @@ nav span{
     /*REVIEWS*/
     .review {
         float: right;
-    font-size: var(--font-size-sm);
-    font-weight: 500;
-}
+        font-size: var(--font-size-sm);
+        font-weight: 500;
+    }
 
     /*CONTACTS*/
-
-
     .form-btns {
         gap: var(--space-sm);
     }
