@@ -43,7 +43,8 @@ body {
     --pad-top: 56%;
     --pad-left: 50%;
     --pad-size: 44%;
-    --toe-size: clamp(72px, 10vw, 360px);
+    --toe-size: clamp(72px, 10vw, 240px);
+    --toe-size-md: clamp(96px, 15vw, 420px);
     --toe-gap: 6%;
 
     --icon-size-sm: clamp(12px, 2vw, 36px);
@@ -892,7 +893,7 @@ footer {
         margin: 0;
         line-height: 1;
         color: var(--accent-text-color);
-        font-size: var(--font-size-h2);
+        font-size: var(--font-size-txt);
         font-weight: 500;
     }
 
@@ -950,7 +951,8 @@ footer {
 
     .hero-CTA button {
         z-index: var(--z-overlay);
-        margin-top: -2.5dvh;
+        margin-top: -3dvh;
+        margin-left: 18dvw ;
         padding-inline: var(--space-md);
         font-size: var(--font-size-xs);
         font-weight: 500;
@@ -1096,8 +1098,8 @@ footer {
         grid-template-columns: 1fr 1fr;
         align-items: center;
         justify-content: center;
-        gap: var(--space-lg);
-        --r: 140%;
+                gap: var(--space-lg);
+        --r: 120%;
     }
 
     .toe {
@@ -1106,6 +1108,8 @@ footer {
         top: 50%;
         display: grid;
         place-items: center;
+        inline-size: var(--toe-size-md);
+        block-size: var(--toe-size-md);
         border-radius: 50%;
         transition: transform .2s ease-in-out;
         transform: translate(-50%, -50%) rotate(var(--ang)) translateX(var(--r)) rotate(calc(var(--ang) * -1));
