@@ -12,7 +12,7 @@ body {
     margin: 0;
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
-    letter-spacing: 0.08rem;
+    letter-spacing: 0.09rem;
     scroll-behavior: smooth;
     line-height: 1.4;
     min-block-size: 100%;
@@ -61,6 +61,10 @@ body {
     --space-md: clamp(16px, 2vw, 32px);
     --space-lg: clamp(32px, 4vw, 64px);
     --space-xl: clamp(64px, 8vw, 128px);
+
+    --font-weight: 500;
+    --font-weight-md: 600;
+    --font-weight-lg: 700;
 
     --border-radius: clamp(8px, 20px, 36px);
     --drop-shadow: 0 8px 24px rgba(0, 0, 0, .25);
@@ -295,7 +299,7 @@ nav a {
     color: var(--accent-text-color);
     text-decoration: none;
     font-size: var(--font-size-xs);
-    font-weight: 500;
+    font-weight: var(--font-weight);
 }
 
 nav a:hover {
@@ -318,22 +322,24 @@ nav img {
     block-size: 100dvh;
     padding-block: clamp(1rem, 3vw, 3rem);
     background: center no-repeat url("images-base/bg-main2.jpeg");
+    background-size: cover;
 }
 
-.hero-container {
-    display: grid;
-    gap: var(--space-sm);
-    grid-template-columns: 1fr;
-}
-
-.hero-info {
+.hero-content {
     display: none;
 }
 
 .hero-CTA {
     display: flex;
+    align-items: center;
     justify-content: center;
     margin-block: var(--space-lg);
+}
+
+
+.hero--meet-CTA {
+    z-index: var(--z-overlay);
+    inline-size: clamp(180px, 25ch, 480px);
 }
 
 .hero-CTA button {
@@ -344,9 +350,10 @@ nav img {
     background: var(--surface-color);
     color: var(--accent-text-color);
     font-size: var(--font-size-sm);
-    font-weight: 700;
+    font-weight: var(--font-weight-lg);
     transition: transform .3s ease-in-out;
 }
+
 
 .hero-CTA button:hover {
     transform: scale(1.05);
@@ -402,7 +409,7 @@ select {
     color: var(--secondary-color);
     background-color: var(--accent-text-color);
     font-size: var(--font-size-xs);
-    font-weight: 500;
+    font-weight: var(--font-weight);
     text-align: center;
 }
 
@@ -414,7 +421,7 @@ select {
     padding: var(--space-sm);
     color: var(--accent-text-color);
     font-size: var(--font-size-xs);
-    font-weight: 600;
+    font-weight: var(--font-weight-md);
     border: none;
 }
 
@@ -438,7 +445,7 @@ select {
     padding-inline: var(--space-md);
     background-color: var(--secondary-color);
     color: var(--accent-text-color);
-    font-weight: 500;
+    font-weight: var(--font-weight);
     border: none;
     border-radius: var(--border-radius);
     font-size: var(--font-size-xs);
@@ -448,7 +455,7 @@ select {
 .filter-btns button:hover {
     text-decoration: underline;
     text-decoration-thickness: 2px;
-    font-weight: 600;
+    font-weight: var(--font-weight-md);
 }
 
 .view-all-btn {
@@ -504,7 +511,7 @@ select {
 
 .pet h3 {
     margin: 0;
-    font-size: var(--step-1);
+    font-size: var(--font-size-md);
     text-decoration: underline;
 }
 
@@ -528,7 +535,7 @@ select {
     background: var(--accent-text-color);
     color: var(--secondary-color);
     font-size: var(--font-size-sm);
-    font-weight: 600;
+    font-weight: var(--font-weight-md);
     text-align: center;
     transition: transform .2s ease-in-out;
 }
@@ -595,7 +602,6 @@ select {
     border-radius: var(--border-radius);
     text-align: center;
     font-size: var(--font-size-sm);
-    line-height: 1.3;
     box-shadow: var(--drop-shadow);
 }
 
@@ -649,10 +655,12 @@ select {
 }
 
 .owners-review img {
-    float: right;
+    margin-block: var(--space-md);
+    margin-inline: var(--space-sm);
+    float: inline-end;
     shape-outside: circle(50%);
     inline-size: var(--icon-size-xxl);
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -745,7 +753,7 @@ select {
 .contact-form label {
     font-size: var(--font-size-sm);
     color: var(--accent-text-color);
-    font-weight: 500;
+    font-weight: var(--font-weight);
     text-align: center;
 }
 
@@ -757,7 +765,6 @@ select {
     border-radius: var(--border-radius);
     background: var(--primary-color);
     color: var(--secondary-color);
-    font-size: var(--step-0);
     outline: 2px solid var(--accent-text-color);
     outline-offset: 2px;
 }
@@ -791,7 +798,7 @@ select {
     padding-block: var(--space-sm);
     border: none;
     font-size: var(--font-size-sm);
-    font-weight: 500;
+    font-weight: var(--font-weight);
     border-radius: var(--border-radius);
     box-shadow: var(--drop-shadow);
     transition: transform .2s ease-in-out;
@@ -837,7 +844,7 @@ footer {
     background-color: var(--primary-color);
     font-size: var(--font-size-xs);
     color: var(--surface-color);
-    font-weight: 500;
+    font-weight: var(--font-weight);
 }
 
 /*SCROLL TOP BTN*/
@@ -893,7 +900,7 @@ footer {
         line-height: 1;
         color: var(--accent-text-color);
         font-size: var(--font-size-txt);
-        font-weight: 500;
+        font-weight: var(--font-weight);
     }
 
     /*NAV*/
@@ -907,6 +914,16 @@ footer {
     }
 
     /*HERO*/
+
+    .hero-container {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        left: 47%;
+        block-size: clamp(280px, 20rem, 420px);
+        transform: translate(0, -5%);
+    }
+
     .pets-stats {
         display: initial;
         position: absolute;
@@ -918,7 +935,7 @@ footer {
         line-height: 1.4rem;
         background-color: rgb(43, 23, 35, 0.5);
         color: var(--accent-text-color);
-        font-weight: 600;
+        font-weight: var(--font-weight-md);
         border-radius: var(--border-radius);
         text-align: center;
         font-size: var(--font-size-xs);
@@ -926,12 +943,12 @@ footer {
 
     .hero-info {
         display: initial;
+        position: absolute;
         z-index: 2;
-        grid-column: 2;
-        inline-size: clamp(28ch, 50vw, 56ch);
+        inline-size: clamp(28ch, 40rem, 40ch);
         max-inline-size: 640px;
         margin-right: var(--space-md);
-        padding: var(--space-sm);
+        padding: var(--space-md);
         border: 1px solid var(--secondary-color);
         border-radius: var(--border-radius);
         background-color: rgb(43, 23, 35, 0.7);
@@ -939,22 +956,29 @@ footer {
         box-shadow: var(--drop-shadow);
         text-align: center;
         font-size: var(--font-size-sm);
-        font-weight: 500;
+        font-weight: var(--font-weight);
         line-height: 1.5;
     }
 
+    .hero-content{
+        display: initial;
+    }
+
     .hero-CTA {
-        grid-column: 2;
+        position: absolute;
+        top: 95%;
+        left: 70%;
+        z-index: var(--z-overlay);
+        inline-size: clamp(180px, 22ch, 460px);
+        transform: translate(-55%, -5%);
         margin-block: 0;
     }
 
     .hero-CTA button {
         z-index: var(--z-overlay);
-        margin-top: -3dvh;
-        margin-left: 18dvw;
         padding-inline: var(--space-md);
         font-size: var(--font-size-xs);
-        font-weight: 500;
+        font-weight: var(--font-weight);
     }
 
     /*PET CARDS*/
@@ -1051,7 +1075,7 @@ footer {
 
     /*CONTACTS*/
     .h2-container {
-        block-size: clamp(96px, 20dvw, 360px);
+        block-size: clamp(96px, 20svh, 360px);
     }
 
     #contact-desc {
@@ -1173,9 +1197,7 @@ footer {
         overflow: hidden;
     }
 
-    .sidebar-toggle {
-        display: none;
-    }
+
 
     .nav-list {
         display: flex;
@@ -1235,8 +1257,17 @@ footer {
         font-size: var(--font-size-xs);
     }
 
+    .hero-container {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        left: 60%;
+        block-size: clamp(280px, 20rem, 420px);
+        transform: translate(0, -5%);
+    }
+
     .hero-info {
-        inline-size: clamp(16ch, 40vw, 36ch);
+        inline-size: clamp(16ch, 40svw, 36ch);
         margin-inline-end: 4vw;
         margin-block-start: clamp(48px, 47vh, 400px);
         padding-inline: var(--space-md);
@@ -1262,13 +1293,13 @@ footer {
         block-size: auto;
         padding: var(--space-sm);
         font-size: var(--font-size-sm);
-        font-weight: 500;
+        font-weight: var(--font-weight);
     }
 
     .pet-cards-section label {
         block-size: auto;
         font-size: var(--font-size-sm);
-        font-weight: 500;
+        font-weight: var(--font-weight);
     }
 
     .filter-btns button {
@@ -1286,7 +1317,7 @@ footer {
     #dogs-year,
     #dogs-total {
         font-size: var(--font-size-txt);
-        font-weight: 700;
+        font-weight: var(--font-weight-lg);
         color: rgb(97, 18, 53);
     }
 
@@ -1438,7 +1469,7 @@ footer {
     #contact-desc {
         align-self: center;
         inline-size: clamp(24ch, 60vw, 52ch);
-        font-weight: 600;
+        font-weight: var(--font-weight-md);
         font-size: var(--font-size-accents);
     }
 
@@ -1464,7 +1495,7 @@ footer {
 
     .contact-form label {
         font-size: var(--font-size-xs);
-        font-weight: 500;
+        font-weight: var(--font-weight);
     }
 
     .contact-form :is(input, textarea) {
@@ -1514,6 +1545,8 @@ footer {
 @media (min-width: 1440px) {
 
     /*HERO*/
+
+
     .hero-info {
         inline-size: clamp(16ch, 40vw, 48ch);
         margin-inline-end: 6vw;
@@ -1522,11 +1555,11 @@ footer {
     }
 
     .hero-CTA {
-        inline-size: clamp(180px, 34vw, 400px);
+        inline-size: clamp(180px, 36vw, 520px);
     }
 
     /*NAV*/
-     .sidebar {
+    .sidebar {
         inline-size: var(--sidebar-w-sm);
         block-size: clamp(240px, 75vh, 640px);
     }
@@ -1544,8 +1577,6 @@ footer {
         inline-size: auto;
     }
 
-
-
     /*FILTERS*/
     .filter-container {
         max-inline-size: 100dvw;
@@ -1556,7 +1587,7 @@ footer {
     }
 
     select {
-        font-weight: 600;
+        font-weight: var(--font-weight-md);
     }
 
     .pet-cards-section label {
@@ -1573,7 +1604,7 @@ footer {
     .review {
         float: right;
         font-size: var(--font-size-sm);
-        font-weight: 500;
+        font-weight: var(--font-weight);
     }
 
     /*CONTACTS*/
@@ -1593,11 +1624,18 @@ footer {
     #form-submit-btn {
         inline-size: 40%;
         padding-inline: var(--space-sm);
-        font-weight: 600;
+        font-weight: var(--font-weight-md);
     }
 
     .contact-address {
         margin-top: 0;
+    }
+}
+
+@media (min-width: 1920px) {
+    #hero {
+        background-position: center;
+        background-size: cover;
     }
 }
 
