@@ -10,11 +10,17 @@
   <meta name="author" content="x.bavayra">
 
   <meta property="og:title" content="ROTVODOM - Dog Shelter">
-<meta property="og:description" content="ROTVODOM is a dog shelter dedicated to finding loving homes for abandoned and stray dogs.">
-<meta property="og:image" content="https://bavayra.github.io/Shelter/images-base/preview-image.jpg">
-<meta property="og:url" content="https://bavayra.github.io/Shelter">
-<meta property="og:type" content="website">
+  <meta property="og:description"
+    content="ROTVODOM is a dog shelter dedicated to finding loving homes for abandoned and stray dogs.">
+  <meta property="og:image" content="https://bavayra.github.io/Shelter/images-base/preview-image.jpg">
+  <meta property="og:url" content="https://bavayra.github.io/Shelter">
+  <meta property="og:type" content="website">
 
+  <script>
+    const saved = localStorage.getItem('theme');
+    const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.setAttribute('data-theme', saved ?? (prefersDark ? 'dark' : 'light'));
+  </script>
 
   <title>ROTVODOM - dog shelter</title>
 
@@ -45,6 +51,11 @@
         <span class="visually-hidden">HOME</span>
       </a>
 
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false"
+        title="Toggle theme">
+        <img class="toggle-theme-icon" src="images-base/dark-theme.png" alt="" aria-hidden="true">
+      </button>
+
       <button class="contact-btn" type="button" data-target="#contacts" aria-label="Contact button">
         <img src="/images-base/phone-call.png" alt="Contact us button" class="contact-icon">
         <span class="contact-text">CONTACT US!</span>
@@ -53,7 +64,8 @@
   </header>
 
   <aside class="sidebar">
-    <button class="sidebar-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Sidebar navigation menu" title="Open menu">
+    <button class="sidebar-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Sidebar navigation menu"
+      title="Open menu">
       <img src="/images-base/paws.png" alt="" aria-hidden="true" class="sidebar-toggle-icon">
       <span class="visually-hidden">OPEN MENU</span>
     </button>
@@ -357,14 +369,14 @@
 <!--TODO:
     Add paws pics for decoration - not the back ground
     polish the pet cards css
-    change colors for numbers in stats
     finish with cards
     check via lighthouse
     dark mode
     use @container quaris
     validations for form with js also
     fallbach for new css properties
-    open graph
     chack-add animations 
     home btn, arrows are jumping
+    check the pic for the preview
+  style the btn for themes, make an img for the dark theme, check the colors, do the js forthat
     -->

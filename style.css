@@ -1,5 +1,6 @@
 html {
     -webkit-text-size-adjust: 100%;
+    background-color: var(--primary-color);
 }
 
 *,
@@ -72,6 +73,15 @@ body {
     --z-nav: 20;
     --z-header: 30;
     --z-overlay: 100;
+
+    color-scheme: light dark;
+}
+
+:root[data-theme="dark"] {
+    --primary-color: #2b1723; 
+    --secondary-color: rgb(94, 32, 60);
+    --surface-color:  rgb(212, 159, 154);
+    --accent-text-color: rgb(217, 177, 141);
 }
 
 button,
@@ -405,7 +415,7 @@ select {
     display: block;
     text-align: center;
     justify-content: center;
-  block-size: clamp(16px, 4cqb, 28px);
+    block-size: clamp(16px, 4cqb, 28px);
     padding: var(--space-sm);
     color: var(--accent-text-color);
     font-size: var(--font-size-xs);
@@ -950,7 +960,7 @@ footer {
         line-height: 1.5;
     }
 
-    .hero-content{
+    .hero-content {
         display: initial;
     }
 
@@ -1041,7 +1051,7 @@ footer {
     .about-images img {
         block-size: clamp(88px, 35svh, 320px);
     }
-    
+
     /*REVIEWS*/
     .owners-review {
         gap: var(--space-sm);
@@ -1483,7 +1493,7 @@ footer {
     .contact-form :is(input, textarea) {
         padding: var(--space-sm);
         font-size: var(--font-size-sm);
-         max-inline-size: clamp(5rem, 28svw, 20rem);
+        max-inline-size: clamp(5rem, 28svw, 20rem);
     }
 
     .form-btns {
