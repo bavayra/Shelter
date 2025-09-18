@@ -10,7 +10,7 @@ html {
 
 body {
     margin: 0;
-    font-family: "Raleway", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-optical-sizing: auto;
     letter-spacing: 0.09rem;
     scroll-behavior: smooth;
@@ -110,17 +110,20 @@ svg {
     min-width: 0;
 }
 
-.visually-hidden {
-    display: none;
-}
-
 main,
 .panel,
 section {
     overflow: visible;
 }
 
-.sidebar-toggle {
+.sidebar-toggle,
+.contact-text,
+.pets-stats,
+.hero-content,
+.pad,
+.visually-hidden,
+.pad iframe,
+h1 {
     display: none;
 }
 
@@ -202,10 +205,6 @@ section {
     object-fit: contain;
 }
 
-h1 {
-    display: none;
-}
-
 #home-btn-link {
     position: fixed;
     display: inline-grid;
@@ -242,10 +241,6 @@ h1 {
     border: none;
     border-radius: 50%;
     box-shadow: var(--drop-shadow);
-}
-
-.contact-btn .contact-text {
-    display: none;
 }
 
 .contact-icon {
@@ -315,19 +310,12 @@ nav img {
 }
 
 /*HERO*/
-.pets-stats {
-    display: none;
-}
 
 #hero {
     block-size: 100svh;
     padding-block: clamp(1rem, 3dvw, 3rem);
     background: center no-repeat url("images-base/bg-main2.jpeg");
     background-size: cover;
-}
-
-.hero-content {
-    display: none;
 }
 
 .hero-CTA {
@@ -722,14 +710,6 @@ select {
     margin-inline: auto;
 }
 
-.pad {
-    display: none;
-}
-
-.pad iframe {
-    display: none;
-}
-
 .orbit {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -943,6 +923,14 @@ footer {
         font-size: var(--font-size-xs);
     }
 
+    #dogs-now,
+    #dogs-year,
+    #dogs-total {
+        font-size: var(--font-size-txt);
+        font-weight: var(--font-weight-lg);
+        color: rgb(97, 18, 53);
+    }
+
     .hero-info {
         display: initial;
         position: absolute;
@@ -1053,7 +1041,7 @@ footer {
     .about-images img {
         block-size: clamp(88px, 35svh, 320px);
     }
-
+    
     /*REVIEWS*/
     .owners-review {
         gap: var(--space-sm);
@@ -1312,14 +1300,6 @@ footer {
     .view-all-btn button {
         block-size: auto;
         font-size: var(--font-size-sm);
-    }
-
-    #dogs-now,
-    #dogs-year,
-    #dogs-total {
-        font-size: var(--font-size-txt);
-        font-weight: var(--font-weight-lg);
-        color: rgb(97, 18, 53);
     }
 
     #hero,
