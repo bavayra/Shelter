@@ -31,27 +31,27 @@
     <div class="container header-container" id="home">
       <div class="logo">
         <div id="logo-bg">
-          <img id="logo-image" src="images-base/logo.png" alt="ROTVODOM LOGO">
+          <img id="logo-image" src="images-base/logo.png" alt="ROTVODOM LOGO" loading="lazy">
         </div>
         <h1 class="site-title">
           ROTVODOM
         </h1>
       </div>
 
-      <a href="#hero" id="home-btn-link">
+      <a href="#hero" id="home-btn-link" aria-label="Hero page link">
         <img class="home-icon" src="images-base/home-icon.png" alt="">
         <span class="visually-hidden">HOME</span>
       </a>
 
-      <button class="contact-btn" type="button" data-target="#contacts">
-        <img src="/images-base/phone-call.png" alt="Phone" class="contact-icon">
+      <button class="contact-btn" type="button" data-target="#contacts" aria-label="Contact button">
+        <img src="/images-base/phone-call.png" alt="Contact us button" class="contact-icon">
         <span class="contact-text">CONTACT US!</span>
       </button>
     </div>
   </header>
 
   <aside class="sidebar">
-    <button class="sidebar-toggle" aria-expanded="false" aria-controls="main-nav" title="Open menu">
+    <button class="sidebar-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Sidebar navigation menu" title="Open menu">
       <img src="/images-base/paws.png" alt="" aria-hidden="true" class="sidebar-toggle-icon">
       <span class="visually-hidden">OPEN MENU</span>
     </button>
@@ -59,28 +59,28 @@
     <nav id="main-nav" aria-label="Main navigation">
       <ul class="nav-list">
         <li>
-          <a href="#pets" id="our-pets-link">
+          <a href="#pets" id="our-pets-link" aria-label="Our pets link">
             <img src="nav-icons/dogs-nav-icon.png" alt="Our pets" aria-hidden="true">
             <span>OUR PETS</span>
           </a>
         </li>
 
         <li>
-          <a href="#about" id="our-story-link">
+          <a href="#about" id="our-story-link" aria-label="Our story link">
             <img src="nav-icons/who-nav-icon.png" alt="Our story" aria-hidden="true">
             <span>OUR STORY</span>
           </a>
         </li>
 
         <li>
-          <a href="https://vk.com/topic-215318612_49116177" id="help">
+          <a href="https://vk.com/topic-215318612_49116177" id="help" aria-label="How to help us link">
             <img src="nav-icons/donate-nav-icon.png" alt="How to help us" aria-hidden="true">
             <span>HOW TO HELP</span>
           </a>
         </li>
 
         <li>
-          <a href="https://vk.com/topic-215318612_49115975" id="adoption-rules">
+          <a href="https://vk.com/topic-215318612_49115975" id="adoption-rules" aria-label="Adoption rules link">
             <img src="nav-icons/rules-nav-icon.png" alt="Adoption rules" aria-hidden="true">
             <span>ADOPTION RULES</span>
           </a>
@@ -101,7 +101,8 @@
             Our pets are waiting for your help, love, and attention!
           </p>
           <div class="hero-CTA">
-            <button class="hero-meet-CTA" data-target="#pets">MEET YOUR BEST FRIEND</button>
+            <button class="hero-meet-CTA" data-target="#pets" aria-label="Meet your pet button">MEET YOUR BEST
+              FRIEND</button>
           </div>
         </div>
       </div>
@@ -154,23 +155,24 @@
 
         <div class="buttons">
           <div class="filter-btns">
-            <button class="apply-filter">APPLY FILTERS</button>
-            <button class="clear-filter">CLEAR FILTERS</button>
+            <button class="apply-filter" aria-label="Apply filters button">APPLY FILTERS</button>
+            <button class="clear-filter" aria-label="Clear filters button">CLEAR FILTERS</button>
           </div>
         </div>
 
-        <div class="view-all-btn">
-          <button class="view-all-CTA" data-target="#pets">SHOW ALL PETS...</button>
+        <div class="view-all-btn" id="view-all-btn-cta">
+          <button class="view-all-CTA" data-target="#pets" aria-expanded="false" aria-controls="view-all-btn-cta"
+            aria-label="View all pets button">SHOW ALL PETS...</button>
         </div>
       </div>
 
       <aritcle class="pet">
-        <img class="pet_img" src="/image-dogs/dog-archie.jpg">
+        <img class="pet_img" alt="A dog's image ready for adoption" src="/image-dogs/dog-archie.jpg">
         <h3 class="pet_name">BONNIE</h3>
         <p class="pet_age_gender">FEMALE 2yo</p>
         <p class="pet_desc">Sweet cute baby with a lot of energy grgegwe fwefwEF TFW3tfwE GVwgW GWeg wetgewg gwegewg
           etgwegW TFWEf gvwegw</p>
-        <button class="pet_btn">ADOPT ME</button>
+        <button class="pet_btn" aria-label="Adopt a pet button">ADOPT ME</button>
       </aritcle>
     </section>
 
@@ -182,40 +184,41 @@
           <img src="/nav-icons/arrow-left.png" alt="Arrow left">
         </button>
 
-        <div class="about-images" id="about-images-container" aria-label="Our team and shelter photos" tabindex="0">
-          <img src="images-about/team-1.jpg" alt="ROTVODOM team"
+        <div class="about-images" id="about-images-container" aria-label="Our team and shelter photos" tabindex="0"
+          aria-live="polite">
+          <img src="images-about/team-1.jpg" alt="ROTVODOM team - a woman sitting with a rottweiler"
             data-caption="Hi, my name is Svetlana, but I used to be called Rotvomama. I started ROTVODOM in 2010 in Jekaterinburg, Russia."
             loading="lazy">
-          <img src="images-about/team-2.jpg" alt="ROTVODOM team"
+          <img src="images-about/team-2.jpg" alt="ROTVODOM team - a girl kissing a mixed-breed dog"
             data-caption="I've faced many problems and challenges because I was working alone but soon I started meeting people with the same desire to help."
             loading="lazy">
-          <img src="images-about/team-3.jpg" alt="ROTVODOM team"
+          <img src="images-about/team-3.jpg" alt="ROTVODOM team - a woman holding a rottweiler"
             data-caption="The shelter started to grow as well as the number of dogs we've helped... " loading="lazy">
-          <img src="images-about/team-4.jpg" alt="ROTVODOM team"
+          <img src="images-about/team-4.jpg" alt="ROTVODOM team - five women sitting on a grass"
             data-caption="We've met a lot of friends: both with two and four legs. We started a community!"
             loading="lazy">
-          <img src="images-about/team-5.jpg" alt="ROTVODOM team"
+          <img src="images-about/team-5.jpg" alt="ROTVODOM team - a group of people brought some pet food"
             data-caption="Many people felt the same as we did and decided to join us in any way they could: food, medcine, infrastructure, and money."
             loading="lazy">
-          <img src="images-about/team-6.jpg" alt="ROTVODOM team"
+          <img src="images-about/team-6.jpg" alt="ROTVODOM team - a rottweiler behind the bars"
             data-caption="But we also encountered situations, when dogs needed more than that...We've found dogs with severe health issues, injuries and deep psychological traumas."
             loading="lazy">
-          <img src="images-about/team-7.jpg" alt="ROTVODOM team"
+          <img src="images-about/team-7.jpg" alt="ROTVODOM team - a rottweiler in a veterinary clinic"
             data-caption="We tried to cure evryone we could, but of course - we are not Gods. Many of our pets went on the rainbow too early."
             loading="lazy">
-          <img src="images-about/team-8.jpg" alt="ROTVODOM team"
+          <img src="images-about/team-8.jpg" alt="ROTVODOM team - a rottweiler giving a paw to a woman"
             data-caption="But the ones we managed help, they found loving homes. They are being taken care of, loved, well fed. That's all we ever wanted - to see them happy with their new best friends, big ones and..."
             loading="lazy">
-          <img src="images-about/team-9.jpg" alt="ROTVODOM team"
+          <img src="images-about/team-9.jpg" alt="ROTVODOM team - a child sitting on a cane-corso back on a couch"
             data-caption="...and small ones! Our dogs are not dangerous breeds. They are still big, loving and amazing creatures."
             loading="lazy">
-          <img src="images-about/team-10.jpg" alt="ROTVODOM team"
+          <img src="images-about/team-10.jpg" alt="ROTVODOM team - a smiling rottweiler looking at the camera"
             data-caption="We just want them to be happy and safe. Do you need the best friend? We believe you can find one in ROTVODOM."
             loading="lazy">
         </div>
 
         <button class="about-arrow right" aria-label="Next">
-          <img src="/nav-icons/arrow-right.png" alt="Arrow right">
+          <img src="/nav-icons/arrow-right.png" alt="Arrow right button">
         </button>
 
         <p class="about-caption" id="about-caption-content" aria-live="polite"></p>
@@ -228,19 +231,22 @@
 
       <div class="container owners-review">
         <div class="review" id="first-review">
-          <img class="review-img" id="first-img" src="image-review/review1.jpg">
+          <img class="review-img" id="first-img" alt="The picture of the first review's author"
+            src="image-review/review1.jpg" loading="lazy">
           <p class="review-text">We found this angel at the shelter and fell in love immidiatley. The Rotvodom's team
             was super supprtive, helpfull and heartwarming.</p>
         </div>
 
         <div class="review" id="second-review">
-          <img class="review-img" id="second-img" src="image-review/review2.jpg">
+          <img class="review-img" id="second-img" alt="The picture of the second review's author"
+            src="image-review/review2.jpg" loading="lazy">
           <p class="review-text">We found this angel at the shelter and fell in love immidiatley. The Rotvodom's team
             was super supprtive, helpfull and heartwarming.</p>
         </div>
 
         <div class="review" id="third-review">
-          <img class="review-img" id="third-img" src="image-review/review3.jpg">
+          <img class="review-img" id="third-img" alt="The picture of the third review's author"
+            src="image-review/review3.jpg" loading="lazy">
           <p class="review-text">We found this angel at the shelter and fell in love immidiatley. The Rotvodom's team
             was super supprtive, helpfull and heartwarming.</p>
         </div>
@@ -262,26 +268,25 @@
               <iframe title="ROTVODOM shelter location" loading="lazy" referrerpolicy="origin"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17525.833283836157!2d60.81718118132396!3d56.69608486472699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43c14176c16eb26b%3A0xb078d03d330dd93c!2z0JDRgNCw0LzQuNC70YwsINCh0LLQtdGA0LTQu9C-0LLRgdC60LDRjyDQvtCx0LsuLCDQoNC-0YHRgdC40Y8!5e0!3m2!1sru!2scz!4v1755518556300!5m2!1sru!2scz"
                 allowfullscreen>
-                <!--The map might have problems with correct opening but it does work in the Incognito mode, so it's an issue with browsers/extentions-->
               </iframe> <!--I could'have used a fallback for the map, though I decided it is not necessary here -->
             </div>
 
-            <div class="orbit">
+            <div class="orbit" aria-live="polite">
               <a class=" toe toe-1" href="https://www.instagram.com/rotvodom/" target="_blank" rel="noopener noreferrer"
-                aria-label="Instagram">
-                <img src="images-socials/instagram.png" alt="Instagram" aria-hidden="true">
+                aria-label="Instagram link">
+                <img src="images-socials/instagram.png" alt="" aria-hidden="true">
               </a>
               <a class=" toe toe-2" href="https://www.facebook.com/rotvoDom/" target="_blank" rel="noopener noreferrer"
-                aria-label="Facebook">
-                <img src="images-socials/facebook.png" alt="Facebook" aria-hidden="true">
+                aria-label="Facebook link">
+                <img src="images-socials/facebook.png" alt="" aria-hidden="true">
               </a>
               <a class=" toe toe-3" href="https://web.telegram.org/k/#@huskyekb" target="_blank"
-                rel="noopener noreferrer" aria-label="Telegram">
-                <img src="images-socials/telegram.png" alt="Telegram" aria-hidden="true">
+                rel="noopener noreferrer" aria-label="Telegram link">
+                <img src="images-socials/telegram.png" alt="" aria-hidden="true">
               </a>
               <a class=" toe toe-4" href="https://vk.com/rotvodom66" target="_blank" rel="noopener noreferrer"
-                aria-label="VKontakte"> <!--I know about .sr-only but for the demo project I decided not to use it-->
-                <img src="images-socials/vk.png" alt="VKontakte" aria-hidden="true">
+                aria-label="VKontakte link">
+                <img src="images-socials/vk.png" alt="" aria-hidden="true">
               </a>
             </div>
           </div>
@@ -301,13 +306,13 @@
             <input id="form-number" typ="tel" name="tel" autocomplete="tel">
 
             <div class="form-btns">
-              <button id="form-submit-btn" type="submit">SEND</button>
-              <button id="form-reset-btn" type="reset">RESET</button>
+              <button id="form-submit-btn" type="submit" aria-label="Send the form">SEND</button>
+              <button id="form-reset-btn" type="reset" aria-label="Reset the form">RESET</button>
             </div>
 
             <address class="contact-address">
-              <a href="mailto:shelter@hello.com">shelter@hello.com</a><br>
-              <a href="tel: +77 777 7777">+77 777 7777</a><br>
+              <a href="mailto:shelter@hello.com" aria-label="Shelter's email address">shelter@hello.com</a><br>
+              <a href="tel: +77 777 7777" aria-label="Shelter's phone number">+77 777 7777</a><br>
               <span>Jekaterinburg, Russia</span>
             </address>
           </form>
@@ -318,8 +323,8 @@
   </main>
   <!--
   <div class="modal-container">
-    <div class="modal-content">
-      <button class="close-modal"></button>
+    <div class="modal-content" id="modal-content-btn">
+      <button class="close-modal" aria-expanded="false" aria-controls="modal-content-btn" ></button>
     <div class="modal-body">
     </div>
     </div>
@@ -330,7 +335,7 @@
   </footer>
 
   <div class="pet-stats-container">
-    <div class="pets-stats">
+    <div class="pets-stats" aria-live="polite">
       DOGS WAITING FOR ADOPTION: <br> <span id="dogs-now">0</span><br>
       ADOPTED DOGS THIS YEAR: <br><span id="dogs-year">0</span><br>
       ADOPTED DOGS SINCE 2010: <br><span id="dogs-total">0</span>
@@ -338,7 +343,7 @@
   </div>
 
   <button id="scroll-top-btn" aria-label="Scroll top button">
-    <img src="/nav-icons/up-arrow.png" alt="Arrow Top Icon" class="scroll-icon">
+    <img src="/nav-icons/up-arrow.png" alt="Arrow Top button" class="scroll-icon">
   </button>
 
   <script src="index.js"></script>
@@ -352,5 +357,6 @@
     polish the pet cards css
     change colors for numbers in stats
     finish with cards
+    check via lighthouse
 
     -->
