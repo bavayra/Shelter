@@ -1489,6 +1489,7 @@ footer {
 
     .contact-form {
         gap: var(--space-sm);
+
         inline-size: 80%;
         margin-inline: var(--space-sm);
         padding: var(--space-lg);
@@ -1502,10 +1503,7 @@ footer {
     .contact-form :is(input, textarea) {
         padding: var(--space-sm);
         font-size: var(--font-size-sm);
-    }
-
-    #message {
-        min-block-size: clamp(3rem, 16svh, 10rem);
+         max-inline-size: clamp(5rem, 28svw, 20rem);
     }
 
     .form-btns {
