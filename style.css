@@ -26,6 +26,8 @@ body {
     --surface-color: rgb(94, 32, 60);
     --accent-text-color: rgb(217, 177, 141);
 
+    --hero-bg: url("images-base/bg-main2.jpeg"); 
+
     --slide-w: min(80vw, 420px);
     --header-h: clamp(56px, 10svh, 96px);
     --header-pad: clamp(6px, 1.2svh, 12px);
@@ -78,10 +80,12 @@ body {
 }
 
 :root[data-theme="dark"] {
-    --primary-color: #2b1723; 
+    --primary-color: rgb(43, 23, 35);
     --secondary-color: rgb(94, 32, 60);
-    --surface-color:  rgb(212, 159, 154);
+    --surface-color:rgb(94, 32, 60);
     --accent-text-color: rgb(217, 177, 141);
+
+    --hero-bg: url("images-base/bg-main-dark.png");
 }
 
 button,
@@ -225,6 +229,7 @@ h1 {
     padding: 0;
     border: none;
     border-radius: var(--border-radius);
+    
 }
 
 .home-icon {
@@ -234,10 +239,25 @@ h1 {
     aspect-ratio: 1/1;
     object-fit: contain;
     opacity: 0.7;
+   
 }
 
 .home-icon:hover {
     opacity: 1;
+}
+
+.theme-toggle-btn {
+    min-inline-size: var(--icon-size-lg);
+    block-size: var(--btn-height);
+    padding-inline: var(--space-md);
+    border: none;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    box-shadow: var(--drop-shadow);
+}
+
+.toggle-theme-icon {
+    inline-size: var(--icon-size-md);
 }
 
 .contact-btn {
@@ -324,7 +344,7 @@ nav img {
 #hero {
     block-size: 100svh;
     padding-block: clamp(1rem, 3dvw, 3rem);
-    background: center no-repeat url("images-base/bg-main2.jpeg");
+    background: center no-repeat var(--hero-bg);
     background-size: cover;
 }
 
@@ -646,10 +666,12 @@ select {
 .review {
     display: block;
     padding: var(--space-sm);
+
     border: 2px solid var(--surface-color);
     border-radius: var(--border-radius);
     text-align: left;
     font-size: var(--font-size-xs);
+    color:var(--accent-text-color);
     box-shadow: var(--drop-shadow);
 }
 
@@ -730,6 +752,9 @@ select {
 .toe {
     inline-size: var(--toe-size);
     aspect-ratio: 1/1;
+    background-color: var(--accent-text-color);
+    border: none;
+    border-radius: 50%;
 }
 
 .contact-form {
