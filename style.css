@@ -25,8 +25,9 @@ body {
     --secondary-color: rgb(43, 23, 35);
     --surface-color: rgb(94, 32, 60);
     --accent-text-color: rgb(217, 177, 141);
+    --review-text-color: rgb(43, 23, 35);
 
-    --hero-bg: url("images-base/bg-main2.jpeg"); 
+    --hero-bg: url("images-base/bg-main2.jpeg");
 
     --slide-w: min(80vw, 420px);
     --header-h: clamp(56px, 10svh, 96px);
@@ -82,8 +83,9 @@ body {
 :root[data-theme="dark"] {
     --primary-color: rgb(43, 23, 35);
     --secondary-color: rgb(94, 32, 60);
-    --surface-color:rgb(94, 32, 60);
+    --surface-color: rgb(94, 32, 60);
     --accent-text-color: rgb(217, 177, 141);
+    --review-text-color: rgb(217, 177, 141);
 
     --hero-bg: url("images-base/bg-main-dark.png");
 }
@@ -229,7 +231,7 @@ h1 {
     padding: 0;
     border: none;
     border-radius: var(--border-radius);
-    
+
 }
 
 .home-icon {
@@ -239,7 +241,7 @@ h1 {
     aspect-ratio: 1/1;
     object-fit: contain;
     opacity: 0.7;
-   
+
 }
 
 .home-icon:hover {
@@ -257,7 +259,7 @@ h1 {
 }
 
 .toggle-theme-icon {
-    inline-size: var(--icon-size-md);
+    inline-size: var(--icon-size-lg);
 }
 
 .contact-btn {
@@ -665,13 +667,12 @@ select {
 
 .review {
     display: block;
-    padding: var(--space-sm);
-
+    padding: var(--space-md);
     border: 2px solid var(--surface-color);
     border-radius: var(--border-radius);
     text-align: left;
-    font-size: var(--font-size-xs);
-    color:var(--accent-text-color);
+    font-size: var(--font-size-sm);
+    color: var(--review-text-color);
     box-shadow: var(--drop-shadow);
 }
 
@@ -1147,7 +1148,7 @@ footer {
         align-items: center;
         justify-content: center;
         gap: var(--space-lg);
-        --r: 120%;
+        --r: 180%;
     }
 
     .toe {
@@ -1156,8 +1157,8 @@ footer {
         top: 50%;
         display: grid;
         place-items: center;
-        inline-size: var(--toe-size-md);
-        block-size: var(--toe-size-md);
+        inline-size: var(--toe-size);
+        block-size: var(--toe-size);
         border-radius: 50%;
         transition: transform .2s ease-in-out;
         transform: translate(-50%, -50%) rotate(var(--ang)) translateX(var(--r)) rotate(calc(var(--ang) * -1));
@@ -1169,7 +1170,7 @@ footer {
 
     .toe img {
         display: block;
-        inline-size: 60%;
+        inline-size: 100%;
         height: auto;
     }
 
@@ -1498,13 +1499,8 @@ footer {
         gap: var(--space-xl);
     }
 
-    .orbit {
-        --r: 120%;
-    }
-
     .contact-form {
         gap: var(--space-sm);
-
         inline-size: 80%;
         margin-inline: var(--space-sm);
         padding: var(--space-lg);
@@ -1623,11 +1619,11 @@ footer {
 
     /*CONTACTS*/
     .toe {
-        inline-size: clamp(96px, 12dvw, 420px);
+        inline-size: var(--toe-size);
     }
 
     .orbit {
-        --r: 120%;
+        --r: 160%;
     }
 
     .form-btns {

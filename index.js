@@ -30,9 +30,70 @@ countUp("dogs-now", 23, 1000);
 countUp("dogs-total", 184, 1500);
 countUp("dogs-year", 47, 1200);
 
-// sidebar toggle for touch/keyboard
+/*DARK MODE*/
+
+const storageKey = "theme";
+const themes = { light: "light", dark: "dark" };
+const icons = {
+  [themes.light]: "images-base/light-theme.png",
+  [themes.dark]: "images-base/dark-theme.png",
+};
+const root = document.documentElement;
+const toggleBtn = document.getElementById("themeToggle");
+const iconEl = toggleBtn ? toggleBtn.querySelector(".toggle-theme-icon") : null;
+const safeStorage = {
+  get(key) {
+    try {
+      return window.localStorage.getItem(key);
+    }
+    catch {
+      return null;
+    }
+  },
+  set(key, value) {
+    try {
+      window.localStorage.setItem(key, value);
+    }
+    catch { }
+  }
+};
+
+function applyTheme(theme) {
+  root.setAttribute("data-theme", theme);
+  if (iconEl) {
+    iconEl.src = icons[theme] || icons[themes.light];
+  }
+  if (toggleBtn) {
+    toggleBtn.setAttribute("aria-pressed", theme === themes.dark ? "true" : "false");
+    toggleBtn.title = theme === themes.dark ? "Switch to light theme" : "Switch to dark theme";
+  }
+}
+
+function getInitialTheme() {
+  const saved = safeStorage.get(storageKey);
+  if (saved === themes.light || saved === themes.dark) return saved;
+  if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    return themes.dark;
+  }
+  return themes.light;
+}
+
+function toggleTheme() {
+  const current = root.getAttribute("data-theme") || themes.light;
+  const next = current === themes.dark ? themes.light : themes.dark;
+  applyTheme(next);
+  safeStorage.set(storageKey, next);
+}
+
+if (toggleBtn) {
+  const initial = getInitialTheme();
+  applyTheme(initial);
+  toggleBtn.addEventListener("click", toggleTheme);
+}
+
+/*SIDEBAR TOGGLE*/
 const sidebar = document.querySelector('.sidebar');
-const toggle  = document.querySelector('.sidebar-toggle');
+const toggle = document.querySelector('.sidebar-toggle');
 
 if (sidebar && toggle) {
   toggle.addEventListener('click', () => {
@@ -40,7 +101,6 @@ if (sidebar && toggle) {
     toggle.setAttribute('aria-expanded', String(open));
   });
 
-  // закрыть по клику вне сайдбара
   document.addEventListener('click', (e) => {
     if (!sidebar.contains(e.target)) {
       sidebar.classList.remove('is-open');
@@ -48,7 +108,6 @@ if (sidebar && toggle) {
     }
   });
 
-  // закрыть по Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       sidebar.classList.remove('is-open');
@@ -277,64 +336,64 @@ scrollTopBtn.addEventListener("click", () => {
 });
 
 const pets = [
-    {
-        name: "Bianka",
-        breed: "Rottweiler",
-        age: 2,
-        gender: "Female",
-        health: "Healthy",
-        image: "image-dogs/dog-bianka.jpg",
-        description: "Most of my life I was kept on a chain. My owner simply abandoned me. I really love people, cuddling, and sitting on someone's laps. I adore playing with other dogs, but I don't really like cats... I want a home so badly — may I sit on your laps?",
-    },
+  {
+    name: "Bianka",
+    breed: "Rottweiler",
+    age: 2,
+    gender: "Female",
+    health: "Healthy",
+    image: "image-dogs/dog-bianka.jpg",
+    description: "Most of my life I was kept on a chain. My owner simply abandoned me. I really love people, cuddling, and sitting on someone's laps. I adore playing with other dogs, but I don't really like cats... I want a home so badly — may I sit on your laps?",
+  },
 
-       {
-        name: "Vasilisa",
-        breed: "Rottweiler",
-        age: 3,
-        gender: "Female",
-        health: "Healthy",
-        image: "image-dogs/dog-vasilisa.jpg",
-        description: "My previous owner didn’t love me or spend time with me, so I never really learned much or was loved. But I’ve got so much energy — and I use all of it to love people! I’m not the best at making friends with other dogs or cats, but with all my love for humans, and with you, my new best friend, I’ll play and have fun for as long as you want. Please take me home?",
-    },
+  {
+    name: "Vasilisa",
+    breed: "Rottweiler",
+    age: 3,
+    gender: "Female",
+    health: "Healthy",
+    image: "image-dogs/dog-vasilisa.jpg",
+    description: "My previous owner didn’t love me or spend time with me, so I never really learned much or was loved. But I’ve got so much energy — and I use all of it to love people! I’m not the best at making friends with other dogs or cats, but with all my love for humans, and with you, my new best friend, I’ll play and have fun for as long as you want. Please take me home?",
+  },
 
-       {
-        name: "Birdy",
-        breed: "Mixed breed",
-        age: 8,
-        gender: "Female",
-        health: "Serious health issues",
-        image: "image-dogs/dog-birdy.jpg",
-        description: "Most of my life felt like a real nightmare. I never went for walks or played outside, never felt a gentle touch… all they wanted from me was to have puppies. At first, I was scared of everything — I didn’t know what would happen to me. I am completely deaf and barely can walk...But now I’ve learned that not all humans are bad. Where are you, my perfect human?"
-    },
+  {
+    name: "Birdy",
+    breed: "Mixed breed",
+    age: 8,
+    gender: "Female",
+    health: "Serious health issues",
+    image: "image-dogs/dog-birdy.jpg",
+    description: "Most of my life felt like a real nightmare. I never went for walks or played outside, never felt a gentle touch… all they wanted from me was to have puppies. At first, I was scared of everything — I didn’t know what would happen to me. I am completely deaf and barely can walk...But now I’ve learned that not all humans are bad. Where are you, my perfect human?"
+  },
 
-       {
-        name: "Archie",
-        breed: "Rottweiler",
-        age: 2,
-        gender: "Male",
-        health: "Minor health issues",
-        image: "image-dogs/dog-archie.jpg",
-        description: "I just adore people! My biggest talent? I’m the best at protecting them! I’m still learning how to walk on a leash and be a social butterfly, but I know for sure—someone out there is looking for a friend exactly like me.",
-    },
+  {
+    name: "Archie",
+    breed: "Rottweiler",
+    age: 2,
+    gender: "Male",
+    health: "Minor health issues",
+    image: "image-dogs/dog-archie.jpg",
+    description: "I just adore people! My biggest talent? I’m the best at protecting them! I’m still learning how to walk on a leash and be a social butterfly, but I know for sure—someone out there is looking for a friend exactly like me.",
+  },
 
-       {
-        name: "Baikal",
-        breed: "Cane Corso",
-        age: 6,
-        gender: "Male",
-        health: "Healthy",
-        image:  "image-dogs/dog-baikal.jpg",
-        description: "I’ve been at the shelter for over a year now… I might look a little scary, but deep down I’m the gentlest giant you’ll ever meet. I’m not the best with kids or people who smell like alcohol, but with everyone else, I’ll happily play with every toy in existence. I’m a good listener, I’m smart, and I'm chatty! I just really, really want to go home…",
-    },
+  {
+    name: "Baikal",
+    breed: "Cane Corso",
+    age: 6,
+    gender: "Male",
+    health: "Healthy",
+    image: "image-dogs/dog-baikal.jpg",
+    description: "I’ve been at the shelter for over a year now… I might look a little scary, but deep down I’m the gentlest giant you’ll ever meet. I’m not the best with kids or people who smell like alcohol, but with everyone else, I’ll happily play with every toy in existence. I’m a good listener, I’m smart, and I'm chatty! I just really, really want to go home…",
+  },
 
-       {
-        name: "Jessie",
-        breed: "Rottweiler",
-        age: 9,
-        gender: "Female",
-        health: "Serious health issues",
-        image: "image-dogs/dog-jessie.jpg",
-        description: "I really am a good girl, I promise. I love people so much… but they’ve let me down. I adore other animals… but they’ve hurt me too. I have cancer, but I’m not giving up! I just want to find my person and spend the rest of my life with them, surrounded by love and care.",
-    },
-] 
+  {
+    name: "Jessie",
+    breed: "Rottweiler",
+    age: 9,
+    gender: "Female",
+    health: "Serious health issues",
+    image: "image-dogs/dog-jessie.jpg",
+    description: "I really am a good girl, I promise. I love people so much… but they’ve let me down. I adore other animals… but they’ve hurt me too. I have cancer, but I’m not giving up! I just want to find my person and spend the rest of my life with them, surrounded by love and care.",
+  },
+]
 
