@@ -290,15 +290,15 @@
                 aria-label="Instagram link">
                 <img src="images-socials/instagram.png" alt="" aria-hidden="true">
               </a>
-              <a class=" toe toe-2" href="https://www.facebook.com/rotvoDom/" target="_blank" rel="noopener noreferrer"
+              <a class="toe toe-2" href="https://www.facebook.com/rotvoDom/" target="_blank" rel="noopener noreferrer"
                 aria-label="Facebook link">
                 <img src="images-socials/facebook.png" alt="" aria-hidden="true">
               </a>
-              <a class=" toe toe-3" href="https://web.telegram.org/k/#@huskyekb" target="_blank"
+              <a class="toe toe-3" href="https://web.telegram.org/k/#@huskyekb" target="_blank"
                 rel="noopener noreferrer" aria-label="Telegram link">
                 <img src="images-socials/telegram.png" alt="" aria-hidden="true">
               </a>
-              <a class=" toe toe-4" href="https://vk.com/rotvodom66" target="_blank" rel="noopener noreferrer"
+              <a class="toe toe-4" href="https://vk.com/rotvodom66" target="_blank" rel="noopener noreferrer"
                 aria-label="VKontakte link">
                 <img src="images-socials/vk.png" alt="" aria-hidden="true">
               </a>
@@ -307,17 +307,17 @@
 
           <form id="form-container" class="contact-form" novalidate>
             <label for="message">TYPE YOUR MESSAGE HERE</label>
-            <textarea id="message" name="message" rows="4" maxlength="200" placeholder="START TYPING..."></textarea>
+            <textarea id="message" name="message" rows="4" maxlength="200" placeholder="START TYPING..." aria-required="true"></textarea>
             <div id="chars-counter">Symbols remain: 200</div>
 
             <label for="form-full-name">YOUR FULL NAME</label>
-            <input id="form-full-name" type="text" name="fullName" required autocomplete="name">
+            <input id="form-full-name" type="text" name="fullName" required autocomplete="name" aria-required="true" >
 
             <label for="form-email">YOUR EMAIL</label>
-            <input id="form-email" type="email" name="email" required autocomplete="email">
+            <input id="form-email" type="email" name="email" required autocomplete="email" aria-required="true" >
 
             <label for="form-number">YOUR PHONE NUMBER</label>
-            <input id="form-number" typ="tel" name="tel" autocomplete="tel">
+            <input id="form-number" type="tel" name="tel" autocomplete="tel" pattern="[\d\s\-\+\(\)]{7,}" aria-required="true" >
 
             <div class="form-btns">
               <button id="form-submit-btn" type="submit" aria-label="Send the form">SEND</button>
@@ -367,16 +367,30 @@
 </html>
 
 <!--TODO:
-    Add paws pics for decoration - not the back ground
-    polish the pet cards css
-    finish with cards
-    check via lighthouse
-    dark mode
-    use @container quaris
-    validations for form with js also
-    fallbach for new css properties
-    chack-add animations 
-    home btn, arrows are jumping
-    check the pic for the preview
-  style the btn for themes, make an img for the dark theme, check the colors, do the js forthat
+
+JS:
+  validations for form 
+
+CSS:
+  polish the pet cards css
+  ?use @container quaris
+  fallbach for new css properties
+  chack-add animations 
+  home btn, arrows are jumping
+  check the pic for the preview
+  correct the btn for the themes size
+  check if css for 1920 is fine
+
+HTML: 
+  ?Add paws pics for decoration - not the back ground
+
+OTHERS:   
+   check via lighthouse
+
+    
+
+    
+
+    
+
     -->

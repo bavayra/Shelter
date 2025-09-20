@@ -50,6 +50,7 @@ body {
     --pad-top: 56%;
     --pad-left: 50%;
     --pad-size: 44%;
+    --toe-size-sm: clamp(48px, 6vw, 200px);
     --toe-size: clamp(72px, 10vw, 240px);
     --toe-size-md: clamp(96px, 15vw, 420px);
     --toe-gap: 6%;
@@ -231,6 +232,7 @@ h1 {
     padding: 0;
     border: none;
     border-radius: var(--border-radius);
+    transform: scale(1.1);
 
 }
 
@@ -241,11 +243,11 @@ h1 {
     aspect-ratio: 1/1;
     object-fit: contain;
     opacity: 0.7;
-
 }
 
 .home-icon:hover {
     opacity: 1;
+    transform: scale(1.1);
 }
 
 .theme-toggle-btn {
@@ -283,11 +285,13 @@ h1 {
 .sidebar a:hover,
 .hero-CTA button:hover,
 .filter-btns button:hover,
-.view-all-CTA:hover {
+.view-all-CTA:hover,
+.theme-toggle-btn:hover {
     font-weight: bold;
     text-decoration: underline;
     text-decoration-thickness: 2px;
-    transform: scale(1.1);
+    transform: scale(1.05);
+    transition: transform .2s ease-in;
 }
 
 .contact-btn,
@@ -547,7 +551,7 @@ select {
     position: absolute;
     bottom: 0;
     justify-self: center;
-    transform: translate(0, 50%);
+
     block-size: var(--btn-height);
     inline-size: 50%;
     padding-inline: var(--space-sm);
@@ -562,7 +566,7 @@ select {
 }
 
 .pet_btn:hover {
-    transform: scale(1.03);
+    transform: translate(0, 20px) scale(1.08);
 }
 
 /*ABOUT:CAROUSEL*/
@@ -937,7 +941,7 @@ footer {
         position: relative;
         display: flex;
         flex-direction: row;
-        left: 47%;
+        left: 53%;
         block-size: clamp(280px, 4dvh, 420px);
         transform: translate(0, -5%);
     }
@@ -1196,6 +1200,14 @@ footer {
     /*HEADER*/
     h1 {
         font-size: var(--font-size-txt);
+    }
+
+    .theme-toggle-btn {
+        padding-inline: var(--space-md);
+    }
+
+    .toggle-theme-icon {
+        inline-size: var(--icon-size-sm);
     }
 
     .contact-btn {
@@ -1555,7 +1567,9 @@ footer {
 @media (min-width: 1440px) {
 
     /*HERO*/
-
+    .theme-toggle-btn {
+        padding-inline: var(--space-sm);
+    }
 
     .hero-info {
         inline-size: clamp(16ch, 40dvw, 48ch);
@@ -1643,9 +1657,121 @@ footer {
 }
 
 @media (min-width: 1920px) {
+
+    /*HERO*/
     #hero {
         background-position: center;
         background-size: cover;
+    }
+
+    #dogs-now,
+    #dogs-year,
+    #dogs-total {
+        font-size: var(--font-size-h2);
+        color: var(--accent-text-color);
+    }
+
+    .hero-info {
+        font-size: var(--font-size-h2);
+    }
+
+    .hero-CTA button {
+        margin-top: var(--space-sm);
+        margin-left: var(--space-xl);
+        font-size: var(--font-size-txt);
+        font-weight: var(--font-weight);
+    }
+
+    .pets-stats {
+        top: 25dvh;
+        left: 10dvw;
+        line-height: 2rem;
+        font-size: var(--font-size-txt);
+    }
+
+    /*HEADER*/
+    .contact-btn {
+        font-size: var(--font-size-txt);
+    }
+
+    /*FILTERS*/
+
+    select {
+        font-size: var(--font-size-txt);
+        font-weight: var(--font-weight-md);
+    }
+
+    .pet-cards-section label {
+        font-size: var(--font-size-txt);
+        font-weight: var(--font-weight-md);
+
+    }
+
+    .filter-btns {
+        max-inline-size: 720px;
+    }
+
+    .filter-btns button {
+        font-weight: var(--font-weight-md);
+        font-size: var(--font-size-txt);
+    }
+
+    .view-all-btn button {
+        font-size: var(--font-size-txt);
+        font-weight: var(--font-weight-md);
+    }
+
+    /*ABOUT US*/
+    .about-caption {
+        font-size: var(--font-size-h2);
+    }
+
+    /*REVIEWS*/
+    .review-text {
+        font-size: var(--font-size-txt);
+    }
+
+    /*CONTACTS*/
+    #contact-desc {
+        font-size: var(--font-size-h2);
+    }
+
+    .toe {
+        inline-size: var(--toe-size-sm);
+        block-size: var(--toe-size-sm);
+    }
+
+    .orbit {
+        --r: 190%;
+    }
+
+    .contact-form label {
+        font-size: var(--font-size-accents);
+        font-weight: var(--font-weight-md);
+    }
+
+    .contact-form :is(input, textarea) {
+        margin-inline: var(--space-lg);
+    }
+
+
+    #chars-counter {
+        font-size: var(--font-size-accents);
+    }
+
+    .form-btns {
+        margin-left: 15%;
+        inline-size: 70%;
+    }
+
+    #form-reset-btn,
+    #form-submit-btn {
+        font-size: var(--font-size-accents);
+        font-weight: var(--font-weight-md);
+    }
+
+    .contact-address {
+        font-size: var(--font-size-accents);
     }
 }
 
