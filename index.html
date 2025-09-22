@@ -51,8 +51,8 @@
         <span class="visually-hidden">HOME</span>
       </a>
 
-      <button id="themeToggle" class="theme-toggle-btn" type="button" aria-label="Toggle color theme" aria-pressed="false"
-        title="Toggle theme">
+      <button id="themeToggle" class="theme-toggle-btn" type="button" aria-label="Toggle color theme"
+        aria-pressed="false" title="Toggle theme">
         <img class="toggle-theme-icon" src="images-base/dark-theme.png" alt="" aria-hidden="true">
       </button>
 
@@ -117,6 +117,19 @@
           <div class="hero-CTA">
             <button class="hero-meet-CTA" data-target="#pets" aria-label="Meet your pet button">MEET YOUR BEST
               FRIEND</button>
+          </div>
+        </div>
+
+        <div class="hero-decor">
+          <div class="pet-stats-container">
+            <div class="pets-stats" aria-live="polite">
+              DOGS WAITING FOR ADOPTION: <br> <span id="dogs-now">0</span><br>
+              ADOPTED DOGS THIS YEAR: <br><span id="dogs-year">0</span><br>
+              ADOPTED DOGS SINCE 2010: <br><span id="dogs-total">0</span>
+            </div>
+          </div>
+          <div class="paw-decoration">
+            <img class="paw-image-decor" src="images-base/paws-light.png">
           </div>
         </div>
       </div>
@@ -307,17 +320,19 @@
 
           <form id="form-container" class="contact-form" novalidate>
             <label for="message">TYPE YOUR MESSAGE HERE</label>
-            <textarea id="message" name="message" rows="4" maxlength="200" placeholder="START TYPING..." aria-required="true"></textarea>
+            <textarea id="message" name="message" rows="4" maxlength="200" placeholder="START TYPING..."
+              aria-required="true"></textarea>
             <div id="chars-counter">Symbols remain: 200</div>
 
             <label for="form-full-name">YOUR FULL NAME</label>
-            <input id="form-full-name" type="text" name="fullName" required autocomplete="name" aria-required="true" >
+            <input id="form-full-name" type="text" name="fullName" required autocomplete="name" aria-required="true">
 
             <label for="form-email">YOUR EMAIL</label>
-            <input id="form-email" type="email" name="email" required autocomplete="email" aria-required="true" >
+            <input id="form-email" type="email" name="email" required autocomplete="email" aria-required="true">
 
             <label for="form-number">YOUR PHONE NUMBER</label>
-            <input id="form-number" type="tel" name="tel" autocomplete="tel" pattern="[\d\s\-\+\(\)]{7,}" aria-required="true" >
+            <input id="form-number" type="tel" name="tel" autocomplete="tel" pattern="[\d\s\-\+\(\)]{7,}"
+              aria-required="true">
 
             <div class="form-btns">
               <button id="form-submit-btn" type="submit" aria-label="Send the form">SEND</button>
@@ -348,14 +363,6 @@
     <p class="footer-content">(c)ROTVODOM 2025</p>
   </footer>
 
-  <div class="pet-stats-container">
-    <div class="pets-stats" aria-live="polite">
-      DOGS WAITING FOR ADOPTION: <br> <span id="dogs-now">0</span><br>
-      ADOPTED DOGS THIS YEAR: <br><span id="dogs-year">0</span><br>
-      ADOPTED DOGS SINCE 2010: <br><span id="dogs-total">0</span>
-    </div>
-  </div>
-
   <button id="scroll-top-btn" aria-label="Scroll top button">
     <img src="/nav-icons/up-arrow.png" alt="Arrow Top button" class="scroll-icon">
   </button>
@@ -373,12 +380,10 @@ JS:
 
 CSS:
   polish the pet cards css
-
   home btn, arrows are jumping
   check the pic for the preview
-
-
-
+  check out z-indexes for var
+  
 HTML: 
   ?Add paws pics for decoration - not the back ground
 

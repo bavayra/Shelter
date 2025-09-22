@@ -34,6 +34,7 @@ body {
     --input-color: rgb(43, 23, 35);
 
     --hero-bg: url("images-base/bg-main2.jpeg");
+    --paw-decor: url("images-base/paw-dark.png");
 
     --slide-w: min(80vw, 420px);
     --header-h: clamp(56px, 10svh, 96px);
@@ -96,6 +97,7 @@ body {
     --input-color: rgb(217, 177, 141);
 
     --hero-bg: url("images-base/bg-main-dark.png");
+    --paw-decor: url("images-base/paw-light.png");
 }
 
 button,
@@ -141,7 +143,7 @@ section {
 
 .sidebar-toggle,
 .contact-text,
-.pets-stats,
+.hero-decor,
 .hero-content,
 .pad,
 .visually-hidden,
@@ -361,6 +363,11 @@ nav img {
     padding-block: clamp(1rem, 3dvw, 3rem);
     background: center no-repeat var(--hero-bg);
     background-size: cover;
+}
+
+.paw-decoration{
+    display: flex;
+    align-items: end;
 }
 
 .hero-CTA {
@@ -962,45 +969,20 @@ footer {
 
     .hero-container {
         position: relative;
-        display: flex;
-        flex-direction: row;
-        left: 53%;
+        display: flex;    
+        align-items: center;
+        justify-content: center;
         block-size: clamp(280px, 4dvh, 420px);
         transform: translate(0, -5%);
-    }
-
-    .pets-stats {
-        display: initial;
-        position: absolute;
-        top: 30dvh;
-        left: 5dvw;
-        inline-size: auto;
-        block-size: auto;
-        padding: var(--space-md);
-        line-height: 1.4rem;
-        background-color: rgb(43, 23, 35, 0.5);
-        color: var(--accent-text-color);
-        font-weight: var(--font-weight-md);
-        border-radius: var(--border-radius);
-        text-align: center;
-        font-size: var(--font-size-xs);
-    }
-
-    #dogs-now,
-    #dogs-year,
-    #dogs-total {
-        font-size: var(--font-size-txt);
-        font-weight: var(--font-weight-lg);
-        color: rgb(97, 18, 53);
     }
 
     .hero-info {
         display: initial;
         position: absolute;
         z-index: 2;
-        inline-size: clamp(28ch, 40rem, 40ch);
+        inline-size: clamp(28ch, 40rem, 72ch);
         max-inline-size: 640px;
-        margin-right: var(--space-md);
+        margin-bottom: var(--space-xl);
         padding: var(--space-md);
         border: 1px solid var(--secondary-color);
         border-radius: var(--border-radius);
@@ -1022,7 +1004,7 @@ footer {
         top: 95%;
         left: 70%;
         z-index: var(--z-overlay);
-        inline-size: clamp(180px, 22ch, 460px);
+        inline-size: clamp(180px, 28ch, 460px);
         transform: translate(-55%, -5%);
         margin-block: 0;
     }
@@ -1032,6 +1014,8 @@ footer {
         padding-inline: var(--space-md);
         font-size: var(--font-size-xs);
         font-weight: var(--font-weight);
+                border: 1px solid var(--accent-text-color);
+        border-radius: var(--border-radius);
     }
 
     /*PET CARDS*/
@@ -1135,9 +1119,7 @@ footer {
         position: relative;
         inline-size: min(620px, 52dvw);
         aspect-ratio: 1.2/1;
-        height: auto;
-        /* fallback for aspect-ratio */
-
+        height: auto;  /* fallback for aspect-ratio */
     }
 
     .pad {
@@ -1148,8 +1130,7 @@ footer {
         transform: translate(-50%, -50%);
         inline-size: var(--pad-size);
         aspect-ratio: 1 / 1;
-        height: auto;
-        /* fallback for aspect-ratio */
+        height: auto; /* fallback for aspect-ratio */
         border: none;
         border-radius: 40%;
         overflow: hidden;
@@ -1300,19 +1281,38 @@ footer {
     }
 
     /*HERO*/
-    .pets-stats {
-        top: 20%;
-        left: 10%;
-        font-size: var(--font-size-xs);
-    }
-
-    .hero-container {
+        .hero-container {
         position: relative;
         display: flex;
         flex-direction: row;
-        left: 60%;
-        block-size: clamp(280px, 20rem, 420px);
+        left: 53%;
+        block-size: clamp(280px, 4dvh, 420px);
         transform: translate(0, -5%);
+    }
+
+    .hero-decor{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        gap:var(--space-sm);
+        inline-size: auto;
+        max-inline-size: 80%;
+        margin: 0 auto;
+    }
+
+    .paw-image-decor{
+        inline-size: clamp(144px, 25vw, 320px);
+    }
+    
+    .pets-stats {
+        display: block;
+
+        position: static;
+        inline-size: auto;
+        block-size: auto;
+        padding: var(--space-md);
     }
 
     .hero-info {
