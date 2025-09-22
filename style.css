@@ -34,7 +34,7 @@ body {
     --input-color: rgb(43, 23, 35);
 
     --hero-bg: url("images-base/bg-main2.jpeg");
-    --paw-decor: url("images-base/paw-dark.png");
+    --paw-decor: url("images-base/paws-light.png");
 
     --slide-w: min(80vw, 420px);
     --header-h: clamp(56px, 10svh, 96px);
@@ -97,7 +97,7 @@ body {
     --input-color: rgb(217, 177, 141);
 
     --hero-bg: url("images-base/bg-main-dark.png");
-    --paw-decor: url("images-base/paw-light.png");
+    --paw-decor: url("images-base/paws-dark.png");
 }
 
 button,
@@ -363,11 +363,6 @@ nav img {
     padding-block: clamp(1rem, 3dvw, 3rem);
     background: center no-repeat var(--hero-bg);
     background-size: cover;
-}
-
-.paw-decoration{
-    display: flex;
-    align-items: end;
 }
 
 .hero-CTA {
@@ -969,7 +964,7 @@ footer {
 
     .hero-container {
         position: relative;
-        display: flex;    
+        display: flex;
         align-items: center;
         justify-content: center;
         block-size: clamp(280px, 4dvh, 420px);
@@ -1014,7 +1009,7 @@ footer {
         padding-inline: var(--space-md);
         font-size: var(--font-size-xs);
         font-weight: var(--font-weight);
-                border: 1px solid var(--accent-text-color);
+        border: 1px solid var(--accent-text-color);
         border-radius: var(--border-radius);
     }
 
@@ -1119,7 +1114,8 @@ footer {
         position: relative;
         inline-size: min(620px, 52dvw);
         aspect-ratio: 1.2/1;
-        height: auto;  /* fallback for aspect-ratio */
+        height: auto;
+        /* fallback for aspect-ratio */
     }
 
     .pad {
@@ -1130,7 +1126,8 @@ footer {
         transform: translate(-50%, -50%);
         inline-size: var(--pad-size);
         aspect-ratio: 1 / 1;
-        height: auto; /* fallback for aspect-ratio */
+        height: auto;
+        /* fallback for aspect-ratio */
         border: none;
         border-radius: 40%;
         overflow: hidden;
@@ -1281,53 +1278,58 @@ footer {
     }
 
     /*HERO*/
-        .hero-container {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        left: 53%;
-        block-size: clamp(280px, 4dvh, 420px);
-        transform: translate(0, -5%);
-    }
 
-    .hero-decor{
+    .hero-decor {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: auto 2fr;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         align-self: center;
-        gap:var(--space-sm);
+        gap: clamp(144px, 20vw, 320px);
         inline-size: auto;
-        max-inline-size: 80%;
-        margin: 0 auto;
+        max-inline-size: 90%;
     }
 
-    .paw-image-decor{
+    .paw-decoration {
+        display: block;
+        content: var(--paw-decor);
         inline-size: clamp(144px, 25vw, 320px);
+        rotate: 12deg;
+        margin-bottom: var(--space-lg);
     }
-    
+
     .pets-stats {
         display: block;
-
         position: static;
+        margin-left: var(--space-md);
+        text-align: center;
         inline-size: auto;
         block-size: auto;
         padding: var(--space-md);
+        border: 1px solid var(--secondary-color);
+        border-radius: var(--border-radius);
+        background-color: rgb(43, 23, 35, 0.5);
+        color: var(--accent-text-color);
+        font-weight: var(--font-weight-md);
+        line-height: 1.8rem;
+    }
+
+    #dogs-now,
+    #dogs-year,
+    #dogs-total {
+        font-size: var(--font-size-txt);
+        color: var(--review-text-color);
+        font-weight: 800;
     }
 
     .hero-info {
-        inline-size: clamp(16ch, 40svw, 36ch);
-        margin-inline-end: 4dvw;
-        margin-block-start: clamp(48px, 47dvh, 400px);
-        padding-inline: var(--space-md);
+        display: flex;
+        top: 17%;
+        left: 60%;
+        inline-size: clamp(16ch, 40dvw, 40ch);
+        margin-inline-end: 6dvw;
+        margin-block-start: clamp(96px, 45dvh, 480px);
         font-size: var(--font-size-sm);
-    }
-
-    .hero-CTA {
-        position: absolute;
-        inset-block-start: 92%;
-        inset-inline-start: 58%;
-        inline-size: clamp(180px, 40dvw, 420px);
     }
 
     /*FILTER*/
@@ -1582,15 +1584,19 @@ footer {
         padding-inline: var(--space-sm);
     }
 
-    .hero-info {
-        inline-size: clamp(16ch, 40dvw, 48ch);
-        margin-inline-end: 6dvw;
-        margin-block-start: clamp(96px, 45dvh, 480px);
+    .paw-decoration {
+        margin-block: var(--space-lg);
+    }
+
+    .pets-stats {
         font-size: var(--font-size-accents);
     }
 
-    .hero-CTA {
-        inline-size: clamp(180px, 36dvw, 520px);
+    .hero-info {
+        inline-size: clamp(16ch, 40dvw, 48ch);
+        margin-inline-end: 6dvw;
+        margin-block-start: clamp(96px, 40dvh, 480px);
+        font-size: var(--font-size-accents);
     }
 
     /*NAV*/
@@ -1674,29 +1680,38 @@ footer {
         background-size: cover;
     }
 
-    #dogs-now,
-    #dogs-year,
-    #dogs-total {
-        font-size: var(--font-size-h2);
-        color: var(--accent-text-color);
+    .hero-decor {
+        gap: clamp(196px, 30vw, 600px);
+        margin-top: var(--space-xl);
+    }
+
+    .paw-decoration {
+        inline-size: clamp(196px, 25vw, 400px);
     }
 
     .hero-info {
+        top: 55%;
         font-size: var(--font-size-h2);
     }
 
     .hero-CTA button {
-        margin-top: var(--space-sm);
-        margin-left: var(--space-xl);
+        margin-top: var(--space-xs);
+        margin-left: var(--space-md);
         font-size: var(--font-size-txt);
         font-weight: var(--font-weight);
     }
 
     .pets-stats {
-        top: 25dvh;
-        left: 10dvw;
-        line-height: 2rem;
+        line-height: 2.5rem;
         font-size: var(--font-size-txt);
+    }
+
+    #dogs-now,
+    #dogs-year,
+    #dogs-total {
+        font-size: var(--font-size-h2);
+        color: var(--review-text-color);
+        font-weight: 800;
     }
 
     /*HEADER*/
