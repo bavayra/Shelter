@@ -15,8 +15,7 @@ body {
     letter-spacing: 0.09rem;
     line-height: 1.4;
     min-block-size: 100%;
-    min-height: 100%;
-    /*fallback for min-block-size*/
+    min-height: 100%; /*fallback for min-block-size*/
     background: var(--primary-color);
 }
 
@@ -154,7 +153,7 @@ h1 {
 
 .paw-click {
     position: fixed;
-    z-index: 9999;
+    z-index: var(--z-overlay);
     inline-size: 2rem;
     block-size: 2rem;
     transform: translate(-50%, -50%) scale(0.5);
@@ -319,6 +318,7 @@ h1 {
 nav {
     display: block;
     margin-block: 0;
+    z-index: var(--z-overlay);
     padding-inline: var(--space-lg);
     padding-block: var(--space-md);
     background-color: var(--secondary-color);
@@ -541,8 +541,7 @@ select {
     margin-block: var(--space-md);
     inline-size: 100%;
     aspect-ratio: 4 / 3;
-    height: auto;
-    /* fallback for aspect-ratio */
+    height: auto; /* fallback for aspect-ratio */
     object-fit: contain;
     border-radius: var(--border-radius);
 }
@@ -562,12 +561,12 @@ select {
 
 .pet_btn {
     position: absolute;
-    bottom: 0;
+    bottom: -5%;
     justify-self: center;
-
     block-size: var(--btn-height);
     inline-size: 50%;
-    padding-inline: var(--space-sm);
+
+    padding: 0;
     border: none;
     border-radius: var(--border-radius);
     background: var(--accent-text-color);
@@ -586,6 +585,21 @@ select {
 
 :is([class*="zoom" i], [id*="zoom" i]) {
     display: none;
+}
+
+#about-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: var(--space-md);
+    padding-inline: var(--space-sm);
+    margin: 0;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-lg);
+    font-size: var(--font-size-h1);
+    color: var(--accent-text-color);
+    text-decoration: underline;
+    text-decoration-style: dotted;
 }
 
 .about-container {
@@ -657,7 +671,7 @@ select {
     align-items: center;
     justify-content: center;
     box-shadow: var(--drop-shadow);
-    z-index: 15;
+    z-index: var(--z-overlay);
     opacity: 0.85;
     transition: opacity 0.2s ease;
 }
@@ -675,6 +689,22 @@ select {
 }
 
 /* REVIEWS*/
+#reviews-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: var(--space-md);
+    padding-inline: var(--space-sm);
+    margin: 0;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-lg);
+    font-size: var(--font-size-h2);
+    color: var(--accent-text-color);
+    text-align: center;
+    line-height: 2.5rem;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
 
 .owners-review {
     display: grid;
@@ -720,7 +750,6 @@ select {
     block-size: clamp(128px, 20dvh, 480px);
     margin-bottom: var(--space-lg);
     padding: 0;
-    background-color: var(--surface-color);
     text-align: center;
     font-weight: 400;
 }
@@ -974,7 +1003,7 @@ footer {
     .hero-info {
         display: initial;
         position: absolute;
-        z-index: 2;
+        z-index: var(--z-nav);
         inline-size: clamp(28ch, 40rem, 72ch);
         max-inline-size: 640px;
         margin-bottom: var(--space-xl);
@@ -1449,7 +1478,7 @@ footer {
     #about-zoom {
         position: fixed;
         inset: 0;
-        z-index: 9999;
+        z-index: var(--z-overlay);
         display: grid;
         place-items: center;
         padding: var(--space-md);
@@ -1473,7 +1502,7 @@ footer {
         position: absolute;
         top: 12px;
         right: 12px;
-        z-index: 2;
+
         width: 40px;
         height: 40px;
         border: none;
