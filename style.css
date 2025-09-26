@@ -491,14 +491,112 @@ select {
     font-weight: var(--font-weight-md);
 }
 
+/* PETS CARDS*/
+
+.cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm, 1.5rem);
+    justify-items: center;
+    margin-bottom: var(--space-md, 1.5rem);
+}
+
+.carousel-arrow {
+    display: none;
+}
+
+.pet {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: var(--space-sm) 0;
+    min-height: 340px; /*check*/
+    max-width: 340px;
+    width: 100%;
+    background: var(--surface-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--drop-shadow);
+    overflow: hidden;
+    transition: transform 0.35s ease-in-out;
+}
+
+.pet:hover,
+.pet:focus-visible{
+    transform: scale(1.04);
+    box-shadow: var(--drop-shadow);
+    z-index: 2;
+}
+
+.pet_img {
+    inline-size: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    transition: filter 0.2s;
+}
+
+.pet-name {
+    margin: var(--space-sm);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight);
+    color: var(--accent-text-color);
+    text-decoration: underline;
+}
+
+.pet-age-gender{
+    font-size: var(--font-size-sm);
+    color: var(--accent-text-color);
+    margin-bottom: var(--space-sm);
+}
+
+.pet-desc {
+    position: relative;
+    max-height: 3.5em;
+    margin-left: 0;
+    padding-inline: var(--space-sm);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-lg);
+    color: var(--accent-text-color, #333);
+    overflow: hidden;
+    text-overflow: ellipsis;
+      transition: max-height 0.3s, color 0.2s;
+}
+
+.pet:hover .pet-desc,
+.pet:focus-within .pet-desc{
+    max-height: 100vh;
+    color: var(--accent-text-color, #222);
+    overflow: visible;
+    background: var(--surface-color, #f5f5f5);
+    z-index: 1;
+}
+
+.pet_btn {
+    padding-block: 1em;
+    margin-bottom: var(--space-md);
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--accent-text-color, #b48a78);
+    color: var(--secondary-color);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-md);
+    transition: background .2s;
+}
+
+.pet_btn:hover {
+    background: var(--accent-text-color, #a06c5a);
+}
+
+
 .view-all-btn {
     display: flex;
     justify-content: center;
     height: var(--btn-height);
+    margin-bottom: var(--space-sm);
 }
 
 .view-all-btn button {
-    height: var(--btn-height);
     padding-inline: var(--space-md);
     background-color: var(--surface-color);
     border: none;
@@ -506,82 +604,6 @@ select {
     color: var(--accent-text-color);
     font-size: var(--font-size-xs);
     box-shadow: var(--drop-shadow);
-}
-
-/* PETS CARDS*/
-
-.cards-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-sm);
-    justify-items: center;
-    margin-bottom: var(--space-md);
-}
-
-.carousel-arrow{
-    display: none;
-}
-
-.pet {
-    position: relative;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    gap: var(--space-xs);
-    inline-size: 80%;
-    block-size: auto;
-    align-self: center;
-    justify-self: center;
-    padding: var(--space-sm);
-    margin-block: var(--space-lg);
-    background: var(--surface-color);
-    color: var(--accent-text-color);
-    border-radius: var(--border-radius);
-    box-shadow: var(--drop-shadow);
-    text-align: center;
-}
-
-.pet_img {
-    margin-block: var(--space-md);
-    inline-size: 100%;
-    aspect-ratio: 4 / 3;
-    height: auto;
-    object-fit: contain;
-    border-radius: var(--border-radius);
-}
-
-.pet h3 {
-    margin: 0;
-    font-size: var(--font-size-md);
-    text-decoration: underline;
-}
-
-.pet_desc {
-    margin-top: 0;
-    padding-inline: var(--space-sm);
-    font-size: var(--font-size-sm);
-    margin-bottom: var(--space-lg);
-}
-
-.pet_btn {
-    position: absolute;
-    bottom: -5%;
-    justify-self: center;
-    block-size: var(--btn-height);
-    inline-size: 50%;
-
-    padding: 0;
-    border: none;
-    border-radius: var(--border-radius);
-    background: var(--accent-text-color);
-    color: var(--secondary-color);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-md);
-    text-align: center;
-    transition: transform .2s ease-in-out;
-}
-
-.pet_btn:hover {
-    transform: translate(0, 20px) scale(1.08);
 }
 
 /*ABOUT:CAROUSEL*/
@@ -1515,9 +1537,10 @@ footer {
 
     /*REVIEWS*/
 
-    #reviews-title{
-        margin-bottom:var(--space-xl);
+    #reviews-title {
+        margin-bottom: var(--space-xl);
     }
+
     .owners-review {
         gap: var(--space-lg);
         width: 90%;
@@ -1783,9 +1806,10 @@ footer {
     }
 
     /*REVIEWS*/
-    #reviews-title{
+    #reviews-title {
         font-size: var(--font-size-h1);
     }
+
     .review-text {
         font-size: var(--font-size-txt);
     }
