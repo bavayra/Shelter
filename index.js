@@ -337,67 +337,109 @@ scrollTopBtn.addEventListener("click", () => {
 
 /*PETS CARDS*/
 
-const dogs = [
+const pets = [
   {
+    id: 1,
     name: "Bianka",
     breed: "Rottweiler",
-    age: 2,
-    gender: "Female",
+    age: "2 y/o",
+    gender: "Female,",
     health: "Healthy",
-    image: "image-dogs/dog-bianka.jpg",
-    description: "Most of my life I was kept on a chain. My owner simply abandoned me. I really love people, cuddling, and sitting on someone's laps. I adore playing with other dogs, but I don't really like cats... I want a home so badly — may I sit on your laps?",
+    img: "image-dogs/dog-bianka.jpg",
+    desc: "Most of my life I was kept on a chain. My owner simply abandoned me. I really love people, cuddling, and sitting on someone's laps. I adore playing with other dogs, but I don't really like cats...",
   },
 
   {
+    id: 2,
     name: "Vasilisa",
     breed: "Rottweiler",
-    age: 3,
-    gender: "Female",
+    age: "3 y/o",
+    gender: "Female,",
     health: "Healthy",
-    image: "image-dogs/dog-vasilisa.jpg",
-    description: "My previous owner didn’t love me or spend time with me, so I never really learned much or was loved. But I’ve got so much energy — and I use all of it to love people! I’m not the best at making friends with other dogs or cats, but with all my love for humans, and with you, my new best friend, I’ll play and have fun for as long as you want. Please take me home?",
+    img: "image-dogs/dog-vasilisa.jpg",
+    desc: "My previous owner did not love me nor spend time with me, so I never really learned much about this life. I am not the best at making friends with other dogs or cats, but with you, my new best friend, I will play and have fun for as long as you want. Please take me home?",
   },
 
   {
+    id: 3,
     name: "Birdy",
     breed: "Mixed breed",
-    age: 8,
-    gender: "Female",
+    age: "8 y/o",
+    gender: "Female,",
     health: "Serious health issues",
-    image: "image-dogs/dog-birdy.jpg",
-    description: "Most of my life felt like a real nightmare. I never went for walks or played outside, never felt a gentle touch… all they wanted from me was to have puppies. At first, I was scared of everything — I didn’t know what would happen to me. I am completely deaf and barely can walk...But now I’ve learned that not all humans are bad. Where are you, my perfect human?"
+    img: "image-dogs/dog-birdy.jpg",
+    desc: "Most of my life felt like a real nightmare. I never went for walks or played outside, never felt a gentle touch… all they wanted from me was to have puppies. I was scared of everything. I am completely deaf and barely can walk...But now I have learnt that not all humans are bad. Where are you, my perfect human?"
   },
 
   {
+    id: 4,
     name: "Archie",
     breed: "Rottweiler",
-    age: 2,
-    gender: "Male",
+    age: "2 y/o",
+    gender: "Male,",
     health: "Minor health issues",
-    image: "image-dogs/dog-archie.jpg",
-    description: "I just adore people! My biggest talent? I’m the best at protecting them! I’m still learning how to walk on a leash and be a social butterfly, but I know for sure—someone out there is looking for a friend exactly like me.",
+    img: "image-dogs/dog-archie.jpg",
+    desc: "I just adore people! My biggest talent? I am the best at protecting them! I’m still learning how to walk on a leash, but I know for sure—someone out there is looking for a friend exactly like me.",
   },
 
   {
+    id: 5,
     name: "Baikal",
     breed: "Cane Corso",
-    age: 6,
-    gender: "Male",
+    age: "6 y/o",
+    gender: "Male,",
     health: "Healthy",
-    image: "image-dogs/dog-baikal.jpg",
-    description: "I’ve been at the shelter for over a year now… I might look a little scary, but deep down I’m the gentlest giant you’ll ever meet. I’m not the best with kids or people who smell like alcohol, but with everyone else, I’ll happily play with every toy in existence. I’m a good listener, I’m smart, and I'm chatty! I just really, really want to go home…",
+    img: "image-dogs/dog-baikal.jpg",
+    desc: "I have been at the shelter for over a year now… I might look a little scary, but deep down I am the gentlest giant you will ever meet. I am a good listener, I am smart, and I'm chatty! I just really, really want to go home…",
   },
 
   {
+    id: 6,
     name: "Jessie",
     breed: "Rottweiler",
-    age: 9,
-    gender: "Female",
+    age: "9 y/o",
+    gender: "Female,",
     health: "Serious health issues",
-    image: "image-dogs/dog-jessie.jpg",
-    description: "I really am a good girl, I promise. I love people so much… but they’ve let me down. I adore other animals… but they’ve hurt me too. I have cancer, but I’m not giving up! I just want to find my person and spend the rest of my life with them, surrounded by love and care.",
+    img: "image-dogs/dog-jessie.jpg",
+    desc: "I really am a good girl, I promise. I love people so much… but they have let me down. I have cancer, but I am not giving up! I just want to find my person and spend the rest of my life with them.",
   },
 ];
+
+/*FILTERS*/
+
+let filteredPets = pets.slice();
+let showAll = false;
+
+function getFilterValue(id) {
+  const el = document.getElementById(id);
+  return el ? el.value : "";
+}
+
+function applyFilters() {
+  const gender = getFilterValue('filter-gender');
+  const age = getFilterValue('filter-age');
+  const health = getFilterValue('filter-health');
+  const breed = getFilterValue('filter-breed');
+
+  filteredPets = pets.filter(pet =>
+    (!gender || pet.gender === gender) &&
+    (!age || pet.age === age) &&
+    (!health || pet.health === health) &&
+    (!breed || pet.breed === breed)
+  );
+  showAll = false;
+  renderCards();
+}
+
+function clearFilters() {
+  ['filter-gender', 'filter-age', 'filter-health', 'filter-breed'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  filteredPets = pets.slice();
+  showAll = false;
+  renderCards();
+}
 
 function getCardsPerView() {
   return window.innerWidth >= 768 ? 3 : 2;
@@ -406,52 +448,91 @@ function getCardsPerView() {
 let currentStart = 0;
 
 function renderCards() {
-  const container = document.querySelector('.cards-container');
-  const perView = getCardsPerView();
+  const container = document.querySelector('.pet-cards-container');
+  if (!container) return;
+
+  const perView = showAll ? filteredPets.length : getCardsPerView();
   container.innerHTML = '';
-  for (let i = currentStart; i < Math.min(currentStart + perView, dogs.length); i++) {
-    const dog = dogs[i];
+
+  for (let i = currentStart; i < Math.min(currentStart + perView, filteredPets.length); i++) {
+    const pet = filteredPets[i];
     container.innerHTML += `
       <div class="pet" tabindex="0">
-        <img class="pet-img" src="${dog.img}" alt="${dog.name}">
-        <h3 class="pet-name">${dog.name}</h3>
-        <p class="pet-age-gender">${dog.gender} ${dog.age}</p>
-        <p class="pet-desc">${dog.desc}</p>
-        <button class="pet-btn">ADOPT ME</button>
+        <img class="pet-img" src="${pet.img}" alt="${pet.name}">
+        <h3 class="pet-name">${pet.name}</h3>
+        <p class="pet-age-gender">${pet.gender} ${pet.age}</p>
+        <button class="pet-btn" data-pet="${pet.id}">ADOPT ME</button>
+        <p class="pet-desc">${pet.desc}</p>
       </div>
     `;
   }
- 
-  const left = document.querySelector('.carousel-arrow.left');
-  const right = document.querySelector('.carousel-arrow.right');
-  if (window.innerWidth >= 768) {
-    left.hidden = currentStart === 0;
-    right.hidden = currentStart + perView >= dogs.length;
+
+  const left = document.querySelector('.pets-carousel-arrow.left');
+  const right = document.querySelector('.pets-carousel-arrow.right');
+  if (window.innerWidth >= 768 && !showAll) {
+    if (left) left.hidden = currentStart === 0;
+    if (right) right.hidden = currentStart + perView >= filteredPets.length;
   } else {
-    left.hidden = true;
-    right.hidden = true;
+    if (left) left.hidden = true;
+    if (right) right.hidden = true;
+  }
+
+  const viewAllBtn = document.querySelector('.view-all-CTA');
+  if (viewAllBtn) {
+    viewAllBtn.textContent = showAll ? "HIDE PETS" : "SHOW ALL PETS...";
+    viewAllBtn.setAttribute('aria-expanded', showAll ? "true" : "false");
   }
 }
 
-document.querySelector('.carousel-arrow.left').addEventListener('click', () => {
+function prevCards() {
   const perView = getCardsPerView();
   if (currentStart - perView >= 0) {
     currentStart -= perView;
     renderCards();
   }
-});
-document.querySelector('.carousel-arrow.right').addEventListener('click', () => {
+}
+function nextCards() {
   const perView = getCardsPerView();
-  if (currentStart + perView < dogs.length) {
+  if (currentStart + perView < filteredPets.length) {
     currentStart += perView;
     renderCards();
   }
-});
+}
 
-window.addEventListener('resize', () => {
-  currentStart = 0;
+document.addEventListener('DOMContentLoaded', () => {
+  const applyBtn = document.getElementById('apply-filters');
+  const clearBtn = document.getElementById('clear-filters');
+  if (applyBtn) applyBtn.addEventListener('click', applyFilters);
+  if (clearBtn) clearBtn.addEventListener('click', clearFilters);
+
+  const viewAllBtn = document.querySelector('.view-all-CTA');
+  if (viewAllBtn) {
+    viewAllBtn.addEventListener('click', () => {
+      showAll = !showAll;
+      currentStart = 0;
+      renderCards();
+    });
+  }
+  const left = document.querySelector('.pets-carousel-arrow.left');
+  const right = document.querySelector('.pets-carousel-arrow.right');
+  if (left) left.addEventListener('click', prevCards);
+  if (right) right.addEventListener('click', nextCards);
+
+  const cardsContainer = document.querySelector('.pet-cards-container');
+  if (cardsContainer) {
+    cardsContainer.addEventListener('click', function (e) {
+      if (e.target.classList.contains('pet-btn')) {
+        const contacts = document.getElementById('contacts');
+        if (contacts) contacts.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  window.addEventListener('resize', () => {
+    currentStart = 0;
+    renderCards();
+  });
+
   renderCards();
 });
-
-document.addEventListener('DOMContentLoaded', renderCards);
 
