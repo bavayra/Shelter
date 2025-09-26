@@ -573,7 +573,7 @@ select {
     z-index: 1;
 }
 
-.pet_btn {
+.pet-btn {
     padding-block: 1em;
     margin-bottom: var(--space-md);
     border: none;
@@ -585,7 +585,7 @@ select {
     transition: background .2s;
 }
 
-.pet_btn:hover {
+.pet-btn:hover {
     background: var(--accent-text-color, #a06c5a);
 }
 

@@ -335,7 +335,9 @@ scrollTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-const pets = [
+/*PETS CARDS*/
+
+const dogs = [
   {
     name: "Bianka",
     breed: "Rottweiler",
@@ -395,5 +397,61 @@ const pets = [
     image: "image-dogs/dog-jessie.jpg",
     description: "I really am a good girl, I promise. I love people so much… but they’ve let me down. I adore other animals… but they’ve hurt me too. I have cancer, but I’m not giving up! I just want to find my person and spend the rest of my life with them, surrounded by love and care.",
   },
-]
+];
+
+function getCardsPerView() {
+  return window.innerWidth >= 768 ? 3 : 2;
+}
+
+let currentStart = 0;
+
+function renderCards() {
+  const container = document.querySelector('.cards-container');
+  const perView = getCardsPerView();
+  container.innerHTML = '';
+  for (let i = currentStart; i < Math.min(currentStart + perView, dogs.length); i++) {
+    const dog = dogs[i];
+    container.innerHTML += `
+      <div class="pet" tabindex="0">
+        <img class="pet-img" src="${dog.img}" alt="${dog.name}">
+        <h3 class="pet-name">${dog.name}</h3>
+        <p class="pet-age-gender">${dog.gender} ${dog.age}</p>
+        <p class="pet-desc">${dog.desc}</p>
+        <button class="pet-btn">ADOPT ME</button>
+      </div>
+    `;
+  }
+ 
+  const left = document.querySelector('.carousel-arrow.left');
+  const right = document.querySelector('.carousel-arrow.right');
+  if (window.innerWidth >= 768) {
+    left.hidden = currentStart === 0;
+    right.hidden = currentStart + perView >= dogs.length;
+  } else {
+    left.hidden = true;
+    right.hidden = true;
+  }
+}
+
+document.querySelector('.carousel-arrow.left').addEventListener('click', () => {
+  const perView = getCardsPerView();
+  if (currentStart - perView >= 0) {
+    currentStart -= perView;
+    renderCards();
+  }
+});
+document.querySelector('.carousel-arrow.right').addEventListener('click', () => {
+  const perView = getCardsPerView();
+  if (currentStart + perView < dogs.length) {
+    currentStart += perView;
+    renderCards();
+  }
+});
+
+window.addEventListener('resize', () => {
+  currentStart = 0;
+  renderCards();
+});
+
+document.addEventListener('DOMContentLoaded', renderCards);
 
