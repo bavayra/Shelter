@@ -512,8 +512,14 @@ select {
 
 .cards-container {
     display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: var(--space-sm);
-    grid-template-columns: 1fr;
+    justify-items: center;
+    margin-bottom: var(--space-md);
+}
+
+.carousel-arrow{
+    display: none;
 }
 
 .pet {
