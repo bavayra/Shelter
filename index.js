@@ -467,35 +467,10 @@ function renderCards() {
     `;
   }
 
-  const left = document.querySelector('.pets-carousel-arrow.left');
-  const right = document.querySelector('.pets-carousel-arrow.right');
-  if (window.innerWidth >= 768 && !showAll) {
-    if (left) left.hidden = currentStart === 0;
-    if (right) right.hidden = currentStart + perView >= filteredPets.length;
-  } else {
-    if (left) left.hidden = true;
-    if (right) right.hidden = true;
-  }
-
   const viewAllBtn = document.querySelector('.view-all-CTA');
   if (viewAllBtn) {
     viewAllBtn.textContent = showAll ? "HIDE PETS" : "SHOW ALL PETS...";
     viewAllBtn.setAttribute('aria-expanded', showAll ? "true" : "false");
-  }
-}
-
-function prevCards() {
-  const perView = getCardsPerView();
-  if (currentStart - perView >= 0) {
-    currentStart -= perView;
-    renderCards();
-  }
-}
-function nextCards() {
-  const perView = getCardsPerView();
-  if (currentStart + perView < filteredPets.length) {
-    currentStart += perView;
-    renderCards();
   }
 }
 
@@ -509,14 +484,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (viewAllBtn) {
     viewAllBtn.addEventListener('click', () => {
       showAll = !showAll;
-      currentStart = 0;
       renderCards();
     });
   }
-  const left = document.querySelector('.pets-carousel-arrow.left');
-  const right = document.querySelector('.pets-carousel-arrow.right');
-  if (left) left.addEventListener('click', prevCards);
-  if (right) right.addEventListener('click', nextCards);
 
   const cardsContainer = document.querySelector('.pet-cards-container');
   if (cardsContainer) {
@@ -529,7 +499,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('resize', () => {
-    currentStart = 0;
     renderCards();
   });
 
