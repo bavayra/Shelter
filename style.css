@@ -151,6 +151,43 @@ h1 {
     display: none;
 }
 
+.contact-btn:hover,
+.sidebar a:hover,
+.hero-CTA button:hover,
+.filter-btns button:hover,
+.view-all-CTA:hover,
+.theme-toggle-btn:hover,
+.pet-btn:hover,
+#form-reset-btn:hover,
+#form-submit-btn:hover {
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    transform: scale(1.1);
+    transition: transform .2s ease-in-out;
+}
+
+.contact-btn,
+.pet,
+.pet-btn,
+.sidebar a,
+.hero-CTA button,
+.filter-btns button,
+.view-all-CTA,
+.about-images img,
+.toe,
+#form-reset-btn,
+#form-submit-btn {
+    transition: transform 0.3s ease-in-out;
+}
+
+.filter-container,
+.pet-cards-section,
+.about,
+.contact-paw {
+    margin: 0;
+}
+
 .paw-click {
     position: fixed;
     z-index: var(--z-overlay);
@@ -288,32 +325,7 @@ h1 {
     inline-size: var(--icon-size-lg);
 }
 
-.contact-btn:hover,
-.sidebar a:hover,
-.hero-CTA button:hover,
-.filter-btns button:hover,
-.view-all-CTA:hover,
-.theme-toggle-btn:hover,
-.pet-btn:hover,
-#form-reset-btn:hover,
-#form-submit-btn:hover {
-    font-weight: bold;
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    transform: scale(1.05);
-    transition: transform .2s ease-in;
-}
-
-.contact-btn,
-.sidebar a,
-.hero-CTA button,
-.filter-btns button,
-.view-all-CTA {
-    transition: transform 0.3s ease-in-out;
-}
-
 /*NAV*/
-
 nav {
     display: block;
     margin-block: 0;
@@ -356,7 +368,6 @@ nav img {
 }
 
 /*HERO*/
-
 #hero {
     block-size: 100svh;
     padding-block: clamp(1rem, 3dvw, 3rem);
@@ -371,11 +382,6 @@ nav img {
     margin-block: var(--space-lg);
 }
 
-.hero--meet-CTA {
-    z-index: var(--z-overlay);
-    inline-size: clamp(180px, 24ch, 480px);
-}
-
 .hero-CTA button {
     height: var(--btn-height);
     padding-inline: var(--space-lg);
@@ -385,18 +391,9 @@ nav img {
     color: var(--accent-text-color);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-lg);
-    transition: transform .3s ease-in-out;
 }
 
 /*FILTER*/
-
-.filter-container,
-.pet-cards-section,
-.about,
-.contact-paw {
-    margin: 0;
-}
-
 .filter-container {
     inline-size: 100%;
     max-inline-size: var(--container-max);
@@ -483,7 +480,6 @@ select {
 }
 
 /* PETS CARDS*/
-
 .pet-cards-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -505,7 +501,6 @@ select {
     border-radius: var(--border-radius);
     box-shadow: var(--drop-shadow);
     overflow: hidden;
-    transition: transform .7s ease-in-out;
 }
 
 .pet:hover,
@@ -569,7 +564,6 @@ select {
     color: var(--secondary-color);
     font-size: var(--font-size-md);
     font-weight: var(--font-weight-md);
-    transition: transform .5s ease-in-out;
 }
 
 .view-all-btn {
@@ -590,7 +584,6 @@ select {
 }
 
 /*ABOUT US*/
-
 :is([class*="zoom" i], [id*="zoom" i]) {
     display: none;
 }
@@ -635,7 +628,6 @@ select {
     object-fit: cover;
     border-radius: var(--border-radius);
     scroll-snap-align: center;
-    transition: transform .2s ease-in-out;
 }
 
 #about-images-container {
@@ -744,7 +736,6 @@ select {
 }
 
 /* CONTACTS / FORM */
-
 .contact-paw {
     padding: clamp(24px, 6svh, 72px) 0;
 }
@@ -761,13 +752,6 @@ select {
     font-weight: 400;
 }
 
-#contact-desc {
-    margin-block: var(--space-md);
-    padding-inline: var(--space-md);
-    font-size: var(--font-size-sm);
-    color: var(--accent-text-color);
-}
-
 #contact-title {
     display: flex;
     align-items: center;
@@ -779,6 +763,13 @@ select {
     color: var(--accent-text-color);
     text-decoration: underline;
     text-decoration-style: dotted;
+}
+
+#contact-desc {
+    margin-block: var(--space-md);
+    padding-inline: var(--space-md);
+    font-size: var(--font-size-sm);
+    color: var(--accent-text-color);
 }
 
 .contacts-grid {
@@ -882,7 +873,6 @@ select {
     font-weight: var(--font-weight);
     border-radius: var(--border-radius);
     box-shadow: var(--drop-shadow);
-    transition: transform .2s ease-in-out;
 }
 
 #form-reset-btn {
@@ -955,6 +945,15 @@ footer {
 @media (min-width: 768px) {
 
     /*HEADER*/
+    h1 {
+        display: initial;
+        margin: 0;
+        line-height: 1;
+        color: var(--accent-text-color);
+        font-size: var(--font-size-txt);
+        font-weight: var(--font-weight);
+    }
+
     .contact-btn {
         border-radius: var(--border-radius);
     }
@@ -965,15 +964,6 @@ footer {
 
     .contact-icon {
         display: none;
-    }
-
-    h1 {
-        display: initial;
-        margin: 0;
-        line-height: 1;
-        color: var(--accent-text-color);
-        font-size: var(--font-size-txt);
-        font-weight: var(--font-weight);
     }
 
     /*NAV*/
@@ -987,7 +977,6 @@ footer {
     }
 
     /*HERO*/
-
     .hero-container {
         position: relative;
         display: flex;
@@ -1039,7 +1028,6 @@ footer {
     }
 
     /*PET CARDS*/
-
     .pet-cards-container {
         grid-template-columns: repeat(3, 1fr);
         gap: var(--space-lg);
@@ -1113,7 +1101,6 @@ footer {
         place-items: center;
         inline-size: var(--toe-size);
         block-size: var(--toe-size);
-        transition: transform .2s ease-in-out;
         transform: translate(-50%, -50%) rotate(var(--ang)) translateX(var(--r)) rotate(calc(var(--ang) * -1));
     }
 
@@ -1223,7 +1210,6 @@ footer {
     }
 
     /*HERO*/
-
     .hero-decor {
         display: grid;
         grid-template-columns: auto 2fr;
@@ -1318,9 +1304,13 @@ footer {
     }
 
     /*ABOUT US*/
-
     .about-caption {
         font-size: var(--font-size-accents);
+    }
+
+     .about-arrow {
+        inline-size: clamp(18px, 4dvw, 36px);
+        block-size: clamp(18px, 4dvh, 36px);
     }
 
     #about-zoom[hidden] {
@@ -1366,7 +1356,6 @@ footer {
     }
 
     /*REVIEWS*/
-
     #reviews-title {
         margin-bottom: var(--space-xl);
     }
@@ -1428,15 +1417,12 @@ footer {
         font-size: var(--font-size-xs);
     }
 
+    /*FOOTER*/
     footer {
         font-size: var(--font-size-sm);
     }
 
-    .about-arrow {
-        inline-size: clamp(18px, 4dvw, 36px);
-        block-size: clamp(18px, 4dvh, 36px);
-    }
-
+    /*SCROLL TO TOP BTN*/
     #scroll-top-btn {
         inline-size: var(--icon-size);
         block-size: var(--icon-size);
@@ -1451,6 +1437,13 @@ footer {
 @media (min-width: 1440px) {
 
     /*HERO*/
+    .hero-info {
+        inline-size: clamp(16ch, 40dvw, 48ch);
+        margin-inline-end: 6dvw;
+        margin-block-start: clamp(96px, 40dvh, 480px);
+        font-size: var(--font-size-accents);
+    }
+    
     .theme-toggle-btn {
         padding-inline: var(--space-sm);
     }
@@ -1460,13 +1453,6 @@ footer {
     }
 
     .pets-stats {
-        font-size: var(--font-size-accents);
-    }
-
-    .hero-info {
-        inline-size: clamp(16ch, 40dvw, 48ch);
-        margin-inline-end: 6dvw;
-        margin-block-start: clamp(96px, 40dvh, 480px);
         font-size: var(--font-size-accents);
     }
 
