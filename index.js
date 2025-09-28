@@ -505,3 +505,6 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCards();
 });
 
+/*FORM VALIDATION*/
+
+

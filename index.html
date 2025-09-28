@@ -56,7 +56,7 @@
         <img class="toggle-theme-icon" src="images-base/dark-theme.png" alt="" aria-hidden="true">
       </button>
 
-      <button class="contact-btn" type="button" data-target="#contacts" aria-label="Contact button">
+      <button class="contact-btn" type="button" aria-label="Contact button">
         <img src="/images-base/phone-call.png" alt="Contact us button" class="contact-icon">
         <span class="contact-text">CONTACT US!</span>
       </button>
@@ -185,13 +185,13 @@
         </div>
       </div>
 
-      <div class="pets-cards-carousel">
-        <div class="pet-cards-container"></div>
-      </div>
-
       <div class="view-all-btn" id="view-all-btn-cta">
         <button class="view-all-CTA" data-target="#pets" aria-expanded="false" aria-controls="view-all-btn-cta"
           aria-label="View all pets button">SHOW ALL PETS...</button>
+      </div>
+
+      <div class="pets-cards-carousel">
+        <div class="pet-cards-container"></div>
       </div>
     </section>
 
@@ -200,10 +200,11 @@
 
       <div class="container about-container">
         <h2 id="about-title">OUR STORY</h2>
-        <button class="about-arrow left" aria-label="Previous">&lt; </button>
 
         <div class="about-images" id="about-images-container" aria-label="Our team and shelter photos" tabindex="0"
           aria-live="polite">
+          <button class="about-arrow left" aria-label="Previous">&lt;</button>
+
           <img src="images-about/team-1.jpg" alt="ROTVODOM team - a woman sitting with a rottweiler"
             data-caption="Hi, my name is Svetlana, but I used to be called Rotvomama. I started ROTVODOM in 2010 in Jekaterinburg, Russia."
             loading="lazy">
@@ -233,10 +234,9 @@
           <img src="images-about/team-10.jpg" alt="ROTVODOM team - a smiling rottweiler looking at the camera"
             data-caption="We just want them to be happy and safe. Do you need the best friend? We believe you can find one in ROTVODOM."
             loading="lazy">
+
+          <button class="about-arrow right" aria-label="Next">&gt;</button>
         </div>
-
-        <button class="about-arrow right" aria-label="Next">&gt;</button>
-
         <p class="about-caption" id="about-caption-content" aria-live="polite"></p>
       </div>
 
@@ -313,12 +313,11 @@
 
           <form id="form-container" class="contact-form" novalidate>
             <label for="message">TYPE YOUR MESSAGE HERE</label>
-            <textarea id="message" name="message" rows="4" maxlength="200" placeholder="START TYPING..."
-              aria-required="true"></textarea>
+            <textarea id="message" name="message" rows="4" maxlength="200" aria-required="true"></textarea>
             <div id="chars-counter">Symbols remain: 200</div>
 
             <label for="form-full-name">YOUR FULL NAME</label>
-            <input id="form-full-name" type="text" name="fullName" required autocomplete="name" aria-required="true">
+            <input id="form-full-name" type="text" name="fullName" required autocomplete="name" aria-required="true" minlength="3">
 
             <label for="form-email">YOUR EMAIL</label>
             <input id="form-email" type="email" name="email" required autocomplete="email" aria-required="true">
@@ -371,12 +370,12 @@
 JS:
   validations for form 
   при нажатии на карточку раскрываться должна только одна
-  чтобы при снятии ховера карточки возвращались к своем размеру
+  красный текст лейбла на форме
 
 
 CSS:
   polish the pet cards css
-  home btn, arrows are jumping
+  425+ - contact btn header doesnt work
 
 
   

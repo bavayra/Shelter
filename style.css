@@ -36,7 +36,7 @@ body {
     --paw-decor: url("images-base/paws-light.png");
 
     --slide-w: min(80vw, 420px);
-    --header-h: clamp(56px, 10svh, 96px);
+    --header-h: clamp(56px, 12svh, 120px);
     --header-pad: clamp(6px, 1.2svh, 12px);
     --container-max: 72rem;
     --content-pad: clamp(1rem, 3vw, 2rem);
@@ -78,7 +78,7 @@ body {
     --font-weight-lg: 700;
 
     --border-radius: clamp(8px, 20px, 36px);
-    --drop-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+    --drop-shadow: 0 8px 24px rgba(0, 0, 0, .2);
 
     --z-nav: 20;
     --z-header: 30;
@@ -236,7 +236,6 @@ h1 {
     block-size: var(--header-h);
     padding-inline: var(--space-lg);
     padding-block: var(--header-pad);
-    background: color-mix(in srgb, var(--secondary-color) 85%, transparent);
     background: var(--secondary-color);
     overflow: clip;
 }
@@ -252,7 +251,7 @@ h1 {
 
 #logo-bg {
     inline-size: min(calc(var(--header-h) - 2*var(--header-pad)));
-    max-inline-size: 100%;
+    max-inline-size: 90%;
     aspect-ratio: 1/1;
     height: auto;
     border-radius: 50%;
@@ -428,7 +427,6 @@ nav img {
 select {
     inline-size: 100%;
     block-size: clamp(16px, 4cqb, 24px);
-    padding-inline: var(--space-sm);
     border: none;
     border-bottom-left-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
@@ -436,8 +434,13 @@ select {
     background-color: var(--accent-text-color);
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight);
+}
+
+select,
+select option {
     text-align: center;
 }
+
 
 .pet-cards-section label {
     display: block;
@@ -513,22 +516,22 @@ select {
 .pet-img {
     margin-top: var(--space-lg);
     inline-size: 85%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1;
     object-fit: cover;
     border-radius: var(--border-radius);
     transition: filter .5s;
 }
 
 .pet-name {
-    margin-top: var(--space-lg);
-    font-size: var(--font-size-h2);
+    margin-top: var(--space-md);
+    font-size: var(--font-size-txt);
     font-weight: var(--font-weight);
     color: var(--accent-text-color);
     text-decoration: underline;
 }
 
 .pet-age-gender {
-    font-size: var(--font-size-txt);
+    font-size: var(--font-size-md);
     color: var(--accent-text-color);
     margin-bottom: var(--space-lg);
     margin-top: 0;
@@ -562,7 +565,7 @@ select {
     border-radius: var(--border-radius);
     background: var(--accent-text-color, #b48a78);
     color: var(--secondary-color);
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-sm);
     font-weight: var(--font-weight-md);
 }
 
@@ -595,7 +598,6 @@ select {
     padding-top: var(--space-md);
     padding-inline: var(--space-sm);
     margin: 0;
-    margin-top: var(--space-xl);
     margin-bottom: var(--space-lg);
     font-size: var(--font-size-h1);
     color: var(--accent-text-color);
@@ -610,12 +612,40 @@ select {
     text-align: center;
 }
 
+.about-arrow {
+    position: sticky;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--accent-text-color);
+    border: none;
+    border-radius: 50%;
+    inline-size: var(--icon-size-lg);
+    block-size: var(--icon-size-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-overlay);
+    opacity: .8;
+    transition: opacity 0.2s ease;
+}
+
+.about-arrow:hover {
+    opacity: 1;
+}
+
+.about-arrow.left {
+    left: var(--space-sm);
+}
+
+.about-arrow.right {
+    right: var(--space-sm);
+}
+
 .about-images {
     display: flex;
     gap: var(--space-sm);
     inline-size: 90%;
     padding-inline: var(--space-sm);
-    margin-inline: var(--space-md);
     background-color: var(--primary-color);
     overflow-x: auto;
     overscroll-behavior-x: contain;
@@ -634,10 +664,7 @@ select {
     scrollbar-width: none;
 }
 
-#about-images-container:focus {
-    outline: none;
-}
-
+#about-images-container:focus,
 #about-images-container:focus-visible {
     outline: none;
 }
@@ -658,36 +685,6 @@ select {
     box-shadow: var(--drop-shadow);
 }
 
-.about-arrow {
-    position: absolute;
-    top: 35%;
-    transform: translateY(-50%);
-    background: var(--accent-text-color);
-    border: none;
-    border-radius: 50%;
-    inline-size: var(--icon-size-lg);
-    block-size: var(--icon-size-lg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--drop-shadow);
-    z-index: var(--z-overlay);
-    opacity: 0.85;
-    transition: opacity 0.2s ease;
-}
-
-.about-arrow:hover {
-    opacity: 1;
-}
-
-.about-arrow.left {
-    left: var(--space-md);
-}
-
-.about-arrow.right {
-    right: var(--space-md);
-}
-
 /* REVIEWS*/
 #reviews-title {
     display: flex;
@@ -696,7 +693,7 @@ select {
     padding-top: var(--space-md);
     padding-inline: var(--space-sm);
     margin: 0;
-    margin-top: var(--space-xl);
+    margin-top: var(--space-md);
     margin-bottom: var(--space-lg);
     font-size: var(--font-size-h2);
     color: var(--accent-text-color);
@@ -725,7 +722,7 @@ select {
 }
 
 .owners-review img {
-    margin-block: var(--space-md);
+    margin-block: var(--space-lg);
     margin-inline: var(--space-sm);
     float: inline-end;
     inline-size: var(--icon-size-xxl);
@@ -746,7 +743,6 @@ select {
     inline-size: 100%;
     max-inline-size: 100dvw;
     block-size: clamp(128px, 20dvh, 480px);
-    margin-bottom: var(--space-lg);
     padding: 0;
     text-align: center;
     font-weight: 400;
@@ -756,7 +752,6 @@ select {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: var(--space-md);
     padding-inline: var(--space-sm);
     margin: 0;
     font-size: var(--font-size-h1);
@@ -766,7 +761,6 @@ select {
 }
 
 #contact-desc {
-    margin-block: var(--space-md);
     padding-inline: var(--space-md);
     font-size: var(--font-size-sm);
     color: var(--accent-text-color);
@@ -839,10 +833,6 @@ select {
 
 .contact-form :is(input) {
     block-size: clamp(8px, 4dvh, 24px);
-}
-
-.contact-form:has(input:invalid) label {
-    color: #d61334;
 }
 
 #message {
@@ -1308,7 +1298,7 @@ footer {
         font-size: var(--font-size-accents);
     }
 
-     .about-arrow {
+    .about-arrow {
         inline-size: clamp(18px, 4dvw, 36px);
         block-size: clamp(18px, 4dvh, 36px);
     }
@@ -1443,7 +1433,7 @@ footer {
         margin-block-start: clamp(96px, 40dvh, 480px);
         font-size: var(--font-size-accents);
     }
-    
+
     .theme-toggle-btn {
         padding-inline: var(--space-sm);
     }
