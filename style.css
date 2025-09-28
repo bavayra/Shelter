@@ -889,14 +889,15 @@ select option {
 }
 
 .invalid {
-  border-color:rgb(191, 32, 88);
-  outline-color: rgb(191, 32, 88);
+    border-color: rgb(191, 32, 88);
+    outline-color: rgb(191, 32, 88);
 }
+
 .error-msg {
-  color:rgb(191, 32, 88);
-  margin-block: var(--space-sm);
-  font-size: var(--font-size-sm);
-  text-align: center;
+    color: rgb(191, 32, 88);
+    margin-block: var(--space-sm);
+    font-size: var(--font-size-sm);
+    text-align: center;
 }
 
 /*FOOTER*/
@@ -955,6 +956,10 @@ footer {
         font-weight: var(--font-weight);
     }
 
+    .toggle-theme-icon {
+        inline-size: var(--icon-size-sm);
+    }
+
     .contact-btn {
         border-radius: var(--border-radius);
     }
@@ -975,6 +980,7 @@ footer {
 
     nav a {
         gap: 1rem;
+        font-size: var(--font-size-md);
     }
 
     /*HERO*/
@@ -1013,7 +1019,7 @@ footer {
     .hero-CTA {
         position: absolute;
         top: 95%;
-        left: 70%;
+        left: 25%;
         z-index: var(--z-overlay);
         inline-size: clamp(180px, 28ch, 460px);
         transform: translate(-55%, -5%);
@@ -1031,14 +1037,15 @@ footer {
     /*PET CARDS*/
     .pet-cards-container {
         grid-template-columns: repeat(3, 1fr);
-        gap: var(--space-lg);
-        margin-bottom: var(--space-lg);
+        gap: var(--space-xs);
+        margin-block: var(--space-lg);
+        margin-inline: var(--space-md);
     }
 
     /*ABOUT*/
-    .about-images {
-        inline-size: 95%;
-    }
+    .about-arrow {
+    aspect-ratio: 1;
+}
 
     /*REVIEWS*/
     .owners-review {
@@ -1050,6 +1057,7 @@ footer {
 
     .review-text {
         margin-inline: var(--space-sm);
+        font-size: var(--font-size-xs);
     }
 
     /*CONTACTS*/
@@ -1059,6 +1067,7 @@ footer {
 
     #contact-desc {
         font-size: var(--font-size-md);
+        margin-inline: var(--space-xl);
     }
 
     .contacts-grid {
