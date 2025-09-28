@@ -644,7 +644,7 @@ select option {
 .about-images {
     display: flex;
     gap: var(--space-sm);
-    inline-size: 90%;
+    inline-size: 100%;
     padding-inline: var(--space-sm);
     background-color: var(--primary-color);
     overflow-x: auto;
@@ -654,7 +654,7 @@ select option {
 
 .about-images img {
     flex: 0 0 min(60dvw, 420px);
-    block-size: clamp(88px, 20dvh, 280px);
+    block-size: clamp(88px, 40dvh, 320px);
     object-fit: cover;
     border-radius: var(--border-radius);
     scroll-snap-align: center;
@@ -1314,7 +1314,7 @@ footer {
         block-size: clamp(18px, 4dvh, 36px);
     }
 
-    #about-zoom[hidden] {
+    /*#about-zoom[hidden] {
         display: none;
     }
 
@@ -1354,7 +1354,7 @@ footer {
         text-align: center;
         border-radius: 50%;
         cursor: pointer;
-    }
+    }*/
 
     /*REVIEWS*/
     #reviews-title {

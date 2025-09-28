@@ -199,15 +199,14 @@ document.addEventListener("DOMContentLoaded", () => {
     captionElement.classList.add(captionZoomClass);
   }
 
-  function restoreCaptionFromZoom() {
-    captionElement.classList.remove(captionZoomClass);
-    if (captionOriginalNext && captionOriginalNext.parentElement === captionOriginalParent) {
-      captionOriginalParent.insertBefore(captionElement, captionOriginalNext);
-    } else {
-      captionOriginalParent.appendChild(captionElement);
-    }
-    if (zoomCaption) zoomCaption.hidden = true;
+ function restoreCaptionFromZoom() {
+  captionElement.classList.remove(captionZoomClass);
+  const aboutContainer = document.querySelector('.about-container');
+  if (aboutContainer && !aboutContainer.contains(captionElement)) {
+    aboutContainer.appendChild(captionElement);
   }
+  if (zoomCaption) zoomCaption.hidden = true;
+}
 
   function setIndex(newIndex, { center = true } = {}) {
     const len = aboutImages.length;
@@ -571,7 +570,7 @@ function showFormErrors(form) {
         error.textContent = 'Please enter your full name.';
       } else if (field.name === 'tel') {
         error.textContent = 'Please enter your phone number.';
-      }  else {
+      } else {
         error.textContent = 'Please fill out this field correctly.';
       }
       field.insertAdjacentElement('afterend', error);
