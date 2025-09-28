@@ -506,5 +506,76 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /*FORM VALIDATION*/
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('.contact-form');
+  if (!form) return;
 
+  form.querySelectorAll('input, textarea').forEach(field => {
+    field.addEventListener('input', function () {
+      validateField(this);
+    });
+  });
+
+  form.addEventListener('submit', function (e) {
+    let valid = true;
+    form.querySelectorAll('input, textarea').forEach(field => {
+      if (!validateField(field)) valid = false;
+    });
+    if (!valid) {
+      e.preventDefault();
+      form.querySelectorAll('.error-msg').forEach(msg => msg.remove());
+      showFormErrors(form);
+    }
+  });
+
+  form.addEventListener('reset', () => {
+    form.querySelectorAll('.error-msg').forEach(msg => msg.remove());
+    form.querySelectorAll('label').forEach(label => {
+      label.style.color = '';
+      label.style.fontWeight = '';
+    });
+  });
+});
+
+function validateField(field) {
+  const label = field.previousElementSibling;
+  let isValid = field.checkValidity();
+  if (field.value && !isValid) {
+    if (label) {
+      label.style.color = '#d32f2f';
+      label.style.fontWeight = 'bold';
+    }
+    field.classList.add('invalid');
+  } else {
+    if (label) {
+      label.style.color = '';
+      label.style.fontWeight = '';
+    }
+    field.classList.remove('invalid');
+  }
+  return isValid;
+}
+
+function showFormErrors(form) {
+  form.querySelectorAll('input, textarea').forEach(field => {
+    if (!field.checkValidity() && field.value) {
+      let error = document.createElement('div');
+      error.className = 'error-msg';
+      error.style.color = '#d32f2f';
+      error.style.fontSize = '0.95em';
+      error.setAttribute('aria-live', 'polite');
+
+      if (field.name === 'email') {
+        error.textContent = 'Please enter a valid email address.';
+      } else if (field.name === 'full-name') {
+        error.textContent = 'Please enter your full name.';
+      } else if (field.name === 'tel') {
+        error.textContent = 'Please enter your phone number.';
+      }  else {
+        error.textContent = 'Please fill out this field correctly.';
+      }
+      field.insertAdjacentElement('afterend', error);
+    }
+  });
+}
 

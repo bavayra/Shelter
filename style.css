@@ -888,6 +888,17 @@ select option {
     text-decoration: none;
 }
 
+.invalid {
+  border-color:rgb(191, 32, 88);
+  outline-color: rgb(191, 32, 88);
+}
+.error-msg {
+  color:rgb(191, 32, 88);
+  margin-block: var(--space-sm);
+  font-size: var(--font-size-sm);
+  text-align: center;
+}
+
 /*FOOTER*/
 footer {
     display: flex;
