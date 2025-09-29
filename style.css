@@ -441,7 +441,6 @@ select option {
     text-align: center;
 }
 
-
 .pet-cards-section label {
     display: block;
     text-align: center;
@@ -1394,7 +1393,7 @@ footer {
         font-size: var(--font-size-accents);
     }
 
-    .paw{
+    .paw {
         left: var(--sidebar-w);
     }
 
@@ -1467,6 +1466,7 @@ footer {
 
     .pets-stats {
         font-size: var(--font-size-accents);
+        margin-left: var(--space-xs);
     }
 
     /*NAV*/
@@ -1499,10 +1499,48 @@ footer {
 
     select {
         font-weight: var(--font-weight-md);
+        font-size: var(--font-size-accents);
+    }
+
+    select option {
+        font-size: var(--font-size-sm);
     }
 
     .pet-cards-section label {
         font-size: var(--font-size-accents);
+    }
+
+    .filter-btns {
+        max-inline-size: 560px;
+    }
+
+    .filter-btns button {
+        font-weight: var(--font-weight-md);
+    }
+
+    .view-all-btn {
+        max-inline-size: 560px;
+        justify-self: center;
+    }
+
+    .view-all-btn button {
+        font-size: var(--font-size-accents);
+        font-weight: var(--font-weight-md);
+    }
+
+    /*PET CARDS*/
+    .pet-cards-container {
+        inline-size: 90%;
+        justify-self: center;
+    }
+
+    .pet-name {
+        font-size: var(--font-size-h2);
+    }
+
+    .pet-age-gender {
+        font-size: var(--font-size-txt);
+        margin-bottom: var(--space-md);
     }
 
     /*CAROUSEL*/
@@ -1511,10 +1549,18 @@ footer {
         block-size: clamp(18px, 4dvh, 36px);
     }
 
+    .about-caption {
+        font-size: var(--font-size-txt);
+    }
+
     /*REVIEWS*/
     .review {
         float: right;
         font-weight: var(--font-weight);
+    }
+
+    #reviews-title {
+        font-size: var(--font-size-h1);
     }
 
     /*CONTACTS*/
@@ -1542,6 +1588,10 @@ footer {
         background-size: cover;
     }
 
+    h1 {
+        font-size: var(--font-size-h1);
+    }
+
     .hero-decor {
         gap: clamp(196px, 30vw, 600px);
         margin-top: var(--space-xl);
@@ -1552,13 +1602,13 @@ footer {
     }
 
     .hero-info {
-        top: 55%;
+        top: 20%;
         font-size: var(--font-size-h2);
     }
 
     .hero-CTA button {
         margin-top: var(--space-xs);
-        margin-left: var(--space-md);
+        margin-left: var(--space-xs);
         font-size: var(--font-size-txt);
         font-weight: var(--font-weight);
     }
@@ -1592,6 +1642,18 @@ footer {
         font-size: var(--font-size-txt);
     }
 
+    .filter-container {
+        max-inline-size: 100dvw;
+    }
+
+    .filter-bar {
+        padding-inline: var(--space-xl);
+    }
+
+    select option {
+        font-size: var(--font-size-accents);
+    }
+
     .filter-btns {
         max-inline-size: 720px;
     }
@@ -1604,6 +1666,26 @@ footer {
     .view-all-btn button {
         font-size: var(--font-size-txt);
         font-weight: var(--font-weight-md);
+    }
+
+    /*PET CARDS*/
+    .pet-cards-container {
+        inline-size: 75%;
+        row-gap: var(--space-md);
+    }
+
+    /*CAROUSEL*/
+    .about-arrow {
+        inline-size: clamp(18px, 4dvw, 36px);
+        block-size: clamp(18px, 4dvh, 36px);
+    }
+
+    .about-images {
+        inline-size: 97%;
+    }
+
+    .about-caption {
+        font-size: var(--font-size-txt);
     }
 
     /*ABOUT US*/
@@ -1623,6 +1705,13 @@ footer {
     /*CONTACTS*/
     #contact-desc {
         font-size: var(--font-size-h2);
+        inline-size: clamp(24ch, 68dvw, 64ch);
+    }
+
+    .contacts-grid {
+        inline-size: 1440px;
+        column-gap: clamp(12dvw, 20dvw, 42dvw);
+        margin-left: var(--space-lg);
     }
 
     .toe {
@@ -1634,13 +1723,22 @@ footer {
         --r: 190%;
     }
 
+    .contact-form{
+        margin-left: var(--space-xl);
+    }
+
+    .contact-form {
+        inline-size: clamp(12dvw, 22dvw, 42dvw);
+    }
+
     .contact-form label {
         font-size: var(--font-size-accents);
         font-weight: var(--font-weight-md);
     }
 
     .contact-form :is(input, textarea) {
-        margin-inline: var(--space-lg);
+        margin-inline: var(--space-xl);
+        inline-size: clamp(12dvw, 20dvw, 42dvw);
     }
 
     #chars-counter {
