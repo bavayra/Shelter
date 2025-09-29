@@ -45,17 +45,15 @@ const safeStorage = {
   get(key) {
     try {
       return window.localStorage.getItem(key);
-    }
-    catch {
+    } catch {
       return null;
     }
   },
   set(key, value) {
     try {
       window.localStorage.setItem(key, value);
-    }
-    catch { }
-  }
+    } catch {}
+  },
 };
 
 function applyTheme(theme) {
@@ -64,15 +62,22 @@ function applyTheme(theme) {
     iconEl.src = icons[theme] || icons[themes.light];
   }
   if (toggleBtn) {
-    toggleBtn.setAttribute("aria-pressed", theme === themes.dark ? "true" : "false");
-    toggleBtn.title = theme === themes.dark ? "Switch to light theme" : "Switch to dark theme";
+    toggleBtn.setAttribute(
+      "aria-pressed",
+      theme === themes.dark ? "true" : "false"
+    );
+    toggleBtn.title =
+      theme === themes.dark ? "Switch to light theme" : "Switch to dark theme";
   }
 }
 
 function getInitialTheme() {
   const saved = safeStorage.get(storageKey);
   if (saved === themes.light || saved === themes.dark) return saved;
-  if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  if (
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  ) {
     return themes.dark;
   }
   return themes.light;
@@ -92,26 +97,26 @@ if (toggleBtn) {
 }
 
 /*SIDEBAR TOGGLE*/
-const sidebar = document.querySelector('.sidebar');
-const toggle = document.querySelector('.sidebar-toggle');
+const sidebar = document.querySelector(".sidebar");
+const toggle = document.querySelector(".sidebar-toggle");
 
 if (sidebar && toggle) {
-  toggle.addEventListener('click', () => {
-    const open = sidebar.classList.toggle('is-open');
-    toggle.setAttribute('aria-expanded', String(open));
+  toggle.addEventListener("click", () => {
+    const open = sidebar.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", String(open));
   });
 
-  document.addEventListener('click', (e) => {
+  document.addEventListener("click", (e) => {
     if (!sidebar.contains(e.target)) {
-      sidebar.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
+      sidebar.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
     }
   });
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      sidebar.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      sidebar.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
       toggle.focus();
     }
   });
@@ -120,7 +125,6 @@ if (sidebar && toggle) {
 /*CAROUSEL*/
 
 document.addEventListener("DOMContentLoaded", () => {
-
   const scroller = document.getElementById("about-images-container");
   const aboutImages = Array.from(scroller?.querySelectorAll("img") ?? []);
   const captionElement = document.getElementById("about-caption-content");
@@ -128,8 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const zoomImage = document.getElementById("zoomed-img");
   const zoomCaption = document.getElementById("zoom-caption-content");
 
-  if (!scroller || aboutImages.length === 0 || !captionElement)
-    return;
+  if (!scroller || aboutImages.length === 0 || !captionElement) return;
 
   if (!scroller.hasAttribute("tabindex")) {
     scroller.setAttribute("tabindex", "0");
@@ -199,14 +202,14 @@ document.addEventListener("DOMContentLoaded", () => {
     captionElement.classList.add(captionZoomClass);
   }
 
- function restoreCaptionFromZoom() {
-  captionElement.classList.remove(captionZoomClass);
-  const aboutContainer = document.querySelector('.about-container');
-  if (aboutContainer && !aboutContainer.contains(captionElement)) {
-    aboutContainer.appendChild(captionElement);
+  function restoreCaptionFromZoom() {
+    captionElement.classList.remove(captionZoomClass);
+    const aboutContainer = document.querySelector(".about-container");
+    if (aboutContainer && !aboutContainer.contains(captionElement)) {
+      aboutContainer.appendChild(captionElement);
+    }
+    if (zoomCaption) zoomCaption.hidden = true;
   }
-  if (zoomCaption) zoomCaption.hidden = true;
-}
 
   function setIndex(newIndex, { center = true } = {}) {
     const len = aboutImages.length;
@@ -216,8 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (isZoomOpen) {
       zoomImage.src = aboutImages[currentIndex].src;
-    }
-    else if (center) {
+    } else if (center) {
       scrollToImg(currentIndex);
     }
   }
@@ -256,18 +258,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.addEventListener("keydown", (e) => {
     const tag = document.activeElement?.tagName;
-    if (tag === "INPUT" || tag === "TEXTAREA" || document.activeElement?.isContentEditable)
+    if (
+      tag === "INPUT" ||
+      tag === "TEXTAREA" ||
+      document.activeElement?.isContentEditable
+    )
       return;
 
     if (e.key === "Escape" && isZoomOpen) {
       e.preventDefault();
       closeZoom();
-    }
-    else if (e.key === "ArrowRight") {
+    } else if (e.key === "ArrowRight") {
       e.preventDefault();
       setIndex(currentIndex + 1);
-    }
-    else if (e.key === "ArrowLeft") {
+    } else if (e.key === "ArrowLeft") {
       e.preventDefault();
       setIndex(currentIndex - 1);
     }
@@ -367,7 +371,7 @@ const pets = [
     gender: "Female",
     health: "Serious health issues",
     img: "image-dogs/dog-birdy.jpg",
-    desc: "Most of my life felt like a real nightmare. I never went for walks or played outside, never felt a gentle touch… all they wanted from me was to have puppies. I was scared of everything. I am completely deaf and barely can walk...But now I have learnt that not all humans are bad. Where are you, my perfect human?"
+    desc: "Most of my life felt like a real nightmare. I never went for walks or played outside, never felt a gentle touch… all they wanted from me was to have puppies. I was scared of everything. I am completely deaf and barely can walk...But now I have learnt that not all humans are bad. Where are you, my perfect human?",
   },
 
   {
@@ -415,26 +419,29 @@ function getFilterValue(id) {
 }
 
 function applyFilters() {
-  const gender = getFilterValue('filter-gender');
-  const age = getFilterValue('filter-age');
-  const health = getFilterValue('filter-health');
-  const breed = getFilterValue('filter-breed');
+  const gender = getFilterValue("filter-gender");
+  const age = getFilterValue("filter-age");
+  const health = getFilterValue("filter-health");
+  const breed = getFilterValue("filter-breed");
 
-  filteredPets = pets.filter(pet =>
-    (!gender || pet.gender === gender) &&
-    (!age || pet.age === age) &&
-    (!health || pet.health === health) &&
-    (!breed || pet.breed === breed)
+  filteredPets = pets.filter(
+    (pet) =>
+      (!gender || pet.gender === gender) &&
+      (!age || pet.age === age) &&
+      (!health || pet.health === health) &&
+      (!breed || pet.breed === breed)
   );
   showAll = false;
   renderCards();
 }
 
 function clearFilters() {
-  ['filter-gender', 'filter-age', 'filter-health', 'filter-breed'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.value = '';
-  });
+  ["filter-gender", "filter-age", "filter-health", "filter-breed"].forEach(
+    (id) => {
+      const el = document.getElementById(id);
+      if (el) el.value = "";
+    }
+  );
   filteredPets = pets.slice();
   showAll = false;
   renderCards();
@@ -447,13 +454,17 @@ function getCardsPerView() {
 let currentStart = 0;
 
 function renderCards() {
-  const container = document.querySelector('.pet-cards-container');
+  const container = document.querySelector(".pet-cards-container");
   if (!container) return;
 
   const perView = showAll ? filteredPets.length : getCardsPerView();
-  container.innerHTML = '';
+  container.innerHTML = "";
 
-  for (let i = currentStart; i < Math.min(currentStart + perView, filteredPets.length); i++) {
+  for (
+    let i = currentStart;
+    i < Math.min(currentStart + perView, filteredPets.length);
+    i++
+  ) {
     const pet = filteredPets[i];
     container.innerHTML += `
       <div class="pet" tabindex="0">
@@ -466,38 +477,38 @@ function renderCards() {
     `;
   }
 
-  const viewAllBtn = document.querySelector('.view-all-CTA');
+  const viewAllBtn = document.querySelector(".view-all-CTA");
   if (viewAllBtn) {
     viewAllBtn.textContent = showAll ? "HIDE PETS" : "SHOW ALL PETS...";
-    viewAllBtn.setAttribute('aria-expanded', showAll ? "true" : "false");
+    viewAllBtn.setAttribute("aria-expanded", showAll ? "true" : "false");
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const applyBtn = document.getElementById('apply-filters');
-  const clearBtn = document.getElementById('clear-filters');
-  if (applyBtn) applyBtn.addEventListener('click', applyFilters);
-  if (clearBtn) clearBtn.addEventListener('click', clearFilters);
+document.addEventListener("DOMContentLoaded", () => {
+  const applyBtn = document.getElementById("apply-filters");
+  const clearBtn = document.getElementById("clear-filters");
+  if (applyBtn) applyBtn.addEventListener("click", applyFilters);
+  if (clearBtn) clearBtn.addEventListener("click", clearFilters);
 
-  const viewAllBtn = document.querySelector('.view-all-CTA');
+  const viewAllBtn = document.querySelector(".view-all-CTA");
   if (viewAllBtn) {
-    viewAllBtn.addEventListener('click', () => {
+    viewAllBtn.addEventListener("click", () => {
       showAll = !showAll;
       renderCards();
     });
   }
 
-  const cardsContainer = document.querySelector('.pet-cards-container');
+  const cardsContainer = document.querySelector(".pet-cards-container");
   if (cardsContainer) {
-    cardsContainer.addEventListener('click', function (e) {
-      if (e.target.classList.contains('pet-btn')) {
-        const contacts = document.getElementById('contacts');
-        if (contacts) contacts.scrollIntoView({ behavior: 'smooth' });
+    cardsContainer.addEventListener("click", function (e) {
+      if (e.target.classList.contains("pet-btn")) {
+        const contacts = document.getElementById("contacts");
+        if (contacts) contacts.scrollIntoView({ behavior: "smooth" });
       }
     });
   }
 
-  window.addEventListener('resize', () => {
+  window.addEventListener("resize", () => {
     renderCards();
   });
 
@@ -505,33 +516,33 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /*FORM VALIDATION*/
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('.contact-form');
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector(".contact-form");
   if (!form) return;
 
-  form.querySelectorAll('input, textarea').forEach(field => {
-    field.addEventListener('input', function () {
+  form.querySelectorAll("input, textarea").forEach((field) => {
+    field.addEventListener("input", function () {
       validateField(this);
     });
   });
 
-  form.addEventListener('submit', function (e) {
+  form.addEventListener("submit", function (e) {
     let valid = true;
-    form.querySelectorAll('input, textarea').forEach(field => {
+    form.querySelectorAll("input, textarea").forEach((field) => {
       if (!validateField(field)) valid = false;
     });
     if (!valid) {
       e.preventDefault();
-      form.querySelectorAll('.error-msg').forEach(msg => msg.remove());
+      form.querySelectorAll(".error-msg").forEach((msg) => msg.remove());
       showFormErrors(form);
     }
   });
 
-  form.addEventListener('reset', () => {
-    form.querySelectorAll('.error-msg').forEach(msg => msg.remove());
-    form.querySelectorAll('label').forEach(label => {
-      label.style.color = '';
-      label.style.fontWeight = '';
+  form.addEventListener("reset", () => {
+    form.querySelectorAll(".error-msg").forEach((msg) => msg.remove());
+    form.querySelectorAll("label").forEach((label) => {
+      label.style.color = "";
+      label.style.fontWeight = "";
     });
   });
 });
@@ -541,40 +552,39 @@ function validateField(field) {
   let isValid = field.checkValidity();
   if (field.value && !isValid) {
     if (label) {
-      label.style.color = '#d32f2f';
-      label.style.fontWeight = 'bold';
+      label.style.color = "#d32f2f";
+      label.style.fontWeight = "bold";
     }
-    field.classList.add('invalid');
+    field.classList.add("invalid");
   } else {
     if (label) {
-      label.style.color = '';
-      label.style.fontWeight = '';
+      label.style.color = "";
+      label.style.fontWeight = "";
     }
-    field.classList.remove('invalid');
+    field.classList.remove("invalid");
   }
   return isValid;
 }
 
 function showFormErrors(form) {
-  form.querySelectorAll('input, textarea').forEach(field => {
+  form.querySelectorAll("input, textarea").forEach((field) => {
     if (!field.checkValidity() && field.value) {
-      let error = document.createElement('div');
-      error.className = 'error-msg';
-      error.style.color = '#d32f2f';
-      error.style.fontSize = '0.95em';
-      error.setAttribute('aria-live', 'polite');
+      let error = document.createElement("div");
+      error.className = "error-msg";
+      error.style.color = "#d32f2f";
+      error.style.fontSize = "0.95em";
+      error.setAttribute("aria-live", "polite");
 
-      if (field.name === 'email') {
-        error.textContent = 'Please enter a valid email address.';
-      } else if (field.name === 'full-name') {
-        error.textContent = 'Please enter your full name.';
-      } else if (field.name === 'tel') {
-        error.textContent = 'Please enter your phone number.';
+      if (field.name === "email") {
+        error.textContent = "Please enter a valid email address.";
+      } else if (field.name === "full-name") {
+        error.textContent = "Please enter your full name.";
+      } else if (field.name === "tel") {
+        error.textContent = "Please enter your phone number.";
       } else {
-        error.textContent = 'Please fill out this field correctly.';
+        error.textContent = "Please fill out this field correctly.";
       }
-      field.insertAdjacentElement('afterend', error);
+      field.insertAdjacentElement("afterend", error);
     }
   });
 }
-
