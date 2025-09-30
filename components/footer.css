@@ -1,0 +1,16 @@
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5dvh;
+  font-size: var(--font-size-xs);
+  color: var(--surface-color);
+  font-weight: var(--font-weight);
+  background-color: var(--primary-color);
+}
+
+@media (min-width: 1024px) {
+  footer {
+    font-size: var(--font-size-sm);
+  }
+}

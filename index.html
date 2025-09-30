@@ -36,7 +36,7 @@
 
     <title>ROTVODOM - dog shelter</title>
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="index.css" />
 
     <link
       rel="icon"
@@ -71,7 +71,7 @@
 
   <body>
     <header>
-      <div class="container header-container" id="home">
+      <div class="container header-container">
         <div class="logo">
           <div id="logo-bg">
             <img
@@ -90,7 +90,7 @@
         </a>
 
         <button
-          id="themeToggle"
+          id="theme-toggle"
           class="theme-toggle-btn"
           type="button"
           aria-label="Toggle color theme"
@@ -105,13 +105,17 @@
           />
         </button>
 
-        <button class="contact-btn" type="button" aria-label="Contact button">
+        <button
+          class="header-contact-btn"
+          type="button"
+          aria-label="Contact button"
+        >
           <img
             src="/images-base/phone-call.png"
             alt="Contact us button"
-            class="contact-icon"
+            class="header-contact-icon"
           />
-          <span class="contact-text">CONTACT US!</span>
+          <span class="header-contact-text">CONTACT US!</span>
         </button>
       </div>
     </header>
@@ -136,7 +140,7 @@
       <nav id="main-nav" aria-label="Main navigation">
         <ul class="nav-list">
           <li>
-            <a href="#pets" id="our-pets-link" aria-label="Our pets link">
+            <a href="#pets" id="nav-our-pets-link" aria-label="Our pets link">
               <img
                 src="nav-icons/dogs-nav-icon.png"
                 alt="Our pets"
@@ -147,7 +151,11 @@
           </li>
 
           <li>
-            <a href="#about" id="our-story-link" aria-label="Our story link">
+            <a
+              href="#about"
+              id="nav-our-story-link"
+              aria-label="Our story link"
+            >
               <img
                 src="nav-icons/who-nav-icon.png"
                 alt="Our story"
@@ -160,7 +168,7 @@
           <li>
             <a
               href="https://vk.com/topic-215318612_49116177"
-              id="help"
+              id="nav-help"
               aria-label="How to help us link"
             >
               <img
@@ -175,7 +183,7 @@
           <li>
             <a
               href="https://vk.com/topic-215318612_49115975"
-              id="adoption-rules"
+              id="nav-adoption-rules"
               aria-label="Adoption rules link"
             >
               <img
@@ -276,19 +284,19 @@
             </div>
           </div>
 
-          <div class="buttons">
+          <div class="filter-buttons-all">
             <div class="filter-btns">
-              <button id="apply-filters" aria-label="Apply filters button">
+              <button id="apply-filters-btn" aria-label="Apply filters button">
                 APPLY FILTERS
               </button>
-              <button id="clear-filters" aria-label="Clear filters button">
+              <button id="clear-filters-btn" aria-label="Clear filters button">
                 CLEAR FILTERS
               </button>
             </div>
           </div>
         </div>
 
-        <div class="view-all-btn" id="view-all-btn-cta">
+        <div class="view-all-btn">
           <button
             class="view-all-CTA"
             data-target="#pets"
@@ -300,7 +308,7 @@
           </button>
         </div>
 
-        <div class="pets-cards-carousel">
+        <div class="pets-cards-grid">
           <div class="pet-cards-container"></div>
         </div>
       </section>
@@ -397,11 +405,10 @@
 
         <div class="reviews-container">
           <h2 id="reviews-title">ALREADY FOUND THEIR BEST FRIENDS</h2>
-          <div class="container owners-review">
+          <div class="container owners-reviews">
             <div class="review" id="first-review">
               <img
                 class="review-img"
-                id="first-img"
                 alt="The picture of the first review's author"
                 src="image-review/review1.jpg"
                 loading="lazy"
@@ -416,7 +423,6 @@
             <div class="review" id="second-review">
               <img
                 class="review-img"
-                id="second-img"
                 alt="The picture of the second review's author"
                 src="image-review/review2.jpg"
                 loading="lazy"
@@ -431,7 +437,6 @@
             <div class="review" id="third-review">
               <img
                 class="review-img"
-                id="third-img"
                 alt="The picture of the third review's author"
                 src="image-review/review3.jpg"
                 loading="lazy"
@@ -448,7 +453,7 @@
 
       <section id="contacts" class="panel contact-paw">
         <div class="container">
-          <div class="h2-container">
+          <div class="h2-contacts-container">
             <h2 id="contact-title">CONTACT US</h2>
             <p id="contact-desc">
               If you want to adopt, learn more about our pets, ask any questions

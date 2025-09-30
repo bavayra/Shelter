@@ -1,0 +1,15 @@
+.header-contact-btn:hover,
+.sidebar a:hover,
+.hero-CTA button:hover,
+.filter-btns button:hover,
+.view-all-CTA:hover,
+.theme-toggle-btn:hover,
+.pet-btn:hover,
+#form-reset-btn:hover,
+#form-submit-btn:hover {
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}

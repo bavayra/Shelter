@@ -39,7 +39,7 @@ const icons = {
   [themes.dark]: "images-base/dark-theme.png",
 };
 const root = document.documentElement;
-const toggleBtn = document.getElementById("themeToggle");
+const toggleBtn = document.getElementById("theme-toggle");
 const iconEl = toggleBtn ? toggleBtn.querySelector(".toggle-theme-icon") : null;
 const safeStorage = {
   get(key) {
@@ -485,8 +485,8 @@ function renderCards() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const applyBtn = document.getElementById("apply-filters");
-  const clearBtn = document.getElementById("clear-filters");
+  const applyBtn = document.getElementById("apply-filters-btn");
+  const clearBtn = document.getElementById("clear-filters-btn");
   if (applyBtn) applyBtn.addEventListener("click", applyFilters);
   if (clearBtn) clearBtn.addEventListener("click", clearFilters);
 

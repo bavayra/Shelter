@@ -1,0 +1,78 @@
+section {
+  padding-bottom: var(--space-lg);
+  scroll-margin-top: var(--header-h);
+}
+
+section > :first-child {
+  margin-top: 0;
+}
+
+section > :last-child {
+  margin-bottom: 0;
+}
+
+.container {
+  inline-size: min(100%-2 * var(--content-pad), var(--container-max));
+  margin-inline: auto;
+}
+
+.flex > *,
+.grid > * {
+  min-width: 0;
+}
+
+main,
+.panel,
+section {
+  overflow: visible;
+}
+
+.filter-container,
+.pet-cards-section,
+.about,
+.contact-paw {
+  margin: 0;
+}
+
+#scroll-top-btn {
+  position: fixed;
+  bottom: var(--space-md);
+  right: var(--space-md);
+  z-index: var(--z-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--icon-size-xl);
+  block-size: var(--icon-size-xl);
+  background-color: var(--primary-color);
+  box-shadow: var(--drop-shadow);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+}
+
+#scroll-top-btn.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scroll-icon {
+  width: 100%;
+  height: 75%;
+}
+
+@media (min-width: 1024px) {
+  #scroll-top-btn {
+    inline-size: var(--icon-size);
+    block-size: var(--icon-size);
+  }
+
+  .scroll-icon {
+    width: 70%;
+    height: 55%;
+  }
+}

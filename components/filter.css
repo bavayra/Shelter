@@ -1,0 +1,197 @@
+.filter-btns button,
+.view-all-CTA {
+  transition: transform 0.3s ease-in-out;
+}
+
+.filter-container {
+  inline-size: 100%;
+  max-inline-size: var(--container-max);
+  margin-inline: 0;
+}
+
+.pet-cards-section {
+  display: block;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md);
+  border: none;
+  box-shadow: var(--drop-shadow);
+  background-color: rgba(43, 23, 35, 0.568);
+}
+
+.filter-bar > * {
+  flex: 1;
+}
+
+.filter-group {
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius);
+}
+
+select {
+  inline-size: 100%;
+  block-size: clamp(16px, 4cqb, 24px);
+  color: var(--secondary-color);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight);
+  background-color: var(--accent-text-color);
+  border: none;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
+select,
+select option {
+  text-align: center;
+}
+
+.pet-cards-section label {
+  display: block;
+  text-align: center;
+  justify-content: center;
+  block-size: clamp(16px, 4cqb, 28px);
+  padding: var(--space-sm);
+  color: var(--accent-text-color);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-md);
+  border: none;
+}
+
+.filter-buttons-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter-btns {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+  max-inline-size: 420px;
+  margin-block: var(--space-md);
+}
+
+.filter-btns button {
+  height: var(--btn-height);
+  padding-inline: var(--space-md);
+  color: var(--accent-text-color);
+  font-weight: var(--font-weight);
+  font-size: var(--font-size-xs);
+  box-shadow: var(--drop-shadow);
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: var(--border-radius);
+}
+
+@media (min-width: 1024px) {
+  .filter-bar {
+    gap: var(--space-lg);
+    padding-inline: var(--space-lg);
+    padding-block: var(--space-md);
+    border-radius: 0;
+  }
+
+  select {
+    padding: var(--space-sm);
+    block-size: auto;
+    font-size: var(--font-size-sm);
+  }
+
+  .pet-cards-section label {
+    block-size: auto;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight);
+  }
+
+  .filter-btns button {
+    font-size: var(--font-size-sm);
+  }
+
+  .view-all-btn button {
+    font-size: var(--font-size-sm);
+  }
+
+  #hero,
+  #filters,
+  #pets,
+  #about,
+  #contacts {
+    scroll-margin-top: clamp(12px, 8svh, 96px);
+  }
+}
+
+@media (min-width: 1440px) {
+  .filter-container {
+    max-inline-size: 100dvw;
+  }
+
+  .filter-bar {
+    padding-inline: var(--space-xl);
+  }
+
+  select {
+    font-weight: var(--font-weight-md);
+    font-size: var(--font-size-accents);
+  }
+
+  select option {
+    font-size: var(--font-size-sm);
+  }
+
+  .pet-cards-section label {
+    font-size: var(--font-size-accents);
+  }
+
+  .filter-btns {
+    max-inline-size: 560px;
+  }
+
+  .filter-btns button {
+    font-weight: var(--font-weight-md);
+  }
+
+  .view-all-btn {
+    justify-self: center;
+    max-inline-size: 560px;
+  }
+
+  .view-all-btn button {
+    font-size: var(--font-size-accents);
+    font-weight: var(--font-weight-md);
+  }
+}
+
+@media (min-width: 1920px) {
+  select {
+    font-size: var(--font-size-txt);
+    font-weight: var(--font-weight-md);
+  }
+
+  select option {
+    font-size: var(--font-size-accents);
+  }
+
+  .pet-cards-section label {
+    font-size: var(--font-size-txt);
+  }
+
+  .filter-btns {
+    max-inline-size: 720px;
+  }
+
+  .filter-btns button {
+    font-size: var(--font-size-txt);
+  }
+
+  .view-all-btn button {
+    font-size: var(--font-size-txt);
+  }
+}

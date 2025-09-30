@@ -1,0 +1,193 @@
+.hero-CTA button {
+  transition: transform 0.3s ease-in-out;
+}
+
+#hero {
+  block-size: 100svh;
+  padding-block: clamp(1rem, 3dvw, 3rem);
+  background: center no-repeat var(--hero-bg);
+  background-size: cover;
+}
+
+.hero-CTA {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-block: var(--space-lg);
+}
+
+.hero-CTA button {
+  height: var(--btn-height);
+  padding-inline: var(--space-lg);
+  color: var(--accent-text-color);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-lg);
+  border: none;
+  border-radius: var(--border-radius);
+  background: var(--surface-color);
+}
+
+@media (min-width: 768px) {
+  .hero-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    block-size: clamp(280px, 4dvh, 420px);
+    transform: translate(0, -5%);
+  }
+
+  .hero-info {
+    display: initial;
+    position: absolute;
+    z-index: var(--z-nav);
+    inline-size: clamp(28ch, 40rem, 72ch);
+    max-inline-size: 640px;
+    margin-bottom: var(--space-xl);
+    padding: var(--space-md);
+    color: var(--accent-text-color);
+    box-shadow: var(--drop-shadow);
+    text-align: center;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight);
+    line-height: 1.5;
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    background-color: rgb(43, 23, 35, 0.7);
+  }
+
+  .hero-content {
+    display: initial;
+  }
+
+  .hero-CTA {
+    position: absolute;
+    top: 95%;
+    left: 25%;
+    z-index: var(--z-overlay);
+    margin-block: 0;
+    inline-size: clamp(180px, 28ch, 460px);
+    transform: translate(-55%, -5%);
+  }
+
+  .hero-CTA button {
+    z-index: var(--z-overlay);
+    padding-inline: var(--space-md);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight);
+    border: 1px solid var(--accent-text-color);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-decor {
+    display: grid;
+    grid-template-columns: auto 2fr;
+    align-items: center;
+    justify-content: space-between;
+    align-self: center;
+    gap: clamp(144px, 20vw, 320px);
+    inline-size: auto;
+    max-inline-size: 90%;
+  }
+
+  .paw-decoration {
+    display: block;
+    content: var(--paw-decor);
+    inline-size: clamp(144px, 25vw, 320px);
+    rotate: 12deg;
+    margin-bottom: var(--space-lg);
+  }
+
+  .pets-stats {
+    position: static;
+    display: block;
+    margin-left: var(--space-md);
+    padding: var(--space-md);
+    text-align: center;
+    inline-size: auto;
+    block-size: auto;
+    color: var(--accent-text-color);
+    font-weight: var(--font-weight);
+    line-height: 1.8rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    background-color: rgb(43, 23, 35, 0.5);
+  }
+
+  #dogs-now,
+  #dogs-year,
+  #dogs-total {
+    font-size: var(--font-size-txt);
+    color: var(--review-text-color);
+    font-weight: var(--font-weight-md);
+  }
+
+  .hero-info {
+    display: flex;
+    top: 17%;
+    left: 60%;
+    margin-inline-end: 6dvw;
+    margin-block-start: clamp(96px, 45dvh, 480px);
+    inline-size: clamp(16ch, 40dvw, 40ch);
+  }
+}
+
+@media (min-width: 1440px) {
+  .paw-decoration {
+    margin-block: var(--space-lg);
+  }
+
+  .pets-stats {
+    margin-left: var(--space-xs);
+    font-size: var(--font-size-accents);
+  }
+  .hero-info {
+    margin-block-start: clamp(96px, 40dvh, 480px);
+    inline-size: clamp(16ch, 40dvw, 48ch);
+    font-size: var(--font-size-accents);
+  }
+}
+
+@media (min-width: 1920px) {
+  #hero {
+    background-position: center;
+    background-size: cover;
+  }
+
+  h1 {
+    font-size: var(--font-size-h1);
+  }
+
+  .hero-decor {
+    gap: clamp(196px, 30vw, 600px);
+    margin-top: var(--space-xl);
+  }
+
+  .paw-decoration {
+    inline-size: clamp(196px, 25vw, 400px);
+  }
+
+  .hero-info {
+    top: 20%;
+    font-size: var(--font-size-h2);
+  }
+
+  .hero-CTA button {
+    margin-top: var(--space-xs);
+    margin-left: var(--space-xs);
+    font-size: var(--font-size-txt);
+    font-weight: var(--font-weight);
+  }
+
+  .pets-stats {
+    line-height: 2.5rem;
+    font-size: var(--font-size-txt);
+  }
+
+  #dogs-now,
+  #dogs-year,
+  #dogs-total {
+    font-size: var(--font-size-h2);
+  }
+}
