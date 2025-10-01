@@ -50,8 +50,7 @@
   display: inline-grid;
   place-items: center;
   justify-self: center;
-  inline-size: clamp(64px, 7dvw, 96px);
-  block-size: clamp(64px, 7dvh, 96px);
+  inline-size: clamp(36px, 10dvw, 96px);
   padding: 0;
   border: none;
   border-radius: var(--border-radius);

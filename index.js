@@ -360,7 +360,7 @@ const pets = [
     gender: "Female",
     health: "Healthy",
     img: "image-dogs/dog-vasilisa.jpg",
-    desc: "My previous owner did not love me nor spend time with me, so I never really learned much about this life. I am not the best at making friends with other dogs or cats, but with you, my new best friend, I will play and have fun for as long as you want. Please take me home?",
+    desc: "My previous owner didn't love me nor spent time with me, so I never really learned much about this life. I'm not good at making friends with other dogs or cats, but with you, my new best friend, I'll play and have fun for as long as you want. Please take me home?",
   },
 
   {

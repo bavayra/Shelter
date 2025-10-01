@@ -7,17 +7,18 @@
 }
 
 #about-title {
-  display: flex;
+  display: inline-block;
   align-items: center;
   justify-content: center;
   padding-top: var(--space-md);
   padding-inline: var(--space-sm);
-  margin: 0;
+  margin: 0 auto;
   margin-bottom: var(--space-lg);
   font-size: var(--font-size-h1);
-  color: var(--accent-text-color);
-  text-decoration: underline;
-  text-decoration-style: dotted;
+  font-weight: var(--font-weight-md);
+  color: var(--title-color);
+  border-bottom: 4px dotted var(--title-color);
+  padding-bottom: var(--space-sm);
 }
 
 .about-container {

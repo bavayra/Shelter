@@ -29,11 +29,12 @@ body {
   --secondary-color: rgb(43, 23, 35);
   --surface-color: rgb(94, 32, 60);
   --accent-text-color: rgb(217, 177, 141);
+  --title-color: rgb(94, 32, 60);
   --review-text-color: rgb(43, 23, 35);
   --input-color: rgb(43, 23, 35);
 
-  --hero-bg: url("images-base/bg-main2.jpeg");
-  --paw-decor: url("images-base/paws-light.png");
+  --hero-bg: url("/images-base/bg-main2.jpeg");
+  --paw-decor: url("/images-base/paws-light.png");
 
   --slide-w: min(80vw, 420px);
   --header-h: clamp(56px, 12svh, 120px);
@@ -91,11 +92,12 @@ body {
   --primary-color: rgb(43, 23, 35);
   --secondary-color: rgb(94, 32, 60);
   --surface-color: rgb(94, 32, 60);
+  --title-color: rgb(217, 177, 141);
   --accent-text-color: rgb(217, 177, 141);
   --review-text-color: rgb(217, 177, 141);
   --input-color: rgb(217, 177, 141);
 
-  --hero-bg: url("images-base/bg-main-dark.png");
+  --hero-bg: url("/images-base/bg-main-dark.png");
   --paw-decor: url("images-base/paws-dark.png");
 }
 

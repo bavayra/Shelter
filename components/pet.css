@@ -18,9 +18,9 @@
   align-items: center;
   margin: var(--space-sm) 0;
   height: auto;
-  max-width: 340px;
-  width: 80%;
-  background: var(--surface-color);
+  max-width: 460px;
+  inline-size: 80%;
+  background: var(--secondary-color);
   border-radius: var(--border-radius);
   box-shadow: var(--drop-shadow);
   overflow: hidden;
@@ -29,7 +29,7 @@
 .pet:hover,
 .pet:focus-visible {
   z-index: 2;
-  transform: scale(1.03);
+  transform: scale(1.05);
   box-shadow: var(--drop-shadow);
 }
 
@@ -51,7 +51,7 @@
 }
 
 .pet-age-gender {
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
   margin-top: 0;
   font-size: var(--font-size-md);
   color: var(--accent-text-color);

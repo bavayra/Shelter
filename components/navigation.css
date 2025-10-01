@@ -14,7 +14,8 @@ nav {
 nav ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-sm);
+  gap: var(--space-md);
+  column-gap: var(--space-lg);
   justify-self: center;
   align-items: center;
   margin: 0;
