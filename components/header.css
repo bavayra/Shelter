@@ -112,11 +112,17 @@
     font-weight: var(--font-weight);
   }
 
+  #home-btn-link {
+    inline-size: clamp(36px, 6dvw, 96px);
+  }
+
   .toggle-theme-icon {
-    inline-size: var(--icon-size-sm);
+    inline-size: var(--icon-size);
   }
 
   .header-contact-btn {
+    margin-left: var(--space-sm);
+    inline-size: auto;
     border-radius: var(--border-radius);
   }
 

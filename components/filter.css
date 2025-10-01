@@ -91,6 +91,24 @@ select option {
   border-radius: var(--border-radius);
 }
 
+.view-all-btn {
+  display: flex;
+  justify-content: center;
+  height: var(--btn-height);
+  margin-bottom: var(--space-lg);
+}
+
+.view-all-btn button {
+  padding-inline: var(--space-md);
+  color: var(--secondary-color);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-md);
+  background-color: var(--accent-text-color);
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--drop-shadow);
+}
+
 @media (min-width: 1024px) {
   .filter-bar {
     gap: var(--space-lg);
