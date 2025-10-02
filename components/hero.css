@@ -80,6 +80,9 @@
 }
 
 @media (min-width: 1024px) {
+  #hero {
+    margin-top: var(--header-h);
+  }
   .hero-decor {
     display: grid;
     grid-template-columns: auto 2fr;

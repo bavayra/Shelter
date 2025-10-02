@@ -136,13 +136,7 @@
     block-size: auto;
   }
   #logo-image {
-    inline-size: var(--icon-size-xl);
-    block-size: var(--icon-size-xxl);
-    object-fit: cover;
-  }
-
-  #home-btn-link {
-    inline-size: clamp(36px, 6dvw, 96px);
+    inline-size: var(--icon-size-xxl);
   }
 
   .toggle-theme-icon {
@@ -151,16 +145,13 @@
 
   .header-contact-btn {
     margin-left: var(--space-sm);
-    inline-size: clamp(36px, 22dvw, 140px);
+    inline-size: clamp(36px, 22dvw, 160px);
     block-size: clamp(24px, 6dvh, 96px);
     border-radius: var(--border-radius);
   }
+
   #home-btn-link {
     inline-size: var(--icon-size-lg);
-  }
-
-  .toggle-theme-icon {
-    inline-size: var(--icon-size-md);
   }
 }
 
@@ -168,6 +159,10 @@
   .theme-toggle-btn {
     padding-inline: var(--space-sm);
     inline-size: var(--icon-size-md);
+  }
+
+  .header-contact-btn {
+    inline-size: clamp(36px, 22dvw, 180px);
   }
 }
 

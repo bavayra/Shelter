@@ -68,7 +68,7 @@ body {
   --icon-size: clamp(18px, 4vw, 48px);
   --icon-size-lg: clamp(24px, 4.5vw, 56px);
   --icon-size-xl: clamp(32px, 6vw, 72px);
-  --icon-size-xxl: clamp(72px, 10vw, 144px);
+  --icon-size-xxl: clamp(72px, 9vw, 144px);
 
   --space-sm: clamp(8px, 1vw, 16px);
   --space-md: clamp(16px, 2vw, 32px);

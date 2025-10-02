@@ -131,5 +131,12 @@ nav img {
 @media (min-width: 1440px) {
   .sidebar {
     block-size: clamp(240px, 75dvh, 640px);
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+  }
+
+  .nav-list {
+    margin-bottom: var(--space-xl);
   }
 }
