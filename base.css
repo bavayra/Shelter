@@ -44,7 +44,7 @@ body {
   --btn-height: clamp(36px, 6dvh, 48px);
 
   --sidebar-w: clamp(72px, 11vw, 148px);
-  --sidebar-w-sm: clamp(64px, 8vw, 96px);
+  --sidebar-w-sm: clamp(64px, 9vw, 96px);
   --sidebar-transition: 200ms;
 
   --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
@@ -57,9 +57,10 @@ body {
   --pad-top: 56%;
   --pad-left: 50%;
   --pad-size: 44%;
+  --pad-size-md: 50%;
   --toe-size-sm: clamp(48px, 6vw, 200px);
-  --toe-size: clamp(72px, 10vw, 240px);
-  --toe-size-md: clamp(96px, 15vw, 420px);
+  --toe-size: clamp(72px, 8vw, 240px);
+  --toe-size-md: clamp(96px, 10vw, 420px);
   --toe-gap: 6%;
 
   --icon-size-sm: clamp(12px, 2vw, 36px);
@@ -98,7 +99,7 @@ body {
   --input-color: rgb(217, 177, 141);
 
   --hero-bg: url("/images-base/bg-main-dark.png");
-  --paw-decor: url("images-base/paws-dark.png");
+  --paw-decor: url("/images-base/paws-dark.png");
 }
 
 button,

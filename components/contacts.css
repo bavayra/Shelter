@@ -93,7 +93,9 @@
 .contact-form :is(input, textarea) {
   padding: var(--space-sm);
   margin-inline: var(--space-md);
-  inline-size: 36ch;
+  inline-size: 100%;
+  max-inline-size: 60ch;
+  min-inline-size: 36ch;
   color: var(--input-color);
   border: 1px solid transparent;
   border-radius: var(--border-radius);
@@ -269,6 +271,10 @@
     left: var(--sidebar-w);
   }
 
+  .toe {
+    inline-size: var(--toe-size-md);
+  }
+
   .contact-form {
     gap: var(--space-sm);
     margin-inline: var(--space-sm);
@@ -296,8 +302,16 @@
 }
 
 @media (min-width: 1440px) {
+  .contacts-grid {
+    inline-size: min(90%, 1440px);
+  }
+
   .orbit {
-    --r: 160%;
+    --r: 180%;
+  }
+
+  .toe {
+    inline-size: var(--toe-size);
   }
 
   #form-reset-btn,
@@ -314,24 +328,22 @@
     font-size: var(--font-size-h2);
   }
 
-  .contacts-grid {
-    margin-left: var(--space-lg);
-    inline-size: 1440px;
-    column-gap: clamp(12dvw, 20dvw, 42dvw);
+  .pad {
+    inline-size: var(--pad-size-md);
   }
 
   .toe {
-    inline-size: var(--toe-size-sm);
-    block-size: var(--toe-size-sm);
+    inline-size: var(--toe-size);
   }
 
   .orbit {
-    --r: 190%;
+    --r: 170%;
   }
 
   .contact-form {
+    align-items: center;
     margin-left: var(--space-xl);
-    inline-size: clamp(12dvw, 22dvw, 42dvw);
+    inline-size: clamp(12dvw, 27dvw, 42dvw);
   }
 
   .contact-form label {
@@ -341,7 +353,7 @@
 
   .contact-form :is(input, textarea) {
     margin-inline: var(--space-xl);
-    inline-size: clamp(12dvw, 20dvw, 42dvw);
+    max-inline-size: 48ch;
   }
 
   #chars-counter {

@@ -90,9 +90,18 @@
     float: right;
     font-weight: var(--font-weight);
   }
+
+  .review-text {
+    font-size: var(--font-size-sm);
+  }
 }
 
 @media (min-width: 1920px) {
+  #reviews-title {
+    inline-size: auto;
+    max-inline-size: 50%;
+  }
+
   .review-text {
     font-size: var(--font-size-txt);
   }
