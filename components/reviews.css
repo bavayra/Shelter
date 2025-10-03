@@ -4,10 +4,11 @@
   align-items: center;
   justify-self: center;
   padding: 0;
-  margin-block: var(--space-lg);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-md);
   inline-size: 90%;
   max-inline-size: 100dvw;
-  block-size: clamp(128px, 20dvh, 480px);
+  block-size: auto;
   text-align: center;
   font-weight: 400;
 }
@@ -40,7 +41,6 @@
   gap: var(--space-md);
   grid-template-columns: 1fr;
   margin-inline: var(--space-lg);
-  margin-top: var(--space-xl);
 }
 
 .review {
@@ -97,7 +97,7 @@
   .owners-reviews {
     gap: var(--space-lg);
     margin-left: var(--sidebar-w);
-    margin-top: var(--space-xl);
+    margin-top: var(--space-md);
     width: 85%;
   }
 

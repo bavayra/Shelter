@@ -10,10 +10,10 @@
   display: flex;
   flex-direction: column;
   padding: 0;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-md);
   inline-size: 100%;
   max-inline-size: 100dvw;
-  block-size: clamp(128px, 20dvh, 480px);
+  block-size: auto;
   text-align: center;
   font-weight: 400;
 }
@@ -122,6 +122,9 @@
 }
 
 @media (min-width: 768px) {
+  .h2-about-container {
+    margin-bottom: var(--space-md);
+  }
   .about-arrow {
     aspect-ratio: 1;
   }
@@ -131,6 +134,7 @@
   .h2-about-container {
     justify-self: center;
     inline-size: 80%;
+    block-size: auto;
   }
 
   #reviews-desc {
