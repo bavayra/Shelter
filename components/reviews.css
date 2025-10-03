@@ -1,19 +1,38 @@
-#reviews-title {
+.h2-reviews-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  padding: 0;
+  margin-block: var(--space-lg);
+  inline-size: 90%;
+  max-inline-size: 100dvw;
+  block-size: clamp(128px, 20dvh, 480px);
+  text-align: center;
+  font-weight: 400;
+}
+
+#reviews-title {
+  display: inline-block;
   align-items: center;
   justify-content: center;
   padding-top: var(--space-md);
   padding-inline: var(--space-sm);
   margin: 0 auto;
-  margin-top: var(--space-md);
-  margin-bottom: var(--space-lg);
-  font-size: var(--font-size-h2);
-  inline-size: 70%;
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-md);
   color: var(--title-color);
-  text-align: center;
-  line-height: 2rem;
   border-bottom: 4px dotted var(--title-color);
   padding-bottom: var(--space-sm);
+}
+
+#reviews-desc {
+  align-self: center;
+  padding-inline: var(--space-md);
+  inline-size: 95%;
+  font-size: var(--font-size-accents);
+  color: var(--title-color);
 }
 
 .owners-reviews {
@@ -21,6 +40,7 @@
   gap: var(--space-md);
   grid-template-columns: 1fr;
   margin-inline: var(--space-lg);
+  margin-top: var(--space-xl);
 }
 
 .review {
@@ -50,6 +70,7 @@
   .owners-reviews {
     gap: var(--space-sm);
     grid-template-columns: repeat(3, 1fr);
+    margin-top: 0;
     margin-inline: var(--space-md);
     width: 95%;
   }
@@ -62,12 +83,21 @@
 
 @media (min-width: 1024px) {
   #reviews-title {
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-md);
+  }
+
+  #reviews-desc {
+    inline-size: 70%;
+  }
+
+  .h2-reviews-container {
+    margin: 0;
   }
 
   .owners-reviews {
     gap: var(--space-lg);
     margin-left: var(--sidebar-w);
+    margin-top: var(--space-xl);
     width: 85%;
   }
 
@@ -86,6 +116,11 @@
     font-size: var(--font-size-h1);
   }
 
+  #reviews-desc {
+    inline-size: 80%;
+    font-size: var(--font-size-txt);
+  }
+
   .review {
     float: right;
     font-weight: var(--font-weight);
@@ -100,6 +135,10 @@
   #reviews-title {
     inline-size: auto;
     max-inline-size: 50%;
+  }
+
+  #reviews-desc {
+    font-size: var(--font-size-h2);
   }
 
   .review-text {

@@ -31,8 +31,7 @@
 }
 
 #logo-image {
-  padding-block: var(--space-md);
-  inline-size: clamp(72px, 18vw, 320px);
+  inline-size: clamp(48px, 13vw, 128px);
   aspect-ratio: 1;
   object-fit: cover;
   border: 1px solid var(--accent-text-color);
@@ -111,7 +110,7 @@
   }
 
   .toggle-theme-icon {
-    inline-size: var(--icon-size-sm);
+    inline-size: var(--icon-size-md);
   }
 
   .header-contact-btn {
@@ -156,18 +155,41 @@
 }
 
 @media (min-width: 1440px) {
+  h1 {
+    margin-left: var(--space-xs);
+  }
+
+  #logo-bg {
+    inline-size: var(--icon-size-lg);
+    block-size: auto;
+  }
+  #logo-image {
+    inline-size: var(--icon-size-xxl);
+  }
+
   .theme-toggle-btn {
     padding-inline: var(--space-sm);
     inline-size: var(--icon-size-md);
   }
 
   .header-contact-btn {
+    margin-left: 0;
     inline-size: clamp(36px, 22dvw, 180px);
   }
 }
 
 @media (min-width: 1920px) {
-  .header-contact-btn {
+  .site-title {
     font-size: var(--font-size-txt);
+  }
+
+  .theme-toggle-btn {
+    padding-inline: var(--space-sm);
+    inline-size: var(--icon-size-lg);
+  }
+
+  .header-contact-btn {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-md);
   }
 }

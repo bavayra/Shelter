@@ -6,6 +6,18 @@
   display: none;
 }
 
+.h2-about-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin-bottom: var(--space-xl);
+  inline-size: 100%;
+  max-inline-size: 100dvw;
+  block-size: clamp(128px, 20dvh, 480px);
+  text-align: center;
+  font-weight: 400;
+}
+
 #about-title {
   display: inline-block;
   align-items: center;
@@ -13,12 +25,20 @@
   padding-top: var(--space-md);
   padding-inline: var(--space-sm);
   margin: 0 auto;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
   font-size: var(--font-size-h1);
   font-weight: var(--font-weight-md);
   color: var(--title-color);
   border-bottom: 4px dotted var(--title-color);
   padding-bottom: var(--space-sm);
+}
+
+#about-desc {
+  align-self: center;
+  padding-inline: var(--space-md);
+  inline-size: 95%;
+  font-size: var(--font-size-accents);
+  color: var(--title-color);
 }
 
 .about-container {
@@ -108,6 +128,14 @@
 }
 
 @media (min-width: 1024px) {
+  .h2-about-container {
+    justify-self: center;
+    inline-size: 80%;
+  }
+
+  #reviews-desc {
+    inline-size: 70%;
+  }
   .about-arrow {
     inline-size: clamp(18px, 4dvw, 36px);
     block-size: clamp(18px, 4dvh, 36px);
@@ -123,12 +151,20 @@
 }
 
 @media (min-width: 1440px) {
+  #about-desc {
+    font-size: var(--font-size-txt);
+  }
+
   .about-caption {
     font-size: var(--font-size-txt);
   }
 }
 
 @media (min-width: 1920px) {
+  #about-desc {
+    font-size: var(--font-size-h2);
+  }
+
   .about-images {
     inline-size: 97%;
   }

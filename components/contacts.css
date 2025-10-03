@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: column;
   padding: 0;
+  margin-bottom: var(--space-lg);
   inline-size: 100%;
   max-inline-size: 100dvw;
   block-size: clamp(128px, 20dvh, 480px);
@@ -33,8 +34,10 @@
 }
 
 #contact-desc {
+  align-self: center;
   padding-inline: var(--space-md);
-  font-size: var(--font-size-md);
+  inline-size: 80%;
+  font-size: var(--font-size-xl);
   color: var(--title-color);
 }
 
@@ -92,7 +95,6 @@
 
 .contact-form :is(input, textarea) {
   padding: var(--space-sm);
-  margin-inline: var(--space-md);
   inline-size: 100%;
   max-inline-size: 60ch;
   min-inline-size: 36ch;
@@ -175,6 +177,7 @@
 
 @media (min-width: 768px) {
   .h2-contacts-container {
+    margin-bottom: 0;
     block-size: clamp(96px, 20dvh, 360px);
   }
 
@@ -255,7 +258,7 @@
   #contact-desc {
     align-self: center;
     margin-bottom: var(--space-lg);
-    inline-size: clamp(24ch, 60dvw, 52ch);
+    inline-size: 70%;
     font-weight: var(--font-weight);
     font-size: var(--font-size-accents);
   }
@@ -277,18 +280,12 @@
 
   .contact-form {
     gap: var(--space-sm);
-    margin-inline: var(--space-sm);
-    padding: var(--space-lg);
-    inline-size: 80%;
-  }
-
-  .contact-form label {
-    font-size: var(--font-size-xs);
   }
 
   .contact-form :is(input, textarea) {
-    max-inline-size: clamp(5rem, 28svw, 20rem);
-    font-size: var(--font-size-sm);
+    inline-size: 100%;
+    max-inline-size: 64ch;
+    min-inline-size: 24ch;
   }
 
   .form-btns {
@@ -302,6 +299,10 @@
 }
 
 @media (min-width: 1440px) {
+  #contact-desc {
+    font-size: var(--font-size-txt);
+  }
+
   .contacts-grid {
     inline-size: min(90%, 1440px);
   }
@@ -341,9 +342,10 @@
   }
 
   .contact-form {
-    align-items: center;
+    margin-inline: auto;
     margin-left: var(--space-xl);
-    inline-size: clamp(12dvw, 27dvw, 42dvw);
+    align-items: center;
+    inline-size: clamp(420px, 20dvw, 960px);
   }
 
   .contact-form label {
@@ -352,7 +354,7 @@
   }
 
   .contact-form :is(input, textarea) {
-    margin-inline: var(--space-xl);
+    inline-size: 100%;
     max-inline-size: 48ch;
   }
 
@@ -361,8 +363,10 @@
   }
 
   .form-btns {
-    margin-left: 15%;
-    inline-size: 70%;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-inline: auto;
+    inline-size: 100%;
   }
 
   #form-reset-btn,
