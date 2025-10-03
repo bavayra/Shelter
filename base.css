@@ -43,7 +43,7 @@ body {
   --content-pad: clamp(1rem, 3vw, 2rem);
   --btn-height: clamp(36px, 6dvh, 48px);
 
-  --sidebar-w: clamp(72px, 11vw, 148px);
+  --sidebar-w: clamp(72px, 12vw, 148px);
   --sidebar-w-sm: clamp(64px, 9vw, 96px);
   --sidebar-transition: 200ms;
 

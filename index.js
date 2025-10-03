@@ -96,7 +96,7 @@ if (toggleBtn) {
   toggleBtn.addEventListener("click", toggleTheme);
 }
 
-/*SIDEBAR TOGGLE*/
+/*SIDEBAR FULL SCREENS TOGGLE*/
 const sidebar = document.querySelector(".sidebar");
 const toggle = document.querySelector(".sidebar-toggle");
 
@@ -121,6 +121,42 @@ if (sidebar && toggle) {
     }
   });
 }
+
+/*SIDEBAR MOBILE TOGGLE*/
+const sidebarMobile = document.querySelector(".sidebar");
+
+// Только для экранов <1024px
+function isMobile() {
+  return window.innerWidth < 1024;
+}
+
+// Проверка, виден ли sidebar в вьюпорте
+function isSidebarVisible() {
+  if (!sidebarMobile) return false;
+  const rect = sidebarMobile.getBoundingClientRect();
+  // Проверяем, что нижняя граница sidebar выше верхней границы вьюпорта (то есть sidebar ушёл вверх)
+  return rect.bottom > 0;
+}
+
+// Следим за скроллом
+function handleSidebarOnScroll() {
+  if (!isMobile()) {
+    sidebarMobile.classList.remove("sidebar-hidden");
+    return;
+  }
+  if (isSidebarVisible()) {
+    sidebarMobile.classList.remove("sidebar-hidden");
+  } else {
+    sidebarMobile.classList.add("sidebar-hidden");
+  }
+}
+
+// Сброс при ресайзе
+window.addEventListener("resize", handleSidebarOnScroll);
+window.addEventListener("scroll", handleSidebarOnScroll);
+
+// Начальное состояние
+document.addEventListener("DOMContentLoaded", handleSidebarOnScroll);
 
 /*CAROUSEL*/
 
